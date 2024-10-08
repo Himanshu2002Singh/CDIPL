@@ -1,170 +1,82 @@
-.hero {
-    position: relative;
-   
-    margin-left: -0.5%;
-    overflow: hidden;
-    height: 700px;
+/* Hero Section */
+.heroSec {
+  position: relative;
+  width: 100%;
+  zoom: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: rgba(0, 0, 0, 0.337); */
+}
+
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 100%;
+  
+  object-fit: cover;
+  z-index: -1;
+}
+
+.heroContent {
+  position: relative;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  padding: 20px;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.heroContent p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.heroBtn {
+  padding: 10px 30px;
+  background-color: #ff5a5f;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 2rem;
   }
-  
-  .container3 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    background: #f5f5f5;
-    box-shadow: 0 30px 50px #dbdbdb;
-    padding-top: 56px;
+
+  .heroContent p {
+    font-size: 1.2rem;
   }
-  
-  .container3 .slide .item2 {
-    width: 200px;
-    height: 300px;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    border-radius: 20px;
-    box-shadow: 0 30px 50px #505050;
-    background-position: 50% 50%;
-    background-size: cover;
-    display: inline-block;
-    transition: 0.5s;
+
+  .heroBtn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
   }
-  
-  .slide .item2:nth-child(1),
-  .slide .item2:nth-child(2) {
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-    border-radius: 0;
-    width: 100%;
-    height: 100%;
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 1.5rem;
   }
-  
-  .slide .item2:nth-child(3) {
-    left: 50%;
+
+  .heroContent p {
+    font-size: 1rem;
   }
-  
-  .slide .item2:nth-child(4) {
-    left: calc(50% + 220px);
+
+  .heroBtn {
+    padding: 6px 15px;
+    font-size: 0.8rem;
   }
-  
-  .slide .item2:nth-child(5) {
-    left: calc(50% + 440px);
-  }
-  
-  .slide .item2:nth-child(n + 6) {
-    left: calc(50% + 660px);
-    opacity: 0;
-  }.item2 .content2 {
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
-    position: absolute;
-    top: 50%;
-    left: 100px;
-    width: 300px;
-    text-align: left;
-    color: white;
-    transform: translate(0, -50%);
-    font-family: system-ui;
-    display: none;
-    padding: 20px; /* Add padding for spacing */
-    border-radius: 10px; /* Rounded corners for the box */
-  }
-  
-  .slide .item2:nth-child(2) .content2 {
-    display: block;
-  }
-  
-  .content2 .name {
-    z-index: 10;
-    font-size: 40px;
-    text-transform: uppercase;
-    font-weight: bold;
-    opacity: 2;
-    animation: animate 1s ease-in-out 1 forwards;
-  }
-  
-  .content2 .des {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    opacity: -1;
-    color: white;
-    animation: animate 1s ease-in-out 0.3s 1 forwards;
-  }
-  
-  .content2 button {
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    opacity: 0;
-    animation: animate 1s ease-in-out 0.6s 1 forwards;
-  }
-  
-  /* Optional animation */
-  @keyframes animate {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  
-  @keyframes animate {
-    from {
-      opacity: 0;
-      transform: translate(0, 100px);
-      filter: blur(33px);
-    }
-  
-    to {
-      opacity: 1;
-      transform: translate(0);
-      filter: blur(0);
-    }
-  } 
-  .button3 {
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    bottom: 20px;
-  }
-  
-  .button button {
-    width: 40px;
-    height: 35px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    margin: 0 5px;
-    border: 1px solid #000;
-    transition: 0.3s;
-  }
-  
-  .button button:hover {
-    background: #ababab;
-    color: #fff;
-  }
-  @media (max-width: 768px) {
-    /* Adjust the card placement to be above the content */
-    .slide .item2:nth-child(3) {
-      left: 0; /* Align to the left */
-      
-      top: 0; /* Move to the top */
-      width: 100%; /* Make it full width for better visibility */
-      height: auto; /* Let the height adjust automatically */
-      z-index: 2; /* Ensure it's on top of other content */
-      border-radius: 10px;
-      box-shadow: 0 30px 50px #505050;
-      transform: translate(0, -50%);
-    }
-  
-    /* Ensure that the rest of the content moves down */
-  
-  }
-  
- 
+}

@@ -11,6 +11,7 @@ import BlogSection from './userpanel/BlogSection/BlogSection'
 import DeveloperCarousel from './userpanel/DeveloperCarousel/DeveloperCarousel'
 import InquiryForm from './userpanel/Feedback/Feedback'
 import Testimonials from './userpanel/Testimonials/Testimonials'
+import ProjectsCarousel from './userpanel/ExplosiveProject/ExplosiveProject'
 
 
 
@@ -23,6 +24,7 @@ const Website = () => {
       <Companies/>
       <Projects/>
       <AboutSection/>
+      <ProjectsCarousel/>
       <ProcessSection/>
       <DeveloperCarousel/>
         <Testimonials/>

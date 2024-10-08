@@ -1,271 +1,417 @@
-/* General Styles */
-.navbar-area {
-  background-color: #fff;
-  padding: 10px 0;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
+
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.sticky {
+/* Navbar Area */
+.navbar-area {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: background-color 0.3s ease;
+  background-color: transparent;
+  padding: 15px 0;
+  color: white;
+}
+
+.navbar-area.sticky {
+  background-color: white;
+  color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-logo img {
-  max-height: 70px;
-  transition: max-height 0.3s ease-in-out;
+  max-width: 100px;
 }
 
 .menu-list {
   list-style: none;
   display: flex;
   justify-content: space-around;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-list li {
-  margin: 0 10px;
 }
 
 .menu-list li a {
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  font-size: 16px;
-  position: relative;
-  transition: color 0.3s ease-in-out;
+  color: inherit;
+  padding: 10px;
+  transition: color 0.3s;
 }
 
 .menu-list li a:hover {
-  color: rgba(233, 21, 21, 0.758)
+  color: #c33764;
 }
 
-.menu-list li a::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 50%;
-  background-color: rgba(235, 30, 30, 0.758);
-  transition: all 0.3s ease-in-out;
+/* Contact Section */
+.contacts {
+  text-align: left;
+  padding: 20px 15px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-.menu-list li a:hover::before {
-  width: 100%;
-  left: 0;
+/* Contact Email & Phone */
+.contacts p {
+  margin: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
 }
 
-/* Navbar Actions */
-.navbar-actions .search-icon {
-  font-size: 22px;
-  margin-right: 29px;
-  cursor: pointer;
-  color: rgba(237, 29, 29, 0.767);
-  transition: transform 0.3s ease-in-out;
+.contacts a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  font-size: 14px;
+  margin: 5px 0;
+  text-decoration: none;
+  word-break: break-word;
 }
 
-.navbar-actions .search-icon:hover {
-  transform: scale(1.2);
+.contacts a:hover {
+  color: #c33764; /* Red hover for email */
 }
 
-.call-info {
+/* Social Media Icons */
+.social-icons {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: linear-gradient(135deg, #1d2671, #c33764); /* Red color for icons */
+  color: white;
   font-size: 18px;
-  color: #666;
-  margin-right: 15px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
 }
 
-.call-info .phone-icon {
-  font-size: 25px;
-  margin-right: 9px;
-  color: rgba(234, 20, 20, 0.806);
-  transform: rotate(90deg); /* Rotate the icon by 370 degrees */
+.social-icons a:hover {
+  background-color: #333; /* Change to darker shade on hover */
 }
 
-
-/* Hamburger Menu Icon */
-.hamburger-icon {
-  font-size: 28px;
-  cursor: pointer;
-  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+/* Call and WhatsApp Floating Buttons */
+.floating-buttons {
+  position: fixed;
+  right: 15px;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.hamburger-icon:hover {
-  color: rgba(242, 27, 27, 0.792);
-  transform: scale(1.1);
+.floating-buttons a {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color:linear-gradient(135deg, #1d2671, #c33764); /* Color for Call Button */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  transition: transform 0.3s ease;
 }
 
-.phone-number{
-  margin-top: -15px;
+.floating-buttons a:hover {
+  transform: scale(1.1); /* Scale on hover for effect */
+}
+
+.floating-buttons .whatsapp {
+  background-color: #25d366; /* WhatsApp color */
 }
 
 /* Mobile Menu */
 .mobile-menu {
   position: fixed;
   top: 0;
-  left: -100%;
-  width: 100%;
+  right: 0;
+  width: 80%;
   height: 100%;
-  background: #fff;
+  background-color: white;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  transition: left 0.5s ease-in-out;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
 }
 
 .mobile-menu.open {
-  left: 0;
+  transform: translateX(0);
 }
 
 .mobile-menu-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.mobile-menu-header .close-icon {
-  font-size: 30px;
-  cursor: pointer;
-  color: black;
-  transition: transform 0.3s ease-in-out;
-}
-
-.mobile-menu-header .logo{
-  width: 90%;
-
-}
-
-
-.mobile-menu-header .close-icon:hover {
-  transform: rotate(90deg);
+  padding: 15px;
 }
 
 .mobile-nav {
-  margin-top: 30px;
+  padding: 15px;
 }
 
 .mobile-menu-list {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.mobile-menu-list li {
-  margin-bottom: 20px;
 }
 
 .mobile-menu-list li a {
   text-decoration: none;
   color: #333;
-  font-weight: bold;
-  font-size: 18px;
-  transition: color 0.3s ease-in-out;
+  padding: 10px 0;
+  display: block;
 }
 
-.mobile-menu-list li a:hover {
-  color: rgba(224, 30, 30, 0.772);
-}
-
-/* Mobile Contact Info */
 .mobile-contact-info {
-  margin-top: 40px;
+  padding: 15px;
+  font-size: 14px;
 }
 
-.mobile-contact-info p {
-  font-size: 14px;
-  color: #333;
-  margin: 5px 0;
+.mobile-social-media-links {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 
 .mobile-social-media-links a {
   margin: 0 10px;
-  font-size: 24px;
-  color: rgba(226, 26, 26, 0.839);
-  transition: transform 0.3s ease-in-out;
+  font-size: 18px;
+  color: #333;
 }
 
 .mobile-social-media-links a:hover {
-  transform: scale(1.2);
+  color: #c33764;
 }
 
-/* Responsive Breakpoints */
+/* Popup Screen */
+.popup-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-/* Large screens (desktop) */
-@media (min-width: 1200px) {
-  .menu-list {
-    justify-content: space-between;
-  }
-  
-  .navbar-logo img {
-    max-height: 90px;
-  }
+.popup-content {
+  background-color: white;
+  padding: 25px;
+  width: 90%;
+  max-width: 450px;
+  text-align: center;
+  border-radius: 8px;
+  animation: popup-fade-in 0.3s ease;
+}
 
-  .call-info {
-    font-size: 20px;
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
   }
-
-  .call-info .phone-icon {
-    font-size: 30px;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-/* Tablets */
-@media (max-width: 1199px) {
-  .menu-list {
-    justify-content: flex-start;
+.popup-content form input,
+.popup-content form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.popup-content form button {
+  padding: 10px 15px;
+  background-color: linear-gradient(135deg, #1d2671, #c33764);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.popup-content form button:hover {
+  background-color: #e11656;
+}
+
+.close-popup {
+  margin-top: 10px;
+  background-color: #c33764;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+}
+
+/* Adjustments for mobile view */
+@media screen and (max-width: 768px) {
+  .contacts {
+    padding: 15px 10px;
   }
 
-  .navbar-logo img {
-    max-height: 120px;
-  }
-
-  .call-info {
+  .social-icons a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
     font-size: 16px;
   }
 
-  .call-info .phone-icon {
-    font-size: 25px;
+  .floating-buttons {
+    right: 10px;
+    bottom: 80px;
   }
 
-  .navbar-actions .search-icon {
-    margin-right: 10px;
+  .floating-buttons a {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+  }
+
+  .popup-content {
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .mobile-social-media-links {
+    padding: 5px;
+  }
+
+  .mobile-social-media-links a {
+    margin: 0 8px;
+    font-size: 16px;
   }
 }
 
-/* Mobile */
-@media (max-width: 767px) {
-  .navbar-logo img {
-    max-height: 90px;
-  }
+/* Inquiry Button */
+.inquiry-button {
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for an exclusive look */
+    color: white;
+  border: none;
+  margin-right: 10%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  .menu-list {
-    display: none; /* Hide the desktop menu */
-  }
+.inquiry-button:hover {
+  background-color: darkmagenta; /* Darker red on hover */
+}
 
-  .hamburger-icon {
-    display: block;
-    margin-top: -25%;
+/* Search Property Button */
+.search-property-button {
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for an exclusive look */
+    color: white;
+  border: none;
+  border-radius: 6px;
+  margin-right: 8%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  }
+.search-property-button:hover {
+  background-color: #c33764;
+}
 
-  .navbar-actions .search-icon {
-    margin-top: 0;
-    font-size: 20px;
-    margin-top: -25%;
-  }
+/* Popup Content */
+.popup-content {
+  background-color: white;
+  padding: 25px;
+  width: 90%;
+  max-width: 450px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for attractiveness */
+}
 
-  .call-info {
-    display: none; /* Hide call info on mobile */
-  }
+.popup-content h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
 
-  .mobile-menu {
-    display: block;
-  }
+.popup-content form input,
+.popup-content form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.popup-content form button {
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.popup-content form button:hover {
+  background-color: #c33764;
+}
+
+.close-popup {
+  margin-top: 10px;
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.mobile-search-icon{
+ font-size: 25px;
+ cursor: pointer;
+  color:#c33764;
+ margin-right: 20%;
+  
+}
+
+
+@media screen and (max-width: 768px){
+
+.mobile-search-icon{
+  font-size: 75px;
+  cursor: pointer;
+   color:#c33764;
+  margin-right: 20%;
+   
+ }
+ 
+ .hamburger-icon{
+   font-size: 80px;
+   
+ 
+ }
 }

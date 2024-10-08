@@ -1,0 +1,104 @@
+/* Container for the exclusive section */
+.m-exclusive {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for an exclusive look */
+    color: white;
+}
+  
+/* Title section for exclusive class */
+.m-exclusive .exclusive-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #ffffff; /* White text for contrast */
+}
+
+/* Subtitle for exclusive class */
+.m-exclusive .exclusive-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #f3f3f3; /* Light color for subtitle */
+}
+
+/* Carousel styling for exclusive projects */
+.m-exclusive .swiper-container {
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the carousel */
+    padding: 0 15px;
+}
+
+.m-exclusive .swiper-slide {
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+   
+    padding: 0 15px;
+   
+   
+}
+
+.m-exclusive .swiper-slide img {
+    width: 50%;
+    height: auto;
+    display: block;
+    border-bottom: 5px solid #c33764; /* Add some accent with a border */
+}
+
+.m-exclusive .project-info {
+    padding: 15px;
+    text-align: left;
+    background-color: #fff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.m-exclusive .project-info h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #1d2671; /* Color to match the exclusive look */
+}
+
+.m-exclusive .project-info p {
+    font-size: 1rem;
+    color: #333;
+    margin: 8px 0;
+}
+
+.m-exclusive .project-info button {
+    display: inline-block;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for an exclusive look */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.m-exclusive .project-info button:hover {
+    background-color: #c33764; /* Hover effect to match the background theme */
+}
+
+/* Add responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .m-exclusive .swiper-slide {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .m-exclusive .exclusive-title {
+        font-size: 2rem;
+    }
+    
+    .m-exclusive .exclusive-subtitle {
+        font-size: 1rem;
+    }
+}
+
+

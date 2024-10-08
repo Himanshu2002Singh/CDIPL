@@ -1,267 +1,117 @@
+/* General styling for the container */
 .c-wrapper {
-  padding: 2rem; /* Add padding for spacing */
+  padding: 2rem 0;
+  width: 86%;
+  margin: 0 auto;
 }
 
 .c-heading {
-  font-size: 2rem; /* Heading size */
-  text-align: center; /* Center the heading */
-  margin-bottom: 1rem; /* Spacing below the heading */
+    text-align: center;
+    font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      color: black; /* White text for contrast */
 }
 
 .c-description {
-  font-size: 1.2rem; /* Description size */
-  text-align: center; /* Center the description */
-  margin-bottom: 2rem; /* Spacing below the description */
-}
-
-.c-container9 {
-  display: flex; /* Use flexbox for alignment */
-  overflow: hidden; /* Hide overflow for sliding effect */
-  transition: transform 0.3s ease; /* Smooth transition */
-  gap: 20px; /* Space between cards */
-}
-
-/* Card styles */
-.company-box {
-  background: #f5f5f5; /* Light background for contrast */
-  border-radius: 10px; /* Rounded corners */
-  padding: 1rem; /* Increased padding inside each box */
-  width: 100%; /* Full width for each box */
-  height: 200px;
-  text-align: center; /* Center text inside each box */
-  transition: transform 0.3s; /* Smooth transform effect */
-}
-
-.company-box h3 {
-  font-size: 2rem; /* Font size for company name */
-  margin-bottom: 1rem; /* Space below the name */
-}
-
-.company-box p {
-  font-size: 1.5rem; /* Description font size */
-  color: #666; /* Dark grey color for the description */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .c-heading {
-    font-size: 1.8rem; /* Smaller heading on mobile */
-  }
-
-  .c-description {
-    font-size: 1rem; /* Smaller description on mobile */
-  }
-
-  .company-box {
-    padding: 1rem; /* Less padding on mobile */
-  }
-
-  .company-box h3 {
-    font-size: 1.5rem; /* Smaller font size for names on mobile */
-  }
-
-  .company-box p {
-    font-size: 1rem; /* Smaller description font size on mobile */
-  }
-
-  .c-container9 {
-    flex-direction: row; /* Display cards in a row */
-  }
-}
-
-@media (max-width: 480px) {
-  .c-heading {
-    font-size: 1.5rem; /* Even smaller heading on very small screens */
-  }
-
-  .c-description {
-    font-size: 0.9rem; /* Even smaller description on very small screens */
-  }
-
-  /* Card styles */
-.company-box {
-  background: #f5f5f5; /* Light background for contrast */
-  border-radius: 10px; /* Rounded corners */
-  padding: 1rem; /* Increased padding inside each box */
-  width: 100%; /* Full width for each box */
-  height: 250px;
-  text-align: center; /* Center text inside each box */
-  transition: transform 0.3s; /* Smooth transform effect */
-}
-
-  .c-container9 {
-    display: flex;
-    flex-wrap: nowrap; /* Allow wrapping for 2 cards */
-  }
-
-  .company-box {
-    flex: 0 0 calc(100% - 20px); /* Two cards per row with gap */
-  }
-}
-
-
-
-/* Inquiry Button Style */
-.inquiry-button {
-  position: fixed;
-  top: 10px; /* Adjust top positioning */
-  right: 20px; /* Align to the right */
-  z-index: 1000; /* Ensure it's on top */
-}
-
-.inquiry-icon {
-  position: fixed;
-  top: 30%;
-  right: 2px;
-  background-color: rgba(228, 26, 26, 0.813);
-  color: white;
-  padding: 10px;
-  border-radius: 22px;
-  cursor: pointer;
-  z-index: 1000;
-  font-size: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.inquiry-icon i {
-  margin-right: 2px;
-  font-size: 22px;
-}
-
-/* Popup Overlay Style */
-.popup-overlay {
-  position: fixed;
-  top: 0; /* Cover the full viewport */
-  left: 0;
-  width: 100%;
-  height: 100%; /* Cover the full height */
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
- 
-}
-
-/* Popup Box Style */
-.popup-box {
+   text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: rgb(44, 44, 44); /* Light color for subtitle */
   
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s all ease-in-out;
+}
+
+.company-box {
+  background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for an exclusive look */
+    color: white;
   padding: 20px;
-  border-radius: 10px;
-  width: 90%; /* Full width for small devices */
-  max-width: 400px; /* Limit maximum width */
-  margin-bottom: 20%;
-  margin-top: 20%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  /* background-image: url(../../assets/Trustworthy.jpg); */
-  background-color: #333333f5;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: calc(25% - 20px); /* 25% for 4 items per slide, minus margin */
+  margin: 10px;
 }
 
-.popup-box h2 {
+.company-box:hover {
+  transform: translateY(-10px);
+}
+
+.company-icon {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.classp2 {
+  font-size: 1rem;
+ 
+  color: white;
   margin-bottom: 20px;
+}
+
+.see-all {
   color: white;
-}
-
-/* Inquiry Form Style */
-.inquiry-form .form-group {
-  margin-bottom: 15px;
-}
-
-.inquiry-form .form-group label {
   font-weight: bold;
-  color: white;
-
+  text-decoration: none;
 }
 
-.inquiry-form .form-group input,
-.inquiry-form .form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+/* Dots */
+.dots-container {
+  text-align: center;
+  margin-top: 20px;
 }
 
-.inquiry-form .form-group textarea {
-  height: 100px;
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.inquiry-form .btn {
-  width: 100%;
-  margin-top: 10px;
+.dot.active {
+  background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for an exclusive look */
+   
 }
 
-
-
-
-@media screen and (max-width: 768px) {
-  .popup-box {
-    margin-bottom: 20%; /* Reduced for smaller screens */
-  }
-
-  .inquiry-form {
-    font-size: 14px; /* Adjusted font size for smaller screens */
-  }
-  
-  .inquiry-icon {
-    font-size: 12px; /* Increased icon size for better visibility */
-  }
-
-  .inquiry-icon i {
-    font-size: 24px; /* Increased icon size for better visibility */
-  }
-
-  .inquiry-form .form-group input,
-  .inquiry-form .form-group textarea {
-    padding: 8px; /* Reduced padding for smaller devices */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .popup-box {
-    padding: 10px; /* Reduced padding for extra small devices */
-    
-  }
-
-  .inquiry-icon {
-    padding: 5px; /* Reduced padding for smaller devices */
-  }
-  
-  .inquiry-form .form-group label {
-    font-size: 12px; /* Adjusted label size for smaller screens */
-  }
-
-  .inquiry-form .form-group input,
-  .inquiry-form .form-group textarea {
-    padding: 5px; /* Reduced padding for smaller devices */
-  }
-}
-
-  
-
-
-/* Medium Screens (tablets) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .c-container9 {
-    display: flex;
-    flex-wrap: nowrap; /* Allow wrapping for 2 cards */
-  }
-
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
   .company-box {
-    flex: 0 0 calc(50% - 20px); /* Two cards per row with gap */
+    width: calc(50% - 20px); /* 50% for 2 items on tablet */
   }
 }
 
-/* Large Screens (desktops) */
-@media (min-width: 769px) {
-  .c-container9 {
-    display: flex; /* Keep as flex for large screens */
-  }
-
+@media (max-width: 768px) {
   .company-box {
-    flex: 0 0 calc(33.33% - 20px); /* Three cards per row with gap */
+    width: calc(100% - 20px); /* 100% for 1 item on mobile */
   }
 }

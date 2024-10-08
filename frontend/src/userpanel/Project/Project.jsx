@@ -13,10 +13,10 @@ const Projects = () => {
         <div className="office pt-5">
           <div className="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
             <div className="sub-style">
-              <h5 className="sub-title text-primary px-3">OUR PROJECTS</h5>
+              <h5 className="sub-title text-danger px-3">OUR PROJECTS</h5>
             </div>
-            <h1 className="display-5 mb-4">Explore Our Best Properties</h1>
-            <p className="mb-0">
+            <h2 className="projecttittle">Explore Our Best Properties</h2>
+            <p className="projectsubtitle">
               Discover premium office spaces that combine modern infrastructure with prime locations. Perfect for businesses looking for expansion and growth.
             </p>
           </div>
@@ -80,10 +80,10 @@ const OfficeCard = ({ tittle, delay, imgSrc, name, phone, price, address }) => {
           <a href={`tel:${phone}`} className="text-secondary fs-5 mb-2">
             {phone}
           </a>
-          <h5 className="price fs-4 text-danger mb-2">{price}</h5> {/* Updated Price style */}
+          <h5 className="price fs-4 textdre mb-2">{price}</h5> {/* Updated Price style */}
           <p className="mb-0">{address}</p>
           {/* Link to the detail page */}
-          <Link to={`/project/${tittle}`} className="btn btn-outline-danger mt-3">View Details</Link>
+          <Link to={`/project/${tittle}`} className=" byt mt-3">View Details</Link>
         </div>
       </div>
     </div>

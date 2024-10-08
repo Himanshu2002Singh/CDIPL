@@ -1,77 +1,82 @@
-// src/userpanel/Testimonials/Testimonials.jsx
-
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'; // Import Swiper styles
-import { Autoplay } from 'swiper/modules'; // Import Autoplay module
-import './Testimonials.css'; // Import the CSS file
+import Slider from 'react-slick';
+import './Testimonials.css';  // Import the CSS
 
-// Sample testimonials data
-const testimonials = [
-  {
-    name: 'John Doe',
-    feedback: 'Excellent service! Highly recommended.',
-    rating: '⭐⭐⭐⭐⭐',
-  },
-  {
-    name: 'Jane Smith',
-    feedback: 'A wonderful experience from start to finish.',
-    rating: '⭐⭐⭐⭐⭐',
-  },
-  {
-    name: 'Mike Johnson',
-    feedback: 'Great support and quick response times.',
-    rating: '⭐⭐⭐⭐⭐',
-  },
-  {
-    name: 'Emily Davis',
-    feedback: 'I was very satisfied with the service provided.',
-    rating: '⭐⭐⭐⭐⭐',
-  },
-  {
-    name: 'Sarah Connor',
-    feedback: 'The team was very professional and helpful.',
-    rating: '⭐⭐⭐⭐⭐',
-  },
+const testimonialsData = [
+    {
+        name: 'Anil - Madhu',
+        testimonial: 'A big thank you to CDIPL Ur Homes for an amazing experience. They listened to our needs and made the process of finding a great property so smooth and stress-free...',
+        image: 'path_to_image1.jpg'
+    },
+    {
+        name: 'Dr. Namita Nadar',
+        testimonial: 'I came to know about Wellness Mart in Noida, a unique concept of health and wellness hub right in the middle of a premium commercial centre really fascinated me...',
+        image: 'path_to_image2.jpg'
+    },
+    {
+        name: 'Raghav - Deepika',
+        testimonial: 'Choosing CDIPL Ur Homes for our investment in Sukhbiri Farms was one of the best decisions we’ve ever made...',
+        image: 'path_to_image3.jpg'
+    },
+    {
+        name: 'Rajesh',
+        testimonial: 'Another testimonial text for client 4, describing the good experience they had...',
+        image: 'path_to_image4.jpg'
+    },
+    {
+        name: 'Shyam',
+        testimonial: 'Client 5 shares their experience, highlighting the good services and support...',
+        image: 'path_to_image5.jpg'
+    }
 ];
 
 const Testimonials = () => {
-  return (
-    <div className="testimonial-section">
-      <h2>What Our Clients Say</h2>
-      <Swiper
-  spaceBetween={30}
-  autoplay={{ delay: 3000, disableOnInteraction: false }} // Autoplay settings
-  loop={true} // Enable looping
-  modules={[Autoplay]} // Add Autoplay module here
-  breakpoints={{
-    320: {
-      slidesPerView: 1, // 1 card on small screens
-    },
-    768: {
-      slidesPerView: 2, // 2 cards on medium screens
-    },
-    1024: {
-      slidesPerView: 3, // 3 cards on larger screens
-    },
-    1440: {
-      slidesPerView: 4, // 4 cards on extra-large screens
-    },
-  }}
-  className="mySwiper"
->
-        {testimonials.map((testimonial, index) => (
-          <SwiperSlide key={index} className="testimonial-slide">
-            <div className="testimonial-card">
-              <p className="feedback">"{testimonial.feedback}"</p>
-              <p className="customer-name">- {testimonial.name}</p>
-              <p className="customer-rating">{testimonial.rating}</p>
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,  // Show 3 cards at a time for larger screens
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        responsive: [
+            {
+                breakpoint: 768, // Adjust for mobile view
+                settings: {
+                    slidesToShow: 1, // Show only 1 card on mobile
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 1024, // Tablet view (optional customization)
+                settings: {
+                    slidesToShow: 2, // Show 2 cards on tablet
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    };
+
+    return (
+        <div className="testimonials-section">
+            <div className="testimonials-header">
+                <h2>What Our Clients Say!</h2>
+                <p>Read The Thoughts Of Our Investors</p>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
-  );
+            <Slider {...settings}>
+                {testimonialsData.map((testimonial, index) => (
+                    <div key={index} className="testimonial-slide">
+                        <div className="testimonial-content">
+                            <div className="quote-mark">❝</div>
+                            <img src={testimonial.image} alt={testimonial.name} className="client-image" />
+                            <p className="testimonial-text">{testimonial.testimonial}</p>
+                            <h3 className="client-name">{testimonial.name}</h3>
+                        </div>
+                    </div>
+                ))}
+            </Slider>
+        </div>
+    );
 };
 
 export default Testimonials;

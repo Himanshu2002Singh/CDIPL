@@ -1,77 +1,104 @@
-.testimonial-section {
-  width: 100%; /* Full width of the screen */
-  padding: 40px 0; /* Vertical padding */
-  background-color: #f0f4f8; /* Light background color */
-  text-align: center; /* Center text */
+.testimonials-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f7f7f7;
 }
 
-.testimonial-section h2 {
-  margin-bottom: 30px; /* Space below the title */
-  font-size: 2.5em; /* Increase font size */
-  color: #333; /* Darker color for the title */
+.testimonials-header h2 {
+  font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: black; /* White text for contrast */
+}
+
+.testimonials-header p {
+  color: #777;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+ 
 }
 
 .testimonial-slide {
-  display: flex; /* Use flexbox for alignment */
-  flex-direction: wrap;
-  justify-content: center; /* Center align content */
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
 }
 
-.testimonial-card {
-  background-color: #fff; /* White background for each card */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  padding: 20px; /* Add some padding */
-  max-width: 300px; /* Max width for uniformity */
-  height: auto; /* Auto height for content */
-  margin: 0 auto; /* Center the card */
-  display: flex; /* Flexbox for vertical centering */
-  flex-direction: column; /* Arrange items in a column */
-  justify-content: center; /* Center vertically */
-  transition: transform 0.3s; /* Add transition for hover effect */
+.testimonial-content {
+  position: relative;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  min-height: 320px;
 }
 
-.testimonial-card:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
+.quote-mark {
+  font-size: 48px;
+  color: #c33764;
+  position: absolute;
+  top: -20px;
+  left: 20px;
 }
 
-.feedback {
-  font-style: italic; /* Italicize the feedback */
-  margin-bottom: 10px; /* Space below the feedback */
-  font-size: 1.2em; /* Increase font size */
-  color: #555; /* Grey color */
+.client-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
-.customer-name {
-  font-weight: bold; /* Bold the customer's name */
-  color: #333; /* Dark color */
-  margin-top: auto; /* Push name to the bottom */
+.testimonial-text {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
-.customer-rating {
-  font-size: 1.2em; /* Increase rating font size */
-  color: #f39c12; /* Gold color for star ratings */
+.client-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+  margin-top: 10px;
+  text-align: right;
 }
 
-/* Responsive design */
+/* Slick dots custom style */
+.slick-dots {
+  margin-top: 30px;
+}
+
+.slick-dots li button:before {
+  color: #e74c3c;
+  font-size: 12px;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #000;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .testimonial-section {
-    padding: 20px; /* Adjust padding for smaller screens */
+  .testimonial-content {
+      padding: 30px;
   }
 
-  .testimonial-card {
-    height: auto; /* Adjust height for content */
+  .testimonials-header h2 {
+      font-size: 26px;
   }
 
-  .testimonial-section h2 {
-    font-size: 2em; /* Reduce font size for smaller screens */
+  .testimonials-header p {
+      font-size: 16px;
   }
-}
 
-@media (max-width: 480px) {
-  .testimonial-card {
-    height: auto; /* Allow height to adjust */
-    width: 95%; /* Wider card on very small screens */
-    margin: 0 auto; /* Center align the card */
+  .testimonial-text {
+      font-size: 14px;
+  }
+
+  .client-name {
+      font-size: 16px;
   }
 }

@@ -1,129 +1,130 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useEffect } from "react";
 import './Company.css';
 
 const Companies = () => {
-  const containerRef = useRef(null);
-
-  const [showPopup, setShowPopup] = useState(false);
-
-  // To trigger the popup automatically on page load
-  useEffect(() => {
-    const timer = setTimeout(() => setShowPopup(true), 2000); // Show popup after 2 seconds
-    return () => clearTimeout(timer); // Cleanup the timer
-  }, []);
-
-  // Function to handle popup toggle
-  const togglePopup = () => {
-    setShowPopup(!showPopup);
-  };
-
-  // Function to handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can add your form submission logic here
-    console.log("Form submitted");
-    togglePopup(); // Close the popup after submission
-  };
-
-  useEffect(() => {
-    const container = containerRef.current;
-
-    const moveNext = () => {
-      const firstItem = container.querySelector('.company-box');
-      container.appendChild(firstItem); // Move the first item to the end
-    };
-
-    // Auto-slide every 3 seconds
-    const autoSlide = setInterval(moveNext, 3000);
-
-    // Cleanup interval on component unmount
-    return () => clearInterval(autoSlide);
-  }, []);
-
-
-
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [itemsPerSlide, setItemsPerSlide] = useState(4); // Default is 4 items for desktop
 
   const companies = [
     {
+      name: "Startup",
+      description: "Meet your new venture needs with affordable and convenient spaces.",
+      icon: "fa-rocket",
+    },
+    {
+      name: "New Property",
+      description: "Begin your journey of first property ownership with a safe and steady choice.",
+      icon: "fa-building",
+    },
+    {
       name: "Investment",
-      description: "Maximize your returns with strategic investments in various sectors."
+      description: "Strategically invest in dynamic and promising workspaces with expertise.",
+      icon: "fa-chart-line",
     },
     {
-      name: "Rental Income",
-      description: "Generate passive income through short-term and long-term rental properties."
+      name: "ROI & Appreciation",
+      description: "Take advantage of our diverse investment options for extraordinary returns.",
+      icon: "fa-seedling",
     },
     {
-      name: "Luxury Properties",
-      description: "Explore exquisite luxury homes and villas for discerning buyers."
+      name: "Property Management",
+      description: "We manage your property with the best possible care and precision.",
+      icon: "fa-home",
     },
     {
-      name: "Office Space",
-      description: "Invest in prime office spaces catering to the IT/ITES sector for high yields."
+      name: "Commercial Spaces",
+      description: "Discover the right commercial space for your business needs.",
+      icon: "fa-briefcase",
     },
     {
-      name: "Owning a Land Parcel",
-      description: "Invest in land parcels for future development or personal use."
+      name: "Residential",
+      description: "Find your dream home with our exclusive residential properties.",
+      icon: "fa-house-user",
     },
     {
-      name: "Freehold",
-      description: "Own property without any time limits, providing you with total control."
-    },
-    {
-      name: "Leasehold",
-      description: "Invest in leasehold properties offering security and investment potential."
+      name: "Leasing Options",
+      description: "Choose from flexible leasing options for residential and commercial spaces.",
+      icon: "fa-handshake",
     }
   ];
 
+  // Update items per slide based on screen width
+  const updateItemsPerSlide = () => {
+    const width = window.innerWidth;
+    if (width <= 768) {
+      setItemsPerSlide(1); // Mobile
+    } else if (width <= 1024) {
+      setItemsPerSlide(2); // Tablet
+    } else {
+      setItemsPerSlide(4); // Desktop
+    }
+  };
+
+  useEffect(() => {
+    updateItemsPerSlide();
+    window.addEventListener("resize", updateItemsPerSlide);
+    return () => window.removeEventListener("resize", updateItemsPerSlide);
+  }, []);
+
+  const totalSlides = Math.ceil(companies.length / itemsPerSlide);
+
+  // Auto-slide logic
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % totalSlides);
+    }, 10000); // Slide every 3 seconds
+
+    return () => clearInterval(slideInterval);
+  }, [totalSlides]);
+
+  const handleDotClick = (index) => {
+    setCurrentSlide(index);
+  };
+
   return (
     <>
+      <section className="c-wrapper">
+        <h2 className="c-heading">What's your Approach?</h2>
+        <p className="c-description ">To Acquire Property For</p>
 
-    <div className="inquiry-icon" onClick={togglePopup}>
-    <i className="fas fa-question-circle"></i> 
-  </div>
+        <div className="carousel">
+          <div
+            className="carousel-inner"
+            style={{
+              transform: `translateX(-${currentSlide * (100 / totalSlides)}%)`, // Adjusts based on current slide
+              width: `${totalSlides * 100}%`, // Ensures the correct width for the carousel
+            }}
+          >
+            {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+              <div className="slide" key={slideIndex} style={{ width: `${100 / totalSlides}%` }}>
+                {companies
+                  .slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide)
+                  .map((company, index) => (
+                    <div key={index} className="company-box">
+                      <i className={`fas ${company.icon} company-icon`}></i>
+                      <h3>{company.name}</h3>
+                      <p className="classp2">{company.description}</p>
+                      <a href="#" className="see-all">
+                        See all <i className="fas fa-arrow-right"></i>
+                      </a>
+                    </div>
+                  ))}
+              </div>
+            ))}
+          </div>
 
-  {/* Inquiry Form Popup */}
-  {showPopup && (
-    <div className="popup-overlay">
-      <div className="popup-box" >
-        <h2>Instant Inquiry</h2>
-        <form className="inquiry-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Name</label>
-            <input type="text" className="form-control" placeholder="Enter your name" required />
+          {/* Navigation Dots */}
+          <div className="dots-container">
+            {Array.from({ length: totalSlides }).map((_, index) => (
+              <span
+                key={index}
+                className={`dot ${currentSlide === index ? "active" : ""}`}
+                onClick={() => handleDotClick(index)}
+              ></span>
+            ))}
           </div>
-          <div className="form-group">
-            <label>Email</label>
-            <input type="email" className="form-control" placeholder="Enter your email" required />
-          </div>
-          <div className="form-group">
-            <label>Phone Number</label>
-            <input type="tel" className="form-control" placeholder="Enter your phone number" required />
-          </div>
-          <div className="form-group">
-            <label>Inquiry Purpose</label>
-            <textarea className="form-control" placeholder="Describe your inquiry" required></textarea>
-          </div>
-          <div className="button-group">
-            <button type="submit" className="btn btn-danger">Submit</button>
-            <button type="button" className="btn btn-secondary" onClick={togglePopup}>Close</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  )}
-
-    <section className="c-wrapper">
-      <h2 className="c-heading">What's your approach?</h2>
-      <p className="c-description">Our approach involves partnering with leading companies globally to deliver top-tier investment opportunities and property services.</p>
-      <div ref={containerRef} className="paddings innerWidth flexCenter c-container9">
-        {companies.map((company, index) => (
-          <div key={index} className="company-box">
-            <h3>{company.name}</h3>
-            <p>{company.description}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      </section>
     </>
   );
 };
