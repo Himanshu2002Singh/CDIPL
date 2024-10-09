@@ -13,7 +13,7 @@ const Projects = () => {
         <div className="office pt-5">
           <div className="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
             <div className="sub-style">
-              <h5 className="sub-title text-danger px-3">OUR PROJECTS</h5>
+              <h5 className="about-title  px-3" style={{ color: "#c33764" }}>OUR PROJECTS</h5>
             </div>
             <h2 className="projecttittle">Explore Our Best Properties</h2>
             <p className="projectsubtitle">

@@ -60,7 +60,7 @@ const Testimonials = () => {
     return (
         <div className="testimonials-section">
             <div className="testimonials-header">
-                <h2>What Our Clients Say!</h2>
+                <h2 className='testimonials-header-heading '>What Our Clients Say!</h2>
                 <p>Read The Thoughts Of Our Investors</p>
             </div>
             <Slider {...settings}>

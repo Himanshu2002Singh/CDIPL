@@ -2,18 +2,20 @@
   text-align: center;
   padding: 50px 20px;
   background-color: white;
+  width: 97%;
 }
 
-.testimonials-header h2 {
+.testimonials-header-heading {
   text-align: center;
-  font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-   
-    background: linear-gradient(135deg, #1d2671, #c33764);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+     
+      background: linear-gradient(135deg, #1d2671, #c33764);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 20px;
 }
 
 .testimonials-header p {
@@ -92,9 +94,6 @@
       padding: 30px;
   }
 
-  .testimonials-header h2 {
-      font-size: 26px;
-  }
 
   .testimonials-header p {
       font-size: 16px;

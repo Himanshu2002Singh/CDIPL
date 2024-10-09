@@ -83,8 +83,9 @@ const ProjectsCarousel = () => {
 
   return (
     <div className="m-exclusive">
-      <h2 className="exclusive-title">Spotlight</h2>
-      <p className="exclusive-subtitle">Leading Real Estate Investment Opportunity</p>
+         <h5 className="about-title" style={{color:'white'}}>Spotlight</h5>
+      <h2 className="exclusive-title">Leading Real Estate Investment Opportunity</h2>
+      <p className="exclusive-subtitle"></p>
 
       <Slider {...settings} className="swiper-container">
         {projects.map((project, index) => (

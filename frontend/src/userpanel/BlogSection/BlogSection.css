@@ -37,7 +37,7 @@
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(164, 22, 159, 0.1);
     width: calc(33.33% - 20px);
     margin-bottom: 40px;
     transition: transform 0.3s ease;
@@ -66,8 +66,9 @@
   }
   
   .blog-date-box {
-    background-color: rgba(225, 42, 42, 0.873);
+    background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for an exclusive look */
     color: white;
+   
     padding: 8px 15px;
     font-size: 0.9rem;
     font-weight: 600;
@@ -89,7 +90,8 @@
   }
   
   .read-more {
-    color: rgba(233, 27, 27, 0.974);
+  
+    color: #c33764;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -97,7 +99,7 @@
   
   .read-more:hover {
     text-decoration: underline;
-    color: red;
+    color: #c33764
   }
   
   /* Responsive Design */
