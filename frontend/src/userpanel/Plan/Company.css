@@ -11,7 +11,10 @@
       font-weight: bold;
       margin-bottom: 0.5rem;
       text-transform: uppercase;
-      color: black; /* White text for contrast */
+     
+      background: linear-gradient(135deg, #1d2671, #c33764);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .c-description {

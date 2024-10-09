@@ -6,14 +6,20 @@
   }
   
   .real-estate-section .section-title {
-    font-size: 1.5rem;
-    color: rgba(232, 27, 27, 0.888);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    text-align: center;
+    font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+     
+      background: linear-gradient(135deg, #1d2671, #c33764);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 20px;
   }
   
   .real-estate-section .section-subtitle {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #333;
     margin-bottom: 40px;

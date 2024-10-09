@@ -1,134 +1,195 @@
-.process-container {
-    padding: 2rem;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    z-index: 1;
-    color: white;
+/* Overall Section Styling */
+.why-choose-us-section {
     background-color: whitesmoke;
-}
-
-.process-body {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 2rem;
-    border-radius: 15px;
-}
-
-.left-side, .right-side {
+    color: white;
+    padding: 60px 0;
+    width: 75%;
+  }
+  
+  /* Card Styling */
+  .card-gradient {
+    position: relative;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    height: 440px; /* Fixed height for consistent card size */
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    flex: 1;
-}
-
-.logo-section {
+    justify-content: space-between;
+  }
+  
+  /* Adding small CDIPL logo on top-right of each card */
+  .card-logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .card-logo img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Hover effect for cards */
+  .card-gradient:hover {
+    background: linear-gradient(135deg, #1c1c80, #e63946);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Icon styling */
+  .icon {
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  
+  /* Stats Section */
+  .stats-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  }
+  
+  .stats-box:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Circular animated stats */
+  .circle {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto 10px;
     display: flex;
     justify-content: center;
-    margin: 2rem 0;
-    padding: 20px;
-}
-
-.cdipl-logo {
-    width: 180px;
-    animation: bounce 2s infinite;
-
-}
-
-.process-item {
-    display: flex;
-    gap: 1rem;
     align-items: center;
-    background-color: rgba(234, 26, 26, 0.899);
-    padding: 1rem;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    transition: all 0.3s ease;
+  }
+  
+  .stats-box:hover .circle {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(195, 55, 100, 0.5);
+  }
+  
+  /* Text color for muted text */
+  .text-muted {
+    color: #333 !important;
+  }
+  
+  /* Typography */
+  .headingtr{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+     
+      background: linear-gradient(135deg, #1d2671, #c33764);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+  
+  .pty {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: rgb(63, 63, 63); /* Light color for subtitle */
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: white;
+  }
+  
+  /* Hover animation for individual cards */
+  .hover-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #1d1d80, #ff4757);
+  }
 
-.process-item img {
-    width: 90px;
-}
-
-.process-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.animated-item {
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+  .try{
+    color: black;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .card-gradient {
+      height: auto; /* Remove fixed height on smaller screens */
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Responsive styles for tablet and mobile */
-@media screen and (max-width: 768px) {
-    .process-body {
-        flex-direction: column;
-    }
-
-    .cdipl-logo {
-        width: 150px;
-    }
-
-    .left-side, .right-side {
-        align-items: center;
-    }
-
-    .process-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .process-item img {
-        width: 90px;
-        margin-bottom: 1rem;
-    }
-
-    .process-item h3 {
-        font-size: 1.2rem;
-    }
-
-    .process-item p {
-        font-size: 0.9rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .process-item img {
-        width: 95px;
-    }
-
-    .process-item h3 {
-        font-size: 1rem;
-    }
-
-    .process-item p {
-        font-size: 0.8rem;
-    }
-
-    .cdipl-logo {
-        width: 120px;
-    }
-}
+  }
+  
+  /* Add additional stats (Trusted Partners, Happy Clients, etc.) */
+  .trusted-partners {
+    margin-top: 40px;
+    color: black;
+  }
+  
+  .trusted-partners h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .trusted-partners p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Extra styling for counting stats */
+  .count-stat {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1d2671;
+  }
+  
+  .count-text {
+    color: #333;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  /* Hover effect on stats */
+  .stats-box:hover .count-stat {
+    color: #e63946;
+  }
+  
+  /* Adding shadow and hover effects to cards */
+  .card-gradient {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    
+  }
+  
+  .card-gradient:hover {
+    background: linear-gradient(135deg, #1d1d80, #ff4757);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+  }
+  

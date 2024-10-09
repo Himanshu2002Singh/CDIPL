@@ -12,6 +12,7 @@ import DeveloperCarousel from './userpanel/DeveloperCarousel/DeveloperCarousel'
 import InquiryForm from './userpanel/Feedback/Feedback'
 import Testimonials from './userpanel/Testimonials/Testimonials'
 import ProjectsCarousel from './userpanel/ExplosiveProject/ExplosiveProject'
+import WhyChooseUs from './userpanel/Process-Work/Processwork'
 
 
 
@@ -25,8 +26,9 @@ const Website = () => {
       <Projects/>
       <AboutSection/>
       <ProjectsCarousel/>
-      <ProcessSection/>
       <DeveloperCarousel/>
+      <WhyChooseUs/>
+      
         <Testimonials/>
         <InquiryForm/>
       <BlogSection/>

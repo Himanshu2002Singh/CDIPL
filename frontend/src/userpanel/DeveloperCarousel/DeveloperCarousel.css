@@ -1,16 +1,21 @@
 .developer-carousel {
     width: 95%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px;
     text-align: center;
   }
   
   .developer-carousel-heading {
+    text-align: center;
     font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    color: black; /* White text for contrast */
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+     
+      background: linear-gradient(135deg, #1d2671, #c33764);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 20px;
   }
   
   /* Container for each carousel slide (cards) with fixed size */
