@@ -23,11 +23,9 @@ const Footer = () => {
                   <i className="fas fa-envelope me-2"></i> info@contourdirectindia.com
                 </a>
                 <a href="#">
-                  <i className="fas fa-phone me-2"></i> +91-8087616057
+                  <i className="fas fa-phone me-2"></i> +91 9266768043
                 </a>
-                <a href="#" className="mb-3">
-                  <i className="fas fa-print me-2"></i> +91-8087616057
-                </a>
+                
 
                 <div className="d-flex align-items-center">
                   <i className="fas fa-share fa-2x text-secondary me-2"></i>
@@ -48,18 +46,15 @@ const Footer = () => {
             </div>
             <div className="col-md-6 col-lg-6 col-xl-3">
               <div className="footer-item d-flex flex-column">
-                <h4 className="text-secondary mb-4">Opening Time</h4>
+                <h4 className="text-secondary mb-4">Office Hours</h4>
                 <div className="mb-3">
-                  <h6 className="text-white mb-0">Mon - Sunday:</h6>
-                  <p className="text-white mb-0">09.30 am to 06.00 pm</p>
+                  <h6 className="text-white mb-0">Wednesday - Monday:</h6>
+                  <p className="text-white mb-0">09.30 am to 06.30 pm</p>
                 </div>
+                
                 <div className="mb-3">
-                  <h6 className="text-white mb-0">Saturday:</h6>
-                  <p className="text-white mb-0">10.00 am to 05.00 pm</p>
-                </div>
-                <div className="mb-3">
-                  <h6 className="text-white mb-0">Vacation:</h6>
-                  <p className="text-white mb-0">All Tuesday is our vacation</p>
+                  
+                  <p className="text-white mb-0">All Tuesday is our Holiday</p>
                 </div>
               </div>
             </div>
@@ -88,7 +83,7 @@ const Footer = () => {
             </div>
             <div className="col-md-6 col-lg-6 col-xl-3">
               <div className="footer-item">
-                <h4 className="text-secondary mb-4">Newsletter</h4>
+                <h4 className="text-secondary mb-4">CDIPL</h4>
                 <p className="text-white mb-3">
                   Welcome to <strong>Contour Direct India Private Limited</strong>, a sister concern firm of <strong>CBPL</strong>.
                   Founded in 2019, CDIPL is a Real estate Consulting firm with huge aspirations
@@ -129,7 +124,7 @@ const Footer = () => {
               </span>
             </div>
             <div className="col-md-6 text-center text-md-end text-white">
-              Designed By{" "}
+              Designed & Developed By{" "}
               <a className="border-bottom text-white" href="">
                 DSMARKIT
               </a>{" "}

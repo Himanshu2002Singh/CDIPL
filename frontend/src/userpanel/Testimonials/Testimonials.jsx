@@ -1,32 +1,33 @@
 import React from 'react';
 import Slider from 'react-slick';
 import './Testimonials.css';  // Import the CSS
+import user from '../../assets/user.png';
 
 const testimonialsData = [
     {
         name: 'Anil - Madhu',
         testimonial: 'A big thank you to CDIPL Ur Homes for an amazing experience. They listened to our needs and made the process of finding a great property so smooth and stress-free...',
-        image: 'path_to_image1.jpg'
+        image: user
     },
     {
         name: 'Dr. Namita Nadar',
         testimonial: 'I came to know about Wellness Mart in Noida, a unique concept of health and wellness hub right in the middle of a premium commercial centre really fascinated me...',
-        image: 'path_to_image2.jpg'
+        image: user
     },
     {
         name: 'Raghav - Deepika',
         testimonial: 'Choosing CDIPL Ur Homes for our investment in Sukhbiri Farms was one of the best decisions we’ve ever made...',
-        image: 'path_to_image3.jpg'
+        image: user
     },
     {
         name: 'Rajesh',
-        testimonial: 'Another testimonial text for client 4, describing the good experience they had...',
-        image: 'path_to_image4.jpg'
+        testimonial: 'Another testimonial text for Rajesh, describing the good experience they had...',
+        image: user
     },
     {
         name: 'Shyam',
-        testimonial: 'Client 5 shares their experience, highlighting the good services and support...',
-        image: 'path_to_image5.jpg'
+        testimonial: 'Shyam shares their experience, highlighting the good services and support...',
+        image: user
     }
 ];
 

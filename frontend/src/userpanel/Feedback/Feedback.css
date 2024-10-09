@@ -1,86 +1,86 @@
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f7f7f7;
-}
-
-/* Container */
 .contact-container {
-  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
 }
 
-/* Google Map Iframe */
+.map-section {
+  position: relative;
+  width: 100%;
+  height: 470px; /* Adjust this as needed */
+}
+
 .map-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Add this for the white transparent overlay */
+.map-section::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  filter: grayscale(80%); /* Desaturate the map for style */
-  border: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6); /* White transparent overlay */
+  z-index: 1; /* Ensure it is on top of the map */
 }
 
-.overlay {
+/* Ensure content inside map-section stays on top of the overlay */
+.map-section .map-iframe {
   position: relative;
+  z-index: 0;
+}
+
+.content-container {
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
   width: 80%;
-  max-width: 1200px;
-  padding: 50px;
-  background-color: rgba(255, 255, 255, 0.205);
-  z-index: 2;
+  margin-top: -150px;
+  background: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 10;
+  flex-direction: row;
 }
 
 /* Form Section */
 .form-section {
   flex: 1;
   padding: 30px;
-  margin-right: 20px;
   background-color: white;
-  border-radius: 10px;
-  height: 70vh;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #333;
+  color: #c33764;
 }
 
 .form-section p {
   margin-bottom: 20px;
-  color: #555;
+  color: black;
 }
 
 .form-row {
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
 }
 
 .form-group {
-  flex-basis: 48%;
+  flex: 1;
   margin-bottom: 20px;
 }
 
 .form-group label {
   display: block;
   margin-bottom: 8px;
-  color: #333;
+  font-size: 14px;
 }
 
 .form-group input,
@@ -89,89 +89,150 @@ body {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 1rem;
-}
-
-textarea {
-  height: 100px;
 }
 
 button {
-  background-color: #ff4757;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #1d2671, #c33764);
   color: white;
-  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
 button:hover {
   background-color: #e74c3c;
 }
 
-/* Information Section */
+/* Info Section */
 .info-section {
   flex: 1;
+  background: url('../../assets/contact.jpg') center center/cover;
+  position: relative;
   padding: 30px;
- 
   color: white;
-  height: 70vh;
-  border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  background-image: url('../../assets/contact.jpg'); /* Replace with your background image */
-  background-size: cover;
-  background-position: center;
-  background-color: #3333337c;
+}
+
+.info-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .info-section h2 {
+  position: relative;
   font-size: 2rem;
+  display: inline-block;
   margin-bottom: 20px;
 }
 
 .info-section p {
+  position: relative;
   margin-bottom: 20px;
 }
 
 .info-item {
+  position: relative;
   margin-bottom: 15px;
 }
 
 .info-item h4 {
-  font-size: 1.2rem;
+  font-size: 18px;
   margin-bottom: 8px;
 }
 
-.info-item p {
-  font-size: 1rem;
+.social-media {
+  position: relative;
 }
 
 .social-media i {
-  font-size: 1.5rem;
+  font-size: 20px;
   margin-right: 15px;
-  cursor: pointer;
   color: white;
+  cursor: pointer;
 }
 
 .social-media i:hover {
-  color: #ff4757;
+  color: #c33764;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .overlay {
+  .contact-container {
     flex-direction: column;
-    padding: 20px;
-    width: 90%;
+    width: 100%;
+    height: auto;
+    padding: 0 10px;
   }
 
-  .form-section {
-    margin-right: 0;
-    margin-bottom: 20px;
+  .map-section {
+    height: 300px; /* Adjust for mobile */
+  }
+
+  .content-container {
+    flex-direction: column; /* Stack the form and info sections vertically */
+    width: 100%;
+    margin-top: 0;
   }
 
   .info-section {
-    background-position: top;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #1d2671, #c33764); /* Ensures background visible on smaller devices */
+    width: 100%; /* Ensure full width */
+    margin-bottom: 20px; /* Adds space below info section */
+  }
+
+  .form-section,
+  .info-section {
+    margin-bottom: 20px; /* Adds space between the sections */
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-section h2 {
+    font-size: 1.8rem;
+  }
+
+  button {
+    padding: 10px;
+  }
+}
+
+/* For very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .map-section {
+    height: 350px; /* Smaller height for mobile */
+  }
+
+  .form-section h2,
+  .info-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .content-container {
+    width: 95%;
+    margin-top: -50px;
+  }
+
+  .form-section,
+  .info-section {
+    padding: 15px;
+  }
+
+  .info-section p {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px;
   }
 }
