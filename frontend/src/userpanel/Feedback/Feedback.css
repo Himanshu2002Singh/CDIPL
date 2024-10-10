@@ -98,6 +98,8 @@ button:hover {
   position: relative;
   padding: 30px;
   color: white;
+  height: 500px;
+  image-resolution: 900;
 }
 
 .info-section::before {

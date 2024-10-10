@@ -85,8 +85,8 @@ const Navbar = () => {
                         <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
                             <div className="mobile-menu-header">
                                 <FaTimes className="close-icon" onClick={toggleMobileMenu} />
-                                <a href="/" className="logo">
-                                    <img src={log1} alt="CDIPL Logo" />
+                                <a href="/" className="logo" style={{width:'90%'}}>
+                                    <img src={log2} alt="CDIPL Logo" />
                                 </a>
                             </div>
                             <nav className="mobile-nav">
@@ -103,7 +103,7 @@ const Navbar = () => {
                                 </ul>
 
                                 {/* Contact Info in Mobile Menu */}
-                                <div className="mobile-contact">
+                                <div className="">
                                     <p>B-84, Sector 2, Noida 201301</p>
                                     <p>Email: contourdirectindia@gmail.com</p>
                                     <p>Phone: +91 9266-768-043</p>

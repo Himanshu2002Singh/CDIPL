@@ -23,11 +23,11 @@
 
 .footer .footer-item a:hover {
   letter-spacing: 2px;
-  color: red; /* Highlight color for hover effect */
+  color: #c33764; /* Highlight color for hover effect */
 }
 
 .footer .footer-item .form-control {
-  background: #2c2c2c; /* Form input background */
+  background: linear-gradient(135deg, #1d2671, #c33764);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -38,12 +38,13 @@
 }
 
 .footer .footer-item .btn-primary {
-  background-color: rgb(216, 33, 33); /* Button color */
+ 
+  background: linear-gradient(135deg, #1d2671, #c33764);
   border: none;
 }
 
 .footer .footer-item .btn-primary:hover {
-  background-color: rgb(222, 26, 26); /* Darken on hover */
+  background: linear-gradient(135deg, #1d2671, #c33764);
 }
 
 .footer .footer-item .btn i {
@@ -94,7 +95,8 @@
   bottom: 20px; /* Distance from the bottom */
   right: 30px;  /* Distance from the right side */
   z-index: 999; /* Make sure it stays above other elements */
-  background-color: rgba(229, 33, 33, 0.718); /* Button color */
+ 
+  background: linear-gradient(135deg, #1d2671, #c33764);
   color: white;
   width: 35px;
   height: 35px;
@@ -107,7 +109,8 @@
 }
 
 .back-to-top:hover {
-  background-color: rgba(220, 35, 35, 0.851); /* Darken on hover */
+
+  background: linear-gradient(135deg, #1d2671, #c33764);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
 }
 
