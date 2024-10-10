@@ -163,19 +163,22 @@
   .heroHeading {
     font-size: 1.5rem;
     white-space: normal; /* Ensures text breaks into multiple lines */
-    width: 95%; /* Reduce width for better readability */
+    width: 98%; /* Reduce width for better readability */
     margin: 0 auto;
+    padding-bottom: 20px;
     align-items: center;
 
   }
 
   /* Adjust content width for mobile */
   .heroContent {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 35px;
+    padding-right: 10px;
     margin-top: 30%;
-    width: 97%; /* Limit content width for smaller screens */
-    margin: 0 auto;
+  
+  
+    width: 98%; /* Limit content width for smaller screens */
+    justify-content: center;
     align-items: center;
   }
 
