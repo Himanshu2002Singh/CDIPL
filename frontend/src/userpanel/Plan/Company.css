@@ -1,8 +1,10 @@
 /* General styling for the container */
 .c-wrapper {
   padding: 2rem 0;
-  width: 86%;
+  
+  max-width: 2000px; /* Updated to prevent stretch */
   margin: 0 auto;
+  align-items: center;
 }
 
 .c-heading {

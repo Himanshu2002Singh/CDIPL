@@ -1,9 +1,14 @@
 /* Real Estate Blog Section Container */
 .real-estate-section {
-    padding: 50px;
+    padding: 30px;
     background-color: #f9fafc;
     text-align: center;
+    max-width: 2000px; 
+    margin: 0 auto;
+   
+  
   }
+  
   
   .real-estate-section .section-title {
     text-align: center;
@@ -68,7 +73,6 @@
   .blog-date-box {
     background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for an exclusive look */
     color: white;
-   
     padding: 8px 15px;
     font-size: 0.9rem;
     font-weight: 600;

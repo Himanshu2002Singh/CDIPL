@@ -1,128 +1,157 @@
 .developer-carousel {
-    width: 97%;
-    margin: 0 auto;
-    padding: 40px;
-    text-align: center;
-  }
-  
-  .developer-carousel-heading {
-    text-align: center;
-    font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-     
-      background: linear-gradient(135deg, #1d2671, #c33764);
+  width: 85%; /* Keep the container width flexible */
+  margin: 0 auto;
+  padding: 25px;
+  text-align: center;
+  max-width: 2000px; /* Set a maximum width to prevent stretching */
+}
+
+.developer-carousel-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #1d2671, #c33764);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-bottom: 20px;
-  }
-  
-  /* Container for each carousel slide (cards) with fixed size */
-  .developer-carousel-slide {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 30px;
-    margin: 0 15px; /* Gap between the cards */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Animation effect */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 300px; /* Fixed width */
-    height: 400px; /* Fixed height */
-  }
-  
-  /* Hover animation for cards */
-  .developer-carousel-slide:hover {
-    transform: translateY(-10px) scale(1.05); /* Slight zoom and lift */
-    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Content inside each card */
-  .developer-carousel-content {
-    width: 100%;
-    text-align: center;
-  }
-  
-  /* Logo styling */
-  .developer-carousel-logo {
-    width: 120px;
-    height: auto;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out; /* Add a smooth logo animation */
-  }
-  
-  /* Logo animation on hover */
-  .developer-carousel-slide:hover .developer-carousel-logo {
-    transform: rotate(360deg) scale(1.2); /* Rotate and scale on hover */
-  }
-  
-  /* Testimonial text styling */
-  .developer-carousel-text {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 20px;
-    text-align: center;
-    padding: 0 10px;
-    height: 150px; /* Fixed height to maintain consistency */
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Truncate long text */
-  }
-  
-  /* Author name styling */
-  .developer-carousel-author {
-    font-weight: bold;
-    font-size: 14px;
-    color: #333;
-    margin-top: auto;
-    padding-top: 10px;
-  }
-  
-  /* Dots styling */
-  .slick-dots {
-    bottom: -30px;
-  }
-  
-  .slick-dots li button:before {
-    font-size: 12px;
-    color: #ccc;
-  }
-  
-  .slick-dots li.slick-active button:before {
-    color: #ff5e57;
-  }
-  
-  /* Previous/Next arrow styling */
-  .slick-prev:before, .slick-next:before {
-    color: #333;
-  }
-  
-  /* Responsive adjustments */
-  @media screen and (max-width: 1024px) {
-    .developer-carousel-slide {
-      max-width: 90%;
-      height: 380px; /* Slightly smaller on medium screens */
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
+}
 
-    .developer-carousel {
-      width: 100%;
-      margin: 0 auto;
-      padding: 50px 20px;
-      text-align: center;
-      align-items: center;
-    }
-    .developer-carousel-slide {
-      width: 100%;
-      height: 350px; /* Smaller on mobile */
-           
-            align-items: center;
-    }
+/* Container for each carousel slide (cards) with fixed size */
+.developer-carousel-slide {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px ;
+  margin: 0 1px; /* Gap between the cards */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Animation effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 200px; /* Fixed width */
+  height: 400px; /* Fixed height */
+  max-width: 100%; /* Ensure slide doesn't exceed container width */
+}
+
+/* Hover animation for cards */
+.developer-carousel-slide:hover {
+  transform: translateY(-10px) scale(1.05); /* Slight zoom and lift */
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Content inside each card */
+.developer-carousel-content {
+  width: 100%;
+  text-align: center;
+}
+
+/* Logo styling */
+.developer-carousel-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out; /* Add a smooth logo animation */
+}
+
+/* Logo animation on hover */
+.developer-carousel-slide:hover .developer-carousel-logo {
+  transform: rotate(360deg) scale(1.2); /* Rotate and scale on hover */
+}
+
+/* Testimonial text styling */
+.developer-carousel-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 0 10px;
+  height: 150px; /* Fixed height to maintain consistency */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Truncate long text */
+}
+
+/* Author name styling */
+.developer-carousel-author {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+/* Dots styling */
+.slick-dots {
+  bottom: -30px;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ff5e57;
+}
+
+/* Previous/Next arrow styling */
+.slick-prev:before, .slick-next:before {
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+  .developer-carousel-slide {
+    max-width: 90%;
+    height: 380px; /* Slightly smaller on medium screens */
   }
+}
+
+@media screen and (max-width: 768px) {
+  .developer-carousel {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .developer-carousel-slide {
+    width: 100%;
+    height: 350px; /* Smaller on mobile */
+    align-items: center;
+  }
+}
+
+/* For extremely small screens (20%, 30%, etc.) */
+@media screen and (max-width: 480px) {
+  .developer-carousel {
+    padding: 30px;
+  }
+
+  .developer-carousel-slide {
+    width: 85%; /* Adjust for small screens */
+   
+  }
+
+  .developer-carousel-text {
+    font-size: 14px; /* Smaller text for readability */
   
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .developer-carousel-slide {
+    width: 85%; /* Further adjust for extra small screens */
+  }
+
+  .developer-carousel-heading {
+    font-size: 1.8rem; /* Smaller heading for extra small screens */
+  }
+
+  .developer-carousel-text {
+    font-size: 12px; /* Further reduce text size */
+  }
+}

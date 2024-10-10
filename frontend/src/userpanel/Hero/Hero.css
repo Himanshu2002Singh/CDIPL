@@ -1,24 +1,22 @@
-/* Hero Section */
+/* Hero Section Styles */
 .heroSec {
   position: relative;
-  width: 100%;
-  zoom: 100%;
-  height: 100vh;
-  overflow: hidden;
+  max-width: 2000px;
+  margin: 0 auto;
+  height: 96vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.551);
-
-  }
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+}
 
 .heroVideo {
   position: absolute;
   top: 0;
   left: 0;
-  width: 120%;
+  width: 100%;
   height: 100%;
-  
   object-fit: cover;
   z-index: -1;
 }
@@ -26,58 +24,192 @@
 .heroContent {
   position: relative;
   color: white;
-  text-align: center;
+  text-align: left;
   z-index: 1;
-  padding: 20px;
+  padding: 100px 70px;
+  padding-left: 150px;
+  width: 100%;
 }
 
-.heroContent h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.heroHeading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-top: 8rem;
+  width: 48%;
+  text-wrap: wrap;
 }
 
-.heroContent p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+/* Search Area Styling */
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px 20px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.069);
+  
+  width: 80%;
+  max-width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.heroBtn {
-  padding: 10px 30px;
+/* Input fields and Search Button */
+.inputGroup {
+  display: flex;
+  padding: 15px;
+  border-radius: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.011); /* White background for the input fields */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.searchInput,
+.propertyTypeSelect,
+.locationInput {
+  padding: 12px 15px;
+  margin-right: 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  background-color: #f5f8fa;
+}
+
+.searchInput {
+  width: 450px;
+}
+
+.propertyTypeSelect,
+.locationInput {
+  width: 380px;
+}
+
+.searchBtn {
+  padding: 12px 30px;
   background-color: #ff5a5f;
   color: white;
   border: none;
-  font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
+  width: 230px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-/* Responsive Styling */
+.searchBtn:hover {
+  background-color: #e04e54;
+}
+
+/* Stats Section */
+.stats {
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+}
+
+.statItem {
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+/* Ensure text breaks into two lines if needed */
+.heroHeading {
+  word-wrap: break-word;
+}
+
 @media (max-width: 768px) {
-  .heroContent h1 {
+  .heroHeading {
     font-size: 2rem;
+    margin-top: 150px;
+    margin: 0 auto;
+    text-align: center;
+    
   }
 
-  .heroContent p {
-    font-size: 1.2rem;
+  .searchInput,
+  .propertyTypeSelect,
+  .locationInput {
+    width: 180px;
   }
 
-  .heroBtn {
-    padding: 8px 20px;
-    font-size: 0.9rem;
+  .searchBtn {
+    padding: 10px 20px;
+  }
+
+  .searchContainer {
+    flex-wrap: wrap;
+  }
+
+  .radioLabel {
+    margin-bottom: 10px;
+  }
+
+  .searchOptions {
+    flex-direction: column;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .heroContent h1 {
+  /* Adjust hero heading size for mobile */
+  .heroHeading {
     font-size: 1.5rem;
+    white-space: normal; /* Ensures text breaks into multiple lines */
+    width: 95%; /* Reduce width for better readability */
+    margin: 0 auto;
+    align-items: center;
+
   }
 
-  .heroContent p {
-    font-size: 1rem;
+  /* Adjust content width for mobile */
+  .heroContent {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 30%;
+    width: 97%; /* Limit content width for smaller screens */
+    margin: 0 auto;
+    align-items: center;
   }
 
-  .heroBtn {
-    padding: 6px 15px;
-    font-size: 0.8rem;
+  /* Stack input fields in a column layout */
+  .inputGroup {
+    flex-direction: column;
   }
+
+  .searchInput,
+  .propertyTypeSelect,
+  .locationInput {
+    width: 100%; /* Full width input fields */
+    margin-bottom: 10px; /* Add spacing between fields */
+  }
+
+  .searchBtn {
+    width: 100%;
+    padding: 12px 15px;
+  }
+
+  .statItem {
+    font-size: 0.9rem;
+  }
+}
+
+/* Ensure bottom alignment for content below */
+.heroContent {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: space-between; /* Positions content between top and bottom */
+  height: 100%;
+}
+
+.heroContentBottom {
+  margin-top: auto; /* Pushes content to the bottom */
 }

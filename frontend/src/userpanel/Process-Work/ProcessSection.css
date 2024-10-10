@@ -2,8 +2,12 @@
 .why-choose-us-section {
     background-color: whitesmoke;
     color: white;
-    padding: 60px 0;
+    padding: 50px 0;
     width: 75%;
+    max-width: 2000px;
+    margin: 0 auto;
+    align-items: center;
+ 
   }
   
   /* Card Styling */
@@ -130,7 +134,7 @@
   
   /* Hover animation for individual cards */
   .hover-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.0);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
     background: linear-gradient(135deg, #1d1d80, #ff4757);
   }
@@ -144,7 +148,9 @@
   /* Responsive Design */
   @media (max-width: 768px) {
     .card-gradient {
-      height: auto; /* Remove fixed height on smaller screens */
+      height: auto; 
+      /* Remove fixed height on smaller screens */
+    
     }
   }
   
@@ -190,6 +196,6 @@
   
   .card-gradient:hover {
     background: linear-gradient(135deg, #1d1d80, #ff4757);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 16px 12px rgba(0, 0, 0, 0.4);
   }
   

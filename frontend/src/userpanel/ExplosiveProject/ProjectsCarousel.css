@@ -1,14 +1,11 @@
-/* Container for the exclusive section */
 .m-exclusive {
     text-align: center;
     padding: 40px 20px;
-    background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for an exclusive look */
+    background: linear-gradient(135deg, #1d2671, #c33764);
     color: white;
-    
+    max-width: 2000px; /* Added max-width to prevent stretching */
+    margin: 0 auto;
 }
-
-  
-
 
 /* Title section for exclusive class */
 .m-exclusive .exclusive-title {
@@ -16,22 +13,22 @@
     font-weight: bold;
     margin-bottom: 10px;
     text-transform: uppercase;
-    color: #ffffff; /* White text for contrast */
+    color: #ffffff;
 }
 
 /* Subtitle for exclusive class */
 .m-exclusive .exclusive-subtitle {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: #f3f3f3; /* Light color for subtitle */
+    color: #f3f3f3;
 }
 
 /* Carousel styling for exclusive projects */
 .m-exclusive .swiper-container {
     padding: 20px 0;
-    max-width: 90%;
-    margin: 0 auto; /* Center the carousel */
-    padding: 0 15px;
+    width: 100%;
+    max-width: 1200px; /* Set max-width to prevent stretching */
+    margin: 0 auto;
 }
 
 .m-exclusive .swiper-slide {
@@ -40,27 +37,27 @@
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     padding: 0 15px;
-    height: 490px; /* Consistent height for all slides */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animation */
-    margin: 0 10px; /* Gap between slides */
+    width: 300px; /* Fixed width to maintain consistency */
+    height: 490px; /* Fixed height */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
 }
 
 /* Hover effect to scale and add shadow */
 .m-exclusive .swiper-slide:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Image styling in the slides */
 .m-exclusive .swiper-slide img {
-    width: 50%; /* Consistent width for all images */
+    width: 50%;
     height: 50%;
     display: block;
-    border-bottom: 5px solid #c33764; /* Accent border for the image */
+    border-bottom: 5px solid #c33764;
 }
 
 /* Project information styling */
@@ -75,7 +72,7 @@
 .m-exclusive .project-info h3 {
     font-size: 1.5rem;
     margin: 0;
-    color: #1d2671; /* Match the exclusive look */
+    color: #1d2671;
 }
 
 .m-exclusive .project-info p {
@@ -88,7 +85,7 @@
 .m-exclusive .project-info button {
     display: inline-block;
     margin-top: 10px;
-    background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for button */
+    background: linear-gradient(135deg, #1d2671, #c33764);
     color: white;
     padding: 10px 20px;
     border: none;
@@ -99,7 +96,7 @@
 }
 
 .m-exclusive .project-info button:hover {
-    background-color: #c33764; /* Hover effect for button */
+    background-color: #c33764;
 }
 
 /* Responsive adjustments for smaller screens */
@@ -121,12 +118,12 @@
 
 /* Extra styling to adjust the gap between slides */
 .slick-slide {
-    padding: 0 10px; /* Gap between the slides */
+    padding: 0 10px;
 }
 
 /* Add color animations to the card and border */
 .m-exclusive .swiper-slide:hover img {
-    border-bottom-color: #ff4757; /* Change border color on hover */
+    border-bottom-color: #ff4757;
     transition: border-bottom-color 0.3s ease;
 }
 

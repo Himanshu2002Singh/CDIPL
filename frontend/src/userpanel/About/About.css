@@ -1,6 +1,11 @@
 .aboutcdipl-container {
   padding: 70px;
   background-color: #f9f9f9; /* Change as needed */
+  max-width: 2000px;
+  margin: 0 auto;
+  
+  align-items: center; 
+ 
 }
 
 .aboutcdipl-images {
@@ -121,7 +126,7 @@
 
 @media (max-width: 576px) {
   .aboutcdipl-container {
-    padding: 30px 10px; /* Even smaller padding for mobile */
+    padding: 30px; /* Even smaller padding for mobile */
   }
 
   .main-image img {

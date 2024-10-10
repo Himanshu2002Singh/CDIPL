@@ -1,18 +1,19 @@
 .testimonials-section {
   text-align: center;
-  padding: 50px 20px;
-  background-color: white;
-  width: 97%;
+  padding: 20px;
+  background-color: rgb(198, 43, 43);
+  max-width: 2000px; /* Updated to prevent stretch */
+  margin: 0 auto;
+  align-items: center;
 }
 
 .testimonials-header-heading {
   text-align: center;
-    font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-     
-      background: linear-gradient(135deg, #1d2671, #c33764);
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #1d2671, #c33764);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-bottom: 20px;
@@ -22,14 +23,14 @@
   color: #777;
   font-size: 1.2rem;
   margin-bottom: 30px;
- 
 }
 
 .testimonial-slide {
   display: flex;
   justify-content: center;
   padding: 0 15px;
-  
+  max-width: 1200px; /* Added to limit max width */
+  margin: 0 auto;
 }
 
 .testimonial-content {
@@ -38,9 +39,10 @@
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 14px 18px rgba(0, 0, 0, 0.1);
-  
   text-align: left;
   min-height: 320px;
+  max-width: 600px; /* Ensures the card doesn't stretch too wide */
+  margin: 20px; /* Adds space between testimonials */
 }
 
 .quote-mark {
@@ -91,19 +93,49 @@
 /* Responsive */
 @media (max-width: 768px) {
   .testimonial-content {
-      padding: 30px;
+    padding: 30px;
+    max-width: 100%; /* Ensures full width on smaller screens */
   }
 
-
   .testimonials-header p {
-      font-size: 16px;
+    font-size: 16px;
   }
 
   .testimonial-text {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .client-name {
-      font-size: 16px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 480px) {
+  .testimonial-slide {
+    flex-direction: column; /* Stack testimonials vertically */
+    max-width: 100%;
+  }
+
+  .testimonial-content {
+    margin: 15px 0; /* Ensures space between stacked testimonials */
+    padding: 20px; /* Smaller padding on mobile */
+  }
+
+  .quote-mark {
+    font-size: 36px; /* Scaled down for smaller screens */
+  }
+
+  .client-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .testimonial-text {
+    font-size: 13px;
+  }
+
+  .client-name {
+    font-size: 14px;
   }
 }

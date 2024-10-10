@@ -26,13 +26,12 @@ const Website = () => {
       <Projects/>
       <AboutSection/>
       <ProjectsCarousel/>
-      <DeveloperCarousel/>
-      <WhyChooseUs/>
+       <DeveloperCarousel/>
+      <WhyChooseUs/> 
       
         <Testimonials/>
         <ContactPage/>
-      <BlogSection/>
-
+      <BlogSection/> 
       
       <Footer/>
     </div>
