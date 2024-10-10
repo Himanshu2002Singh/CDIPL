@@ -1,38 +1,52 @@
 .aboutcdipl-container {
-  padding: 70px;
-  background-color: #f9f9f9; /* Change as needed */
+  padding: 70px 30px;
+  background-color: #f9f9f9;
+}
+
+.aboutcdipl {
   max-width: 2000px;
   margin: 0 auto;
-  
-  align-items: center; 
- 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .aboutcdipl-images {
   position: relative;
-
-  
+  margin-bottom: 50px;
 }
 
+/* Main image (background image) */
 .main-image img {
-  width: 60%; /* Make sure this fills the container */
-  height: 40%;
-  margin-left: 20%;
-  border-radius: 10px; /* Adjust to match your design */
+  width: 80%; /* Full width for better responsiveness */
+  max-width: 630px; /* Maintain the size on larger screens */
+  height: auto;
+  margin-left: 10%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+ 
 }
 
+/* Small image (overlapping bottom-right) */
 .small-image {
   position: absolute;
-  bottom: -35px; /* Adjust based on your layout */
-  left: 380px; /* Adjust based on your layout */
+  bottom: -10px; /* Adjust to overlap the bottom */
+  right: -240px; /* Adjust overlap to the right */
+  width: 80%;
+  max-width: 450px; /* Maintain a proper width for large screens */
+  height: auto;
+  border: 5px solid white;
   border-radius: 10px;
-  
-  width: 45%;
+  margin-right:16% ;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.small-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
 
-
-/* Sub-title with gradient underline */
 .about-title {
   font-size: 2.5rem;
   font-weight: bold;
@@ -63,83 +77,131 @@
   font-weight: bold;
   margin-bottom: 25px;
   animation: fadeInRight 1s ease-in-out;
-
   text-transform: uppercase;
 }
-
 
 .about-description {
   margin-bottom: 20px;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .about-benefits {
-  list-style-type: disc; /* Adjust bullet points style */
-  padding-left: 20px; /* Adjust padding */
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 15px;
 }
 
 .aboutcdipl-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.signature img {
-  max-width: 100px; /* Adjust size as needed */
+/* Explore Button */
+.explore-btn {
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s ease;
 }
 
+.explore-btn:hover {
+  background: linear-gradient(135deg, #1d2671, #c33764);
+}
 
+/* Call Info Section */
+.call-info {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
 
-/* Responsive design using media queries */
+.call-icon {
+  background-color: #c33764;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.call-icon i {
+  color: white;
+  font-size: 24px;
+}
+
+.call-details p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.call-details span {
+  display: block;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .aboutcdipl-container {
-    padding: 40px 20px; /* Smaller padding for tablets */
+    padding: 40px 20px;
   }
 
   .main-image img {
-    width: 80%; /* Reduce image size on tablets */
-    margin-left: 10%; /* Center the image */
+    width: 90%;
+    margin-right: 0;
   }
 
   .small-image {
-    width: 35%; /* Adjust image size on tablets */
-    left: 10px; /* Position the small image closer */
-  }
-
-  .about-title {
-    font-size: 1.8rem; /* Reduce font size on tablets */
-  }
-
-  .about-heading {
-    font-size: 1.8rem; /* Adjust heading size */
-  }
-
-  .about-description {
-    font-size: 15px; /* Adjust description font size */
-  }
-
-  .about-benefits {
-    font-size: 15px; /* Adjust list font size */
+    width: 40%;
+    bottom: -10px;
+    right: -10px;
   }
 }
 
 @media (max-width: 576px) {
   .aboutcdipl-container {
-    padding: 30px; /* Even smaller padding for mobile */
+    padding: 30px;
   }
 
   .main-image img {
-    width: 100%; /* Full width for mobile */
-    margin-left: 0; /* Center the image */
+    width: 80%;
   }
 
   .small-image {
-    position: relative; /* Stack images vertically */
-    left: 13%;
-    bottom: 90px;
-    width: 86%; /* Reduce small image size for mobile */
-     /* Add margin for better spacing */
+    width: 60%;
+    bottom: -67px;
+    right: -26px;
+   
   }
 
+  .about-title{
+    margin-top: 36px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .aboutcdipl-container {
+    padding: 80px;
+  }
+
+  .main-image img {
+    width: 60%;
+  }
+
+  .small-image {
+    width: 30%;
+    bottom: -40px;
+    right: -30px;
+  }
 }

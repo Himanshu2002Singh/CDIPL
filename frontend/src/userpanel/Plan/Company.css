@@ -2,9 +2,7 @@
 .c-wrapper {
   padding: 2rem 0;
   
-  max-width: 2000px; /* Updated to prevent stretch */
-  margin: 0 auto;
-  align-items: center;
+ 
 }
 
 .c-heading {
@@ -32,6 +30,9 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  max-width: 2000px; /* Updated to prevent stretch */
+  margin: 0 auto;
+  align-items: center;
 }
 
 .carousel-inner {

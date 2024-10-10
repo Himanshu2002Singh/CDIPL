@@ -1,0 +1,115 @@
+/* Container for the whole section */
+.property-section {
+    text-align: center;
+    padding: 40px;
+    background-color: whitesmoke;
+   
+  }
+  
+  /* Subtitle Styling */
+  .section-subtitle {
+    font-size: 14px;
+    color: #f2894f;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Title Styling */
+  .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Container for the property cards */
+  .property-container {
+    display: flex;
+    justify-content: space-around; /* Keeps the cards equally spaced */
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 2000px; /* Keeps the width from stretching too far */
+    margin: 0 auto; /* Centers the entire container */
+  }
+  
+  /* Individual property cards */
+  .property-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 200px; /* Consistent width for the cards */
+    position: relative; /* Ensure the "View More" is positioned relative to the card */
+    overflow: hidden; /* Hide the text initially */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Hover effect for the cards */
+  .property-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* Icon styling */
+  .icon {
+    font-size: 40px;
+    
+    color: #c33764;
+    margin-bottom: 10px;
+  }
+  
+  /* Property name styling */
+  .property-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Property count styling */
+  .property-count {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* View More text */
+  .property-card .view-more-text {
+    display: none; /* Hidden by default */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #c33764;
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    opacity: 0; /* Start with 0 opacity */
+  }
+  
+  /* Show the text on hover */
+  .property-card:hover .view-more-text {
+    display: block; /* Display on hover */
+    opacity: 1; /* Fade in */
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    
+  }
+  
+  /* Mobile view: Single row per card */
+  @media (max-width: 768px) {
+    .property-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .property-card {
+      width: 90%; /* Adjust to fit on smaller screens */
+    }
+  }
+  

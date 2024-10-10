@@ -3,11 +3,16 @@
     background-color: whitesmoke;
     color: white;
     padding: 50px 0;
-    width: 75%;
+    width: 100%;
+    
+     
+   
+ 
+  }
+  .why-choose{
     max-width: 2000px;
     margin: 0 auto;
     align-items: center;
- 
   }
   
   /* Card Styling */

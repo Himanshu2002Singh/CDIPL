@@ -13,6 +13,7 @@ import Testimonials from './userpanel/Testimonials/Testimonials'
 import ProjectsCarousel from './userpanel/ExplosiveProject/ExplosiveProject'
 import WhyChooseUs from './userpanel/Process-Work/Processwork'
 import ContactPage from './userpanel/Feedback/Feedback'
+import PropertySection from './userpanel/PropertySection/PropertySection'
 
 
 
@@ -23,6 +24,7 @@ const Website = () => {
     <div>
       <HeroSection />
       <Companies/>
+      <PropertySection/>
       <Projects/>
       <AboutSection/>
       <ProjectsCarousel/>

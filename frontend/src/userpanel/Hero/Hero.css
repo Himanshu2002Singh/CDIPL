@@ -1,8 +1,6 @@
 /* Hero Section Styles */
 .heroSec {
   position: relative;
-  max-width: 2000px;
-  margin: 0 auto;
   height: 96vh;
   display: flex;
   justify-content: flex-start;
@@ -29,6 +27,12 @@
   padding: 100px 70px;
   padding-left: 150px;
   width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .heroHeading {
@@ -36,7 +40,7 @@
   font-weight: bold;
   margin-top: 8rem;
   width: 48%;
-  text-wrap: wrap;
+  word-wrap: break-word;
 }
 
 /* Search Area Styling */
@@ -47,7 +51,6 @@
   padding: 15px 20px;
   border-radius: 50px;
   background-color: rgba(255, 255, 255, 0.069);
-  
   width: 80%;
   max-width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -59,7 +62,7 @@
   padding: 15px;
   border-radius: 50px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.011); /* White background for the input fields */
+  background-color: rgba(255, 255, 255, 0.011); 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -114,18 +117,77 @@
   border-radius: 20px;
 }
 
-/* Ensure text breaks into two lines if needed */
-.heroHeading {
-  word-wrap: break-word;
+@media (max-width: 1524px) {
+  /* Adjust layout for medium screens */
+  .heroHeading {
+    font-size: 2.3rem;
+    margin-top: 6rem;
+    width: 80%;
+  }
+
+    .heroContent {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+  }
+
+
+  .searchInput,
+  .propertyTypeSelect,
+  .locationInput {
+    width: 220px;
+  }
+
+  .searchBtn {
+    padding: 12px 25px;
+    width: 180px;
+  }
+
+  .stats {
+    gap: 15px;
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  /* Adjust layout for medium screens */
+  .heroHeading {
+    font-size: 2.4rem;
+    margin-top: 6rem;
+    width: 75%;
+  }
+
+  .searchInput,
+  .propertyTypeSelect,
+  .locationInput {
+    width: 320px;
+  }
+
+  .searchBtn {
+    padding: 12px 25px;
+    width: 180px;
+  }
+
+  .stats {
+    gap: 15px;
+  }
 }
 
 @media (max-width: 768px) {
+  /* Further adjustments for tablets */
   .heroHeading {
     font-size: 2rem;
     margin-top: 150px;
     margin: 0 auto;
     text-align: center;
-    
+    width: 70%;
+  }
+
+  .heroContent {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
   }
 
   .searchInput,
@@ -136,20 +198,7 @@
 
   .searchBtn {
     padding: 10px 20px;
-  }
-
-  .searchContainer {
-    flex-wrap: wrap;
-  }
-
-  .radioLabel {
-    margin-bottom: 10px;
-  }
-
-  .searchOptions {
-    flex-direction: column;
-    margin-right: 0;
-    margin-bottom: 10px;
+    width: 160px;
   }
 
   .stats {
@@ -159,30 +208,26 @@
 }
 
 @media (max-width: 480px) {
-  /* Adjust hero heading size for mobile */
+  /* Mobile adjustments */
   .heroHeading {
     font-size: 1.5rem;
-    white-space: normal; /* Ensures text breaks into multiple lines */
-    width: 98%; /* Reduce width for better readability */
+    white-space: normal;
+    width: 98%;
     margin: 0 auto;
+    margin-top: 50%;
     padding-bottom: 20px;
-    align-items: center;
-
+    text-align: center;
   }
 
-  /* Adjust content width for mobile */
   .heroContent {
-    padding-left: 35px;
-    padding-right: 10px;
-    margin-top: 30%;
-  
-  
-    width: 98%; /* Limit content width for smaller screens */
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 27%;
+    width: 100%;
     justify-content: center;
     align-items: center;
   }
 
-  /* Stack input fields in a column layout */
   .inputGroup {
     flex-direction: column;
   }
@@ -190,8 +235,8 @@
   .searchInput,
   .propertyTypeSelect,
   .locationInput {
-    width: 100%; /* Full width input fields */
-    margin-bottom: 10px; /* Add spacing between fields */
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   .searchBtn {
@@ -204,15 +249,40 @@
   }
 }
 
-/* Ensure bottom alignment for content below */
-.heroContent {
-  display: flex;
-
-  flex-wrap: wrap;
-  justify-content: space-between; /* Positions content between top and bottom */
-  height: 100%;
-}
-
+/* Bottom content alignment - Single row across all screen sizes */
 .heroContentBottom {
-  margin-top: auto; /* Pushes content to the bottom */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+  width: 100%; /* Ensure it stretches full width */
+  gap: 20px; /* Add gap between items */
+  overflow-x: auto; /* Allow horizontal scrolling on smaller screens if needed */
 }
+
+/* Medium screens (tablets and up to 1024px) */
+@media (max-width: 1024px) {
+  .heroContentBottom {
+    gap: 15px; /* Reduce gap between items for smaller screens */
+  }
+}
+
+/* Small screens (mobile devices up to 768px) */
+@media (max-width: 768px) {
+  .heroContentBottom {
+    gap: 10px; /* Further reduce gap for mobile devices */
+  }
+}
+
+/* Extra small screens (mobile devices up to 480px) */
+@media (max-width: 480px) {
+  .heroContentBottom {
+    flex-wrap: wrap;
+    gap: 5px; /* Minimal gap to ensure items fit within the width */
+  }
+}
+
+
+

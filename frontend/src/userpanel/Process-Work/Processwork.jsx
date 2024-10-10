@@ -27,7 +27,8 @@ const WhyChooseUs = () => {
   }, []);
 
   return (
-    <Container fluid className="why-choose-us-section py-5">
+    <div className='why-choose-us-section'>
+    <Container fluid className="why-choose py-5">
       <Row className="justify-content-center text-center">
         <Col lg={8}>
           <h2 className="headingtr">Why Choose CDIPL Properties</h2>
@@ -109,6 +110,7 @@ const WhyChooseUs = () => {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 };
 
