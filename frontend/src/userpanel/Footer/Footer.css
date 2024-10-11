@@ -1,134 +1,238 @@
-/*** Footer Start ***/
-.footer {
-  background: #1f1f1f; /* Darker background for contrast */
-  color: var(--bs-white); /* Ensure text is visible */
-  padding: 60px 0; /* Add padding for spacing */
+.footer-container {
+  background-color: #05000cfb;
+  padding: 40px 20px;
+  color: white;
 }
 
-.footer h4 {
-  color: var(--bs-secondary); /* Make the section titles stand out */
-  font-weight: 800;
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
-.footer .footer-item a {
-  line-height: 30px;
-  color: rgba(255, 255, 255, 0.75); /* Slightly lighter for better readability */
-  transition: all 0.3s ease-in-out;
+.footer-left,
+.footer-right {
+  width: 100%; /* By default, take full width */
 }
 
-.footer .footer-item p {
-  line-height: 25px;
-  color: rgba(255, 255, 255, 0.75); /* Match link color */
-}
-
-.footer .footer-item a:hover {
-  letter-spacing: 2px;
-  color: #c33764; /* Highlight color for hover effect */
-}
-
-.footer .footer-item .form-control {
-  background: linear-gradient(135deg, #1d2671, #c33764);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.footer .footer-item .form-control:focus {
-  box-shadow: none;
-  border-color: rgb(212, 32, 32);
-}
-
-.footer .footer-item .btn-primary {
- 
-  background: linear-gradient(135deg, #1d2671, #c33764);
-  border: none;
-}
-
-.footer .footer-item .btn-primary:hover {
-  background: linear-gradient(135deg, #1d2671, #c33764);
-}
-
-.footer .footer-item .btn i {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.footer .footer-item .btn:hover i {
-  color: rgba(218, 24, 24, 0.805);
-}
-
-.footer .social-icons a {
-  color: rgba(255, 255, 255, 0.75);
-  margin-right: 10px;
-}
-
-.footer .social-icons a:hover {
-  color: rgba(227, 36, 36, 0.732);
-}
-
-/*** Footer End ***/
-
-
-/*** Copyright Start ***/
-.copyright {
-  background: #151515; /* Dark background for copyright area */
-  padding: 20px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.5);
+.footer-left {
+  width: 100%;
   text-align: center;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.footer-text {
+  margin-bottom: 20px;
+  line-height: 1.6;
   font-size: 14px;
 }
 
-.copyright a {
-  color: rgba(255, 255, 255, 0.75);
+.social-icons {
+  display: flex;
+  justify-content: center; /* Center on small screens */
+}
+
+.social-icons a {
+  color: white;
+  margin-right: 15px;
+  font-size: 18px;
   text-decoration: none;
 }
 
-.copyright a:hover {
-  color: rgba(218, 39, 39, 0.662); /* Same highlight for consistency */
-  text-decoration: underline;
-}
-
-/*** Copyright End ***/
-
-/*** Back to Top Button ***/
-.back-to-top {
-  position: fixed; /* Sticky to the viewport */
-  bottom: 20px; /* Distance from the bottom */
-  right: 30px;  /* Distance from the right side */
-  z-index: 999; /* Make sure it stays above other elements */
- 
-  background: linear-gradient(135deg, #1d2671, #c33764);
-  color: white;
-  width: 35px;
-  height: 35px;
+.footer-right {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%; /* Make it circular */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
-  transition: all 0.3s ease-in-out;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.back-to-top:hover {
-
-  background: linear-gradient(135deg, #1d2671, #c33764);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+.contact-box,
+.subscribe-box {
+  width: 100%; /* Default to full width */
+  max-width: 350px;
+  margin: auto; /* Center on small screens */
+  background-color: #12344F;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.back-to-top i {
-  font-size: 13px;
-  align-items: center;
+.house-img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.contact-text {
+  margin-bottom: 10px;
+  font-size: 14px;
   text-align: center;
 }
 
-/* Optional: Hide the button by default and show when scrolled down */
-.back-to-top.hide {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+.contact-link {
+  color: #F36A45;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
 }
 
-/* Show button when scrolled down */
-.back-to-top.show {
-  opacity: 1;
-  visibility: visible;
-}   
+.subscribe-box h4 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.subscribe-form {
+  display: flex;
+  background-color: #12344F;
+  border-radius: 30px;
+  padding: 5px;
+  align-items: center;
+  justify-content: space-between; /* Space between for better alignment */
+}
+
+.subscribe-input {
+  width: 95%;
+  padding: 12px 0 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  padding-left: 20px;
+}
+
+.subscribe-input::placeholder {
+  color: #D2E1EC; /* Placeholder color */
+}
+
+.subscribe-btn {
+  background-color: #F36A45;
+  border: none;
+  padding: 14px 5px;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.terms-checkbox {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terms-checkbox input {
+  margin-right: 5px;
+}
+
+.terms-checkbox label {
+  color: #D2E1EC;
+  font-size: 14px;
+}
+
+.footer-links {
+  margin-top: 30px;
+  display: flex;
+  padding: 30px;
+  font-size: 15px;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 20px;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.link-column {
+  width: 100%; /* Full width by default on smaller screens */
+  max-width: 45%; /* Limit the width to 45% to allow two columns per row */
+  margin-bottom: 20px; /* Add some spacing between rows */
+  text-align: left; /* Align text to the left */
+  padding: 10px; /* Add padding for spacing */
+}
+
+.link-column h4 {
+  margin-bottom: 10px;
+}
+
+.link-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.link-column ul li {
+  margin-bottom: 10px;
+}
+
+.link-column ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-bottom {
+ padding: 20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6); /* Light text */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: 1px solid white; /* White line on top */
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+  text-align: center;
+  font-weight: bold; /* Bold the developer name */
+  color: white; 
+  width: 100%;
+}
+
+.footer-bottom p.lki {
+  font-weight: bold; /* Bold the developer name */
+  color: white; /* White color for better contrast */
+  text-align: right; /* Align to the right for larger screens */
+}
+
+
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+  .footer-left,
+  .footer-right {
+    width: 50%; /* On larger screens, split left and right */
+  }
+
+  .footer-right {
+    justify-content: space-between;
+  }
+
+  .link-column {
+    width: 20%; /* Adjust columns on larger screens */
+    text-align: left; /* Align left on larger screens */
+  }
+  .footer-bottom p {
+    width: auto; /* Allow more flexible spacing on larger screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-left {
+    width: 30%; /* Adjust width on larger screens */
+  }
+
+  .footer-right {
+    width: 65%; /* Adjust width on larger screens */
+  }
+}

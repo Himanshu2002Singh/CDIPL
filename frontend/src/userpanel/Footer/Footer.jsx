@@ -1,145 +1,114 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import "./Footer.css"; // Assuming you have a CSS file for styling.
-
+import "./Footer.css"; // Import your CSS file
+import cdipl from '../../assets/cdipl.png';
+import home from '../../assets/contact-img.png';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faTwitter, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
-
-
   return (
-    <>
-    
-
-      <div className="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-        <div className="container py-5">
-          <div className="row g-5">
-            <div className="col-md-6 col-lg-6 col-xl-3">
-              <div className="footer-item d-flex flex-column">
-                <h4 className="text-secondary mb-4">Contact Info</h4>
-                <a href="#">
-                  <i className="fa fa-map-marker-alt me-2"></i> B-84, Sector 2, Noida 201301, GautamBuddh Nagar  , Uttar Pradesh  
-                </a>
-                <a href="#">
-                  <i className="fas fa-envelope me-2"></i> info@contourdirectindia.com
-                </a>
-                <a href="#">
-                  <i className="fas fa-phone me-2"></i> +91 9266768043
-                </a>
-                
-
-                <div className="d-flex align-items-center">
-                  <i className="fas fa-share fa-2x text-secondary me-2"></i>
-                  <a className="btn mx-1" href="#">
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                  <a className="btn mx-1" href="#">
-                    <i className="fab fa-twitter"></i>
-                  </a>
-                  <a className="btn mx-1" href="#">
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                  <a className="btn mx-1" href="#">
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-6 col-xl-3">
-              <div className="footer-item d-flex flex-column">
-                <h4 className="text-secondary mb-4">Office Hours</h4>
-                <div className="mb-3">
-                  <h6 className="text-white mb-0">Wednesday - Monday:</h6>
-                  <p className="text-white mb-0">09.30 am to 06.30 pm</p>
-                </div>
-                
-                <div className="mb-3">
-                  
-                  <p className="text-white mb-0">All Tuesday is our Holiday</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-6 col-xl-3">
-              <div className="footer-item d-flex flex-column">
-                <h4 className="text-secondary mb-4">Our Services</h4>
-                <a href="/property">
-                  <i className="fas fa-angle-right me-2"></i> Property
-                </a>
-                <a href="/About-Us">
-                  <i className="fas fa-angle-right me-2"></i> About
-                </a>
-                <a href="/Contact-Us">
-                  <i className="fas fa-angle-right me-2"></i> Contact
-                </a>
-                <a href="#">
-                  <i className="fas fa-angle-right me-2"></i> Blog
-                </a>
-                <a href="#">
-                  <i className="fas fa-angle-right me-2"></i> Counselling
-                </a>
-                <a href="#">
-                  <i className="fas fa-angle-right me-2"></i> Work / Career
-                </a>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-6 col-xl-3">
-              <div className="footer-item">
-                <h4 className="text-secondary mb-4">CDIPL</h4>
-                <p className="text-white mb-3">
-                  Welcome to <strong>Contour Direct India Private Limited</strong>, a sister concern firm of <strong>CBPL</strong>.
-                  Founded in 2019, CDIPL is a Real estate Consulting firm with huge aspirations
-                  and the entire Real estate world to capture in its arms. CDIPL is aligned to
-                  cater Residential, Commercial, and Mixed Use real estate needs of the DELHI NCR
-                  region.
-                </p>
-                {/* <div className="position-relative mx-auto rounded-pill">
-                  <input
-                    className="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5"
-                    type="text"
-                    placeholder="Enter your email"
-                  />
-                  <button
-                    type="button"
-                    className="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2"
-                  >
-                    SignUp
-                  </button>
-                </div> */}
-              </div>
-            </div>
+    <div className="footer-container">
+      <div className="footer-content">
+        <div className="footer-left">
+          <img src={cdipl} alt="Veedoo Logo" className="logo" />
+          <p className="footer-text">
+          Welcome to <strong>Contour Direct India Private Limited</strong>, a sister concern firm of <strong>CBPL</strong>.
+            Founded in 2019, CDIPL is a Real estate Consulting firm with huge aspirations
+            and the entire Real estate world to capture in its arms. CDIPL is aligned to
+            cater Residential, Commercial, and Mixed Use real estate needs of the DELHI NCR
+            region.
+          </p>
+          <div className="social-icons">
+            <a href="https://www.facebook.com/contourdirectindia"><FontAwesomeIcon icon={faFacebook} /></a>
+            <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
+            <a href="https://www.instagram.com/contourdirectindia/"><FontAwesomeIcon icon={faInstagram} /></a>
+            <a href="https://www.youtube.com/@ContourDirectIndia"><FontAwesomeIcon icon={faYoutube} /></a>
           </div>
+         
+        </div>
+
+        <div className="footer-right">
+          <div className="contact-box">
+            <img src={home} alt="House" className="house-img" />
+            <p className="contact-text">
+            Looking to buy? Discover your perfect property today!
+            </p>
+            <a href="#" className="contact-link">Contact Us</a>
+          </div>
+
+          <div className="subscribe-box">
+  <h4>Subscribe for property updates</h4>
+  <form className="subscribe-form">
+    <input
+      type="email"
+      placeholder="Enter Your Mail id"
+      className="subscribe-input"
+    />
+    <button type="submit" className="subscribe-btn">Send</button>
+  </form>
+  <div className="terms-checkbox">
+    <input type="checkbox" id="agree" />
+    <label htmlFor="agree">I agree with the terms & conditions</label>
+  </div>
+</div>
+
         </div>
       </div>
-      {/* Footer End */}
 
-      {/* Copyright Start */}
-      <div className="container-fluid copyright py-4">
-        <div className="container">
-          <div className="row g-4 align-items-center">
-            <div className="col-md-6 text-center text-md-start mb-md-0">
-              <span className="text-white">
-                <a href="www.cdipl.com" className="border-bottom text-white">
-                  <i className="fas fa-copyright text-light me-2"></i>CDIPL
-                </a>
-                , All rights reserved.
-              </span>
-            </div>
-            <div className="col-md-6 text-center text-md-end text-white">
-              Designed & Developed By{" "}
-              <a className="border-bottom text-white" href="">
-                DSMARKIT
-              </a>{" "}
-            
-            </div>
-          </div>
+      <div className="footer-links">
+        <div className="link-column">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Property</a></li>
+            <li><a href="About-us">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="Contact-us">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div className="link-column">
+          <h4>Inner Pages</h4>
+          <ul>
+            <li><a href="#">Property Listing</a></li>
+            <li><a href="#">Property Detail</a></li>
+            <li><a href="#">Property Plans</a></li>
+            <li><a href="#">Locate Property</a></li>
+          
+            <li><a href="#">Property Gallery</a></li>
+          </ul>
+        </div>
+
+        <div className="link-column">
+          <h4>Utility Pages</h4>
+          <ul>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Advertise</a></li>
+            <li><a href="#">Mobile App</a></li>
+            <li><a href="#">Agent Blog</a></li>
+            <li><a href="#">Media Room</a></li>
+          </ul>
+        </div>
+
+        <div className="link-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Pricing Plans</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Contact Support</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
         </div>
       </div>
-      {/* Copyright End */}
 
-      {/* Back to Top */}
-      <a href="#" className="btn btn-danger btn-lg-square back-to-top">
-        <i className="fa fa-arrow-up"></i>
-      </a>
-    </>
+      <div className="footer-bottom">
+  <p>&copy; 2024 CDIPL. All rights Reserved</p>
+  <p className="lki">Designed & Developed by DSMARKIT</p>
+</div>
+
+    </div>
   );
 };
 

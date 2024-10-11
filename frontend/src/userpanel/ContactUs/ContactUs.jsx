@@ -1,155 +1,102 @@
-import React, { useEffect, useState } from 'react';
-import { Tilt } from 'react-tilt';
-import { motion } from 'framer-motion';
-import { FaPhone, FaEnvelope, FaGlobe, FaMapMarkerAlt } from 'react-icons/fa';
-import './ContactUs.css';
-import Footer from '../Footer/Footer';
-import DeveloperCarousel from '../DeveloperCarousel/DeveloperCarousel';
+import React from "react";
+import "./ContactUs.css"; // Ensure the CSS file is created and linked correctly
+import Footer from "../Footer/Footer";
+import backgroundImg from '../../assets/r1.png';
+import { Container } from "react-bootstrap";
 
 const ContactUs = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-  };
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const { clientX, clientY } = e;
-      const xMove = (clientX - window.innerWidth / 2) / 50;
-      const yMove = (clientY - window.innerHeight / 2) / 50;
-      const background = document.querySelector('.sketchfab-embed-wrapper iframe');
-      if (background) {
-        background.style.transform = `translate(${xMove}px, ${yMove}px) scale(1.1)`;
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
   return (
-    <div>
-      {/* Background Sketchfab 3D Model */}
-      <div className="sketchfab-embed-wrapper">
-        <iframe
-          title="modern apartment house building design"
-          frameBorder="0"
-          allowFullScreen
-          mozallowfullscreen="true"
-          webkitallowfullscreen="true"
-          allow="autoplay; fullscreen; xr-spatial-tracking"
-          src="https://sketchfab.com/models/43232ebb8d3841a996a78b2c09a6dc84/embed?autospin=1&autostart=1&preload=1&ui_hint=0&ui_theme=dark"
-        ></iframe>
-      </div>
-
-      {/* Contact Information Section */}
-      <div className="contact-container">
-        <motion.div 
-          className="contact-content"
-          initial={{ opacity: 0, y: 50 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 1 }}
-        >
-          <h1 className="contact-title">CONTACT US</h1>
-
-          <Tilt className="Tilt" options={{ max: 25, scale: 1.1, speed: 300 }}>
-            <div className="Tilt-inner">
-              <div className="contact-info">
-                <div className="contact-item">
-                  <FaPhone className="contact-icon" />
-                  <p>Phone: <a href="tel:+918087616057">+91-8087616057</a></p>
-                </div>
-                <div className="contact-item">
-                  <FaEnvelope className="contact-icon" />
-                  <p>Email: <a href="mailto:info@contourdirectindia.com">info@contourdirectindia.com</a></p>
-                </div>
-                <div className="contact-item">
-                  <FaGlobe className="contact-icon" />
-                  <p>Website: <a href="http://www.contourdirectindia.com" target="_blank" rel="noopener noreferrer">www.contourdirectindia.com</a></p>
-                </div>
-                <div className="contact-item">
-                  <FaMapMarkerAlt className="contact-icon" />
-                  <p>Address: B-84, Sector 2, Noida 201301, GautamBuddh Nagar</p>
-                </div>
-              </div>
+    <>
+     <Container fluid>
+      <div className="cdipl-contact-section">
+        {/* Breadcrumb Section */}
+        <div className="cdipl-breadcrumb" style={{ backgroundImage: `url(${backgroundImg})` }}>
+          <div className="overlay">
+            <div className="company-title">
+              <a href="/">Home</a> <span> / </span> <span>Contact Us</span>
             </div>
-          </Tilt>
-        </motion.div>
-      </div>
+          </div>
+        </div>
 
-      {/* Map and Contact Form in Black Transparent Box */}
-      <motion.div
-        className="contact-form-section"
-        initial={{ opacity: 0, y: 50 }} 
-        animate={{ opacity: 1, y: 0 }} 
-        transition={{ duration: 0.5, delay: 0.5 }}
-      >
-        <div className="map-container">
-          <h2 style={{color:'white'}}>Our Location</h2>
+        {/* Map Section */}
+        <div className="cdipl-map-container">
           <iframe
-            title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.7541946659137!2d77.31702181501477!3d28.564453282460906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cecb05f5b693b%3A0xe30f4c9a5105e7e7!2sB-84%2C%20Sector%202%2C%20Noida%2C%20Uttar%20Pradesh%20201301%2C%20India!5e0!3m2!1sen!2sin!4v1681928559411!5m2!1sen!2sin"
+            className="mapiy"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.5088040750966!2d77.30839828206425!3d28.58450912359919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce54e9bcf820d%3A0x7e5e5cb0dc9c7437!2sContour%20Buildcon%20(P)%20Ltd.!5e0!3m2!1sen!2sin!4v1728504832191!5m2!1sen!2sin"
             width="100%"
-            height="300"
-            style={{ border: 0, borderRadius: '10px' }}
+            height="650" 
+            style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Map"
           ></iframe>
         </div>
 
-        <div className="contact-form">
-          <h2 style={{color:'white'}}>Get in Touch</h2>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your Name"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Your Email"
-              required
-            />
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Your Message"
-              rows="5"
-              required
-            ></textarea>
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
-      </motion.div>
+        {/* Contact Information */}
+        <div className="cdipl-contact-info-container">
+          {/* Left Contact Information Section */}
+          <div className="cdipl-contact-info-left">
+            <h3>Contact Us</h3>
+            <h4>To Know More About Properties</h4>
 
-      {/* Footer */}
-      <DeveloperCarousel/>
+            <div className="cdipl-contact-details">
+              <div className="cdipl-detail-item">
+                <i className="fa fa-globe"></i>
+                <div>
+                  <p><strong>Our Address</strong></p>
+                  <p>B-84, Sector 2, Noida 201301, GautamBuddh Nagar, Uttar Pradesh</p>
+                </div>
+              </div>
+              <div className="cdipl-detail-item">
+                <i className="fa fa-phone"></i>
+                <div>
+                  <p><strong>Contact Us</strong></p>
+                  <p>+91 9266768043 </p>
+                </div>
+              </div>
+              <div className="cdipl-detail-item">
+                <i className="fa fa-clock"></i>
+                <div>
+                  <p><strong>Working Hours</strong></p>
+                  <p>Wed-Mon: 9:30 AM - 6:30 PM<br /> Tuesday our Holiday</p>
+                </div>
+              </div>
+              <div className="cdipl-detail-item">
+                <i className="fa fa-envelope"></i>
+                <div>
+                  <p><strong>Email Us</strong></p>
+                  <p>info@contourdirectindia.com<br />contourdirectindia@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form Section */}
+          <div className="cdipl-contact-form-container">
+            <form className="cdipl-contact-form">
+              <div className="cdipl-form-row">
+                <input type="text" placeholder="Name*" required />
+                <input type="email" placeholder="Email*" required />
+              </div>
+              <div className="cdipl-form-row">
+                <input type="date" placeholder="Desired Date*" required />
+                <input type="time" placeholder="Desired Time*" required />
+              </div>
+              <textarea
+                placeholder="Additional Message"
+                rows="5"
+                className="cdipl-textarea"
+              ></textarea>
+              <button type="submit" className="cdipl-submit-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      </Container>
+      {/* Footer Section */}
       <Footer />
-    </div>
+    </>
   );
 };
 

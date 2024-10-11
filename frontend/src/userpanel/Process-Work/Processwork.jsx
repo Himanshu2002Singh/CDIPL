@@ -43,7 +43,7 @@ const WhyChooseUs = () => {
             <div className="card-logo">
               <img src='./cdipl.png' alt="CDIPL Logo" />
             </div>
-            <FaShieldAlt size={50} className="icon mb-3" />
+            <FaShieldAlt size={50} className="icon3 mb-3" />
             <Card.Body>
               <Card.Title style={{color:'white'}}>Trusted Channel Partner</Card.Title>
               <Card.Text>
@@ -57,7 +57,7 @@ const WhyChooseUs = () => {
             <div className="card-logo">
               <img src='./cdipl.png' alt="CDIPL Logo" />
             </div>
-            <FaMoneyBillAlt size={50} className="icon mb-3" />
+            <FaMoneyBillAlt size={50} className="icon3 mb-3" />
             <Card.Body>
               <Card.Title style={{color:'white'}}>Profitable Investment Options</Card.Title>
               <Card.Text>
@@ -71,7 +71,7 @@ const WhyChooseUs = () => {
             <div className="card-logo">
               <img src='./cdipl.png' alt="CDIPL Logo" />
             </div>
-            <FaHandshake size={50} className="icon mb-3" />
+            <FaHandshake size={50} className="icon3 mb-3" />
             <Card.Body>
               <Card.Title style={{color:'white'}}>Low Commissions, High Benefits</Card.Title>
               <Card.Text >

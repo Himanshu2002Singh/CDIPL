@@ -34,14 +34,22 @@ const HeroSection = () => {
           </div> */}
 
           <div className="inputGroup">
-            <input type="text" placeholder="Enter Keyword" className="searchInput" />
+            <input type="text" placeholder="Enter Property" className="searchInput" />
             <select className="propertyTypeSelect">
               <option value="">Property Type</option>
-              <option value="house">House</option>
-              <option value="flat">Flat</option>
+              <option value="residential">Residential</option>
+              <option value="commercial">Commercial</option>
               <option value="villa">Villa</option>
+              <option value="flat">Flat</option>
+
             </select>
-            <input type="text" placeholder="Location" className="locationInput" />
+            <select className="propertyTypeSelect">
+              <option value="">Noida</option>
+              <option value="house">Delhi</option>
+              <option value="flat">Gurugaon</option>
+             
+            </select>s
+            
             <button className="searchBtn">Search Property</button>
           </div>
         </div>

@@ -63,7 +63,7 @@
 
 /* On hover, change border color and scale image */
 .m-exclusive .swiper-slide:hover img {
-    border-bottom-color: #ff4757;
+    border-bottom-color: #c33764;
     transform: scale(1.05);
 }
 

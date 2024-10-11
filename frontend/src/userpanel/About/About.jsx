@@ -42,8 +42,8 @@ const AboutCdipl = () => {
                   <i className="fas fa-phone"></i>
                 </div>
                 <div className="call-details">
-                  <p>Call Us Anytime</p>
-                  <span>+00 123 456789</span>
+                  <p>Contact Now</p>
+                  <span>+91 9266768043</span>
                 </div>
               </div>
             </div>

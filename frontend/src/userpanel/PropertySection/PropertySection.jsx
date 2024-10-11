@@ -5,7 +5,7 @@ const PropertySection = () => {
   const properties = [
     { name: 'Apartment', icon: 'fa-building', count: '6 Properties' },
     { name: 'Commercial', icon: 'fa-city', count: '6 Properties' },
-    { name: 'Solo Shop', icon: 'fa-store', count: '6 Properties' },
+    { name: 'Plot', icon: 'fa-store', count: '6 Properties' },
    
     { name: 'Villa', icon: 'fa-home', count: '3 Properties' },
 

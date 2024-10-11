@@ -4,9 +4,6 @@
     color: white;
     padding: 50px 0;
     width: 100%;
-    
-     
-   
  
   }
   .why-choose{
@@ -18,7 +15,7 @@
   /* Card Styling */
   .card-gradient {
     position: relative;
-    background: linear-gradient(135deg, #1d2671, #c33764);
+   background: linear-gradient(135deg, #1d2671, #c33764);
     border-radius: 10px;
     color: white;
     padding: 20px;
@@ -46,13 +43,13 @@
   
   /* Hover effect for cards */
   .card-gradient:hover {
-    background: linear-gradient(135deg, #1c1c80, #e63946);
+    background: linear-gradient(135deg, #1d2671, #c33764);
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
   
   /* Icon styling */
-  .icon {
+  .icon3 {
     color: #fff;
     margin-bottom: 15px;
   }
@@ -141,7 +138,7 @@
   .hover-card:hover {
     transform: scale(1.0);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-    background: linear-gradient(135deg, #1d1d80, #ff4757);
+    background: linear-gradient(135deg, #1d2671, #c33764);
   }
 
   .try{
@@ -200,7 +197,7 @@
   }
   
   .card-gradient:hover {
-    background: linear-gradient(135deg, #1d1d80, #ff4757);
+    background: linear-gradient(135deg, #1d2671, #c33764);
     box-shadow: 0 16px 12px rgba(0, 0, 0, 0.4);
   }
   
