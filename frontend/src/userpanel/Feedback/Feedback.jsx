@@ -60,10 +60,18 @@ const ContactPage = () => {
             <p>info@contourdirectindia.com</p>
           </div>
           <div className="social-media">
+            <a href="https://www.facebook.com/contourdirectindia">
             <i className="fab fa-facebook-f"></i>
-            <i className="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/contour-direct-india/">
+            <i className="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/contourdirectindia/">
             <i className="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@ContourDirectIndia">
             <i className="fab fa-youtube"></i>
+            </a>
           </div>
         </div>
       </div>

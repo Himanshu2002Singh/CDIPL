@@ -59,7 +59,7 @@
   width: 100%; /* Default to full width */
   max-width: 350px;
   margin: auto; /* Center on small screens */
-  background-color: #12344F;
+  background: linear-gradient(135deg, #1d2671, #c33764);
   padding: 20px;
   border-radius: 10px;
 }
@@ -76,7 +76,8 @@
 }
 
 .contact-link {
-  color: #F36A45;
+
+  color: white;
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
@@ -92,7 +93,7 @@
 
 .subscribe-form {
   display: flex;
-  background-color: #12344F;
+  background: linear-gradient(135deg, #1d2671, #c33764);
   border-radius: 30px;
   padding: 5px;
   align-items: center;
@@ -115,7 +116,7 @@
 }
 
 .subscribe-btn {
-  background-color: #F36A45;
+  background: linear-gradient(135deg, #1d2671, #c33764);
   border: none;
   padding: 14px 5px;
   border-radius: 30px;
@@ -169,6 +170,8 @@
   padding: 0;
 }
 
+
+
 .link-column ul li {
   margin-bottom: 10px;
 }
@@ -176,6 +179,12 @@
 .link-column ul li a {
   color: white;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.link-column ul li::after {
+  color: #c33764;
+  animation: underline 1.2s ease-in-out; 
 }
 
 .footer-bottom {
@@ -235,4 +244,28 @@
   .footer-right {
     width: 65%; /* Adjust width on larger screens */
   }
+}
+
+
+/* Add your other footer styles here */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-size: 20px;
+  transform: rotate(180deg); /* Rotating the button by 170 degrees */
+}
+
+.scroll-to-top:hover {
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  transition: background-color 0.3s ease;
 }
