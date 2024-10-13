@@ -52,7 +52,7 @@ const Footer = () => {
           <div className="contact-box">
             <img src={home} alt="House" className="house-img" />
             <p className="contact-text">Looking to buy? Discover your perfect property today!</p>
-            <a href="#" className="contact-link">Contact Us</a>
+            <a href="/Contact-us" className="contact-link">Contact Us</a>
           </div>
 
           <div className="subscribe-box">

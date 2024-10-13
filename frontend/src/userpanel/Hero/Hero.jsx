@@ -48,7 +48,7 @@ const HeroSection = () => {
               <option value="house">Delhi</option>
               <option value="flat">Gurugaon</option>
              
-            </select>s
+            </select>
             
             <button className="searchBtn">Search Property</button>
           </div>

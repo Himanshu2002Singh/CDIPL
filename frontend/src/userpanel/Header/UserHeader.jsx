@@ -8,7 +8,7 @@ import log1 from '../../assets/cdipl.png'; // Transparent logo
 const Navbar = () => {
     const [isSticky, setIsSticky] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isSearchPopupOpen, setIsSearchPopupOpen] = useState(false);
+   
     const [isInquiryPopupOpen, setIsInquiryPopupOpen] = useState(false);
 
     const location = useLocation(); // Get the current page URL
@@ -33,9 +33,9 @@ const Navbar = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
-    const toggleSearchPopup = () => {
-        setIsSearchPopupOpen(!isSearchPopupOpen);
-    };
+    // const toggleSearchPopup = () => {
+    //     setIsSearchPopupOpen(!isSearchPopupOpen);
+    // };
 
     const toggleInquiryPopup = () => {
         setIsInquiryPopupOpen(!isInquiryPopupOpen);
@@ -71,7 +71,7 @@ const Navbar = () => {
                         {/* Right side: Search, Call, and Hamburger Icon */}
                         <div className="col-lg-3 col-md-3 col-6">
                             <div className="navbar-actions d-flex justify-content-end align-items-center">
-                                <FaSearch className="mobile-search-icon" onClick={toggleSearchPopup} />
+                               
                                 <button className="search-property-button" onClick={toggleInquiryPopup}>
                                     Inquiry
                                 </button>
@@ -122,7 +122,7 @@ const Navbar = () => {
             </header>
 
             {/* Search Popup */}
-            {isSearchPopupOpen && (
+            {/* {isSearchPopupOpen && (
                 <div className="popup-screen">
                     <div className="popup-content">
                         <h2>Search Property</h2>
@@ -133,7 +133,7 @@ const Navbar = () => {
                         <button className="close-popup" onClick={toggleSearchPopup}>Close</button>
                     </div>
                 </div>
-            )}
+            )} */}
 
             {/* Inquiry Popup */}
             {isInquiryPopupOpen && (

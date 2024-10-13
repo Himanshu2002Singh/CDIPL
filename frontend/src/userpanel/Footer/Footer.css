@@ -182,7 +182,7 @@
   cursor: pointer;
 }
 
-.link-column ul li::after {
+.link-column ul li::after{
   color: #c33764;
   animation: underline 1.2s ease-in-out; 
 }
