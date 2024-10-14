@@ -108,8 +108,8 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .m-exclusive .swiper-slide {
-        width: 250px;
-        height: 350px;
+        width: 280px;
+        height: 480px;
         margin: 10px; /* Maintain margin for smaller screens */
     }
 
@@ -124,8 +124,8 @@
 
 @media (max-width: 480px) {
     .m-exclusive .swiper-slide {
-        width: 220px;
-        height: 320px;
+        width: 270px;
+        height: 490px;
         margin: 5px; /* Reduced margin for small screens */
     }
 }
