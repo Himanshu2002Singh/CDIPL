@@ -29,7 +29,7 @@ const Projects = () => {
               name="Sharda QUAd WTC"
               phone="+91 9876543210"
               price="₹7,000/sqft"
-              address="WTC, Plot no-13A & 13B Sector-Techzone, Greater Noida, Pincode-201308."
+              address="WTC,Sector-Techzone, Greater Noida, Pincode-201308."
             />
             <OfficeCard
               projectId="2"
