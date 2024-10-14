@@ -13,7 +13,7 @@
   font-weight: bold;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #1d2671, #c33764);
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-bottom: 20px;
@@ -47,7 +47,7 @@
 
 .quote-mark {
   font-size: 48px;
-  color: #c33764;
+  color: #BE7C2A;
   position: absolute;
   top: -20px;
   left: 20px;

@@ -8,12 +8,12 @@ import office4 from '../../assets/Image-1.jpg';
 
 const Projects = () => {
   return (
-    <div className="container-fluid contact overflow-hidden pb-5">
+    <div className="container-fluid contact overflow-hidden pb-5" style={{background:'black'}}>
       <div className="container py-5">
         <div className="office pt-5">
           <div className="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div className="sub-style" style={{color:'#c33764'}}>
-              <h5 className="aboutproject-title  px-3" style={{ color: '#c33764' }}>OUR PROJECTS</h5>
+            <div className="sub-style" style={{color:'#BE7C2A'}}>
+              <h5 className="aboutproject-title  px-3" style={{color:'#BE7C2A'}}>OUR PROJECTS</h5>
             </div>
             <h2 className="projecttittle">Explore Our Best Properties</h2>
             <p className="projectsubtitle">

@@ -415,7 +415,7 @@ const logoImages = images?.logo || [];
             
             {/* Download Brochure Button */}
             <li className="ml-auto">
-              <button className="btn btn-outline-danger">Download Brochure</button>
+              <button className="btn btn-primary ">Download Brochure</button>
 
             </li>
           </ul>
@@ -527,7 +527,7 @@ const logoImages = images?.logo || [];
               <div className="content-box">
                 <h5>{Imagesdetails[activeIndex].title}</h5>
                 <p>{Imagesdetails[activeIndex].locations}</p>
-                <button className="btn btn-outline-danger invest-now" onClick={() => openPopup(Imagesdetails[activeIndex].title)}>Invest Now</button>
+                <button className="btn btn-primary invest-now" onClick={() => openPopup(Imagesdetails[activeIndex].title)}>Invest Now</button>
               </div>
             </div>
           </div>

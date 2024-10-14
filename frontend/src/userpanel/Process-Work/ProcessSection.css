@@ -1,6 +1,6 @@
 /* Overall Section Styling */
 .why-choose-us-section {
-    background-color: whitesmoke;
+    background-color: BLACK;
     color: white;
     padding: 50px 0;
     width: 100%;
@@ -15,7 +15,7 @@
   /* Card Styling */
   .card-gradient {
     position: relative;
-   background: linear-gradient(135deg, #1d2671, #c33764);
+    background: linear-gradient(135deg ,#000000 ,#BE7C2A ,#F5C463);
     border-radius: 10px;
     color: white;
     padding: 20px;
@@ -43,7 +43,7 @@
   
   /* Hover effect for cards */
   .card-gradient:hover {
-    background: linear-gradient(135deg, #1d2671, #c33764);
+    background: linear-gradient(135deg ,#000000 ,#BE7C2A ,#F5C463);
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
@@ -56,21 +56,21 @@
   
   /* Stats Section */
   .stats-box {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.824);
     padding: 20px;
     border-radius: 10px;
     color: white;
     text-align: center;
     transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.2);
+    /* background-color: rgba(255, 255, 255, 0.2); */
     transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 30px rgba(246, 245, 245, 0.4);
   }
   
   .stats-box:hover {
     background-color: rgba(255, 255, 255, 0.2);
     transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 30px rgba(247, 246, 246, 0.4);
   }
   
   /* Circular animated stats */
@@ -79,7 +79,7 @@
     height: 100px;
     line-height: 100px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #1d2671, #c33764);
+    background: linear-gradient(135deg ,#000000 ,#BE7C2A ,#F5C463);
     color: white;
     font-size: 24px;
     font-weight: bold;
@@ -97,7 +97,7 @@
   
   /* Text color for muted text */
   .text-muted {
-    color: #333 !important;
+    color: #faf7f7 !important;
   }
   
   /* Typography */
@@ -111,8 +111,8 @@
       font-weight: bold;
       margin-bottom: 0.5rem;
       text-transform: uppercase;
-     
-      background: linear-gradient(135deg, #1d2671, #c33764);
+     color: white;
+     background: linear-gradient(135deg ,#FFFF ,#BE7C2A ,#F5C463);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   }
@@ -120,7 +120,7 @@
   .pty {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: rgb(63, 63, 63); /* Light color for subtitle */
+    color: white; /* Light color for subtitle */
   }
   
   .card-title {
@@ -138,11 +138,11 @@
   .hover-card:hover {
     transform: scale(1.0);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-    background: linear-gradient(135deg, #1d2671, #c33764);
+    background: linear-gradient(135deg ,#FFFF ,#BE7C2A ,#F5C463);
   }
 
   .try{
-    color: black;
+    color: white;
     font-weight: 700;
     font-size: 1rem;
   }
@@ -197,7 +197,7 @@
   }
   
   .card-gradient:hover {
-    background: linear-gradient(135deg, #1d2671, #c33764);
+    background: linear-gradient(135deg ,#000000 ,#BE7C2A ,#F5C463);
     box-shadow: 0 16px 12px rgba(0, 0, 0, 0.4);
   }
   

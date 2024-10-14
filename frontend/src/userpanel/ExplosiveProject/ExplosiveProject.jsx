@@ -103,7 +103,7 @@ const ProjectsCarousel = () => {
               <h3>{project.name}</h3>
               <p>RERA No: {project.reraId}</p>
               <p>{project.location}</p>
-              <button onClick={() => openProject(project.tittle)}>Read More</button>
+              <button style={{marginTop:'7%'}} onClick={() => openProject(project.tittle)}>Read More</button>
             </div>
           </div>
         ))}

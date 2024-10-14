@@ -33,25 +33,44 @@ const HeroSection = () => {
             </label>
           </div> */}
 
-          <div className="inputGroup">
-            <input type="text" placeholder="Enter Property" className="searchInput" />
-            <select className="propertyTypeSelect">
-              <option value="">Property Type</option>
-              <option value="residential">Residential</option>
-              <option value="commercial">Commercial</option>
-              <option value="villa">Villa</option>
-              <option value="flat">Flat</option>
+<div className="inputGroup">
+  <div className="formItem">
+    <label htmlFor="locationSelect">Location</label>
+    <select id="locationSelect" className="propertyTypeSelect">
+      <option value="noida">Noida</option>
+      <option value="house">Delhi</option>
+      <option value="Greater-Noida">Greater Noida</option>
+      <option value="Yamuna-Express">Yamuna Expressway</option>
+    </select>
+  </div>
 
-            </select>
-            <select className="propertyTypeSelect">
-              <option value="">Noida</option>
-              <option value="house">Delhi</option>
-              <option value="flat">Gurugaon</option>
-             
-            </select>
-            
-            <button className="searchBtn">Search Property</button>
-          </div>
+  <div className="formItem">
+    <label htmlFor="landTypeSelect">Land Type</label>
+    <select id="landTypeSelect" className="propertyTypeSelect">
+      <option value="lease">Leasehold</option>
+      <option value="freehold">Freehold</option>
+    </select>
+  </div>
+
+  <div className="formItem">
+    <label htmlFor="propertyTypeSelect">Property Type</label>
+    <select id="propertyTypeSelect" className="propertyTypeSelect">
+      <option value="residential">Residential</option>
+      <option value="commercial">Commercial</option>
+      <option value="OfficeSpace">Office Space/IT-ITES</option>
+      <option value="MixedUse">Mixed Use</option>
+      <option value="Agri">Agriculture</option>
+    </select>
+  </div>
+
+  <div className="formItem">
+    <label htmlFor="projectName">Project Name</label>
+    <input id="projectName" type="text" placeholder="Enter Project Name" className="searchInput" />
+  </div>
+
+  <button className="searchBtn">Search Property</button>
+</div>
+
         </div>
 
         <div className="stats">

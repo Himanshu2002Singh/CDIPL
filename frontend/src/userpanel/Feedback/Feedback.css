@@ -59,7 +59,8 @@
 .form-section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #c33764;
+  
+  color: #BE7C2A;
 }
 
 .form-section p {
@@ -94,7 +95,7 @@
 button {
   width: 100%;
   padding: 12px;
-  background: linear-gradient(135deg, #1d2671, #c33764);
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
   color: white;
   border: none;
   border-radius: 5px;
@@ -102,7 +103,7 @@ button {
 }
 
 button:hover {
-  background-color: #e74c3c;
+  background-color: #F5C463;
 }
 
 /* Info Section */
@@ -160,7 +161,7 @@ button:hover {
 }
 
 .social-media i:hover {
-  color: #c33764;
+  color: #F5C463;
 }
 
 /* Responsive Design */
@@ -185,7 +186,7 @@ button:hover {
   .info-section {
     padding: 20px;
     text-align: center;
-    background: linear-gradient(to bottom, #1d2671, #c33764); /* Ensures background visible on smaller devices */
+    background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463); /* Ensures background visible on smaller devices */
     width: 100%; /* Ensure full width */
     margin-bottom: 20px; /* Adds space below info section */
   }

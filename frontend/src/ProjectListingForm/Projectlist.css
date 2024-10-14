@@ -1,0 +1,80 @@
+.projectlist-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .projectlist-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .projectlist-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .projectlist-table th, 
+  .projectlist-table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .projectlist-table th {
+    background-color: rgb(26, 26, 74);
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  
+  .projectlist-table td {
+    font-size: 14px;
+    color: black;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .projectlist-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .projectlist-button {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .projectlist-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  @media (max-width: 768px) {
+    .projectlist-table {
+      width: 100%;
+      font-size: 12px;
+    }
+  
+    .projectlist-table th, 
+    .projectlist-table td {
+      padding: 10px;
+    }
+  
+    .projectlist-button {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+  }
+  
+
+
+  

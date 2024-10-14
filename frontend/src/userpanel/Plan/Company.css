@@ -1,27 +1,42 @@
 /* General styling for the container */
 .c-wrapper {
   padding: 2rem 0;
-  
- 
+  background: #0f0f0f;
 }
 
 .c-heading {
-    text-align: center;
     font-size: 2.5rem;
-      font-weight: bold;
+  font-weight: bold;
       margin-bottom: 0.5rem;
       text-transform: uppercase;
-     
-      background: linear-gradient(135deg, #1d2671, #c33764);
+      
+  text-transform: uppercase;
+  
+  text-align: center;
+      background: linear-gradient(135deg ,#0f0f0f ,#BE7C2A ,#F5C463);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
+.c-heading::after {
+  content: '';
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    animation: underline 1.2s ease-in-out;
+}
+
 
 .c-description {
    text-align: center;
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: rgb(44, 44, 44); /* Light color for subtitle */
+  
+    color: #BE7C2A;
   
 }
 
@@ -47,11 +62,11 @@
 }
 
 .company-box {
-  background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for an exclusive look */
+  background: linear-gradient(135deg ,#101010 ,#BE7C2A ,#F5C463); /* Gradient background for an exclusive look */
     color: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 6px #F5C463;
   text-align: center;
   transition: transform 0.3s ease;
   width: calc(25% - 20px); /* 25% for 4 items per slide, minus margin */
@@ -97,7 +112,7 @@ h3 {
   height: 12px;
   width: 12px;
   margin: 0 5px;
-  background-color: #bbb;
+  background-color: #BE7C2A;
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
@@ -105,7 +120,7 @@ h3 {
 }
 
 .dot.active {
-  background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for an exclusive look */
+  background: linear-gradient(135deg ,#101010 ,#BE7C2A ,#F5C463); /* Gradient background for an exclusive look */
    
 }
 

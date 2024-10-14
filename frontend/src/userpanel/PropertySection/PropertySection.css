@@ -2,6 +2,7 @@
 .property-section {
     text-align: center;
     padding: 40px;
+    
     background-color: whitesmoke;
    
   }
@@ -23,7 +24,7 @@
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     margin-bottom: 25px;
-    background: linear-gradient(135deg, #1d2671, #c33764);
+    background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -60,7 +61,7 @@
   .icon {
     font-size: 40px;
     
-    color: #c33764;
+    color: #BE7C2A;
     margin-bottom: 10px;
   }
   
@@ -85,7 +86,7 @@
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    color: #c33764;
+    color: #BE7C2A;
     font-size: 14px;
     transition: opacity 0.3s ease;
     cursor: pointer;

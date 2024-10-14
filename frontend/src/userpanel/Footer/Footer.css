@@ -59,7 +59,8 @@
   width: 100%; /* Default to full width */
   max-width: 350px;
   margin: auto; /* Center on small screens */
-  background: linear-gradient(135deg, #1d2671, #c33764);
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
+  
   padding: 20px;
   border-radius: 10px;
 }
@@ -67,6 +68,10 @@
 .house-img {
   width: 80px;
   margin-bottom: 15px;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .contact-text {
@@ -93,7 +98,8 @@
 
 .subscribe-form {
   display: flex;
-  background: linear-gradient(135deg, #1d2671, #c33764);
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
+
   border-radius: 30px;
   padding: 5px;
   align-items: center;
@@ -116,11 +122,12 @@
 }
 
 .subscribe-btn {
-  background: linear-gradient(135deg, #1d2671, #c33764);
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
+  color: white;
   border: none;
   padding: 14px 5px;
   border-radius: 30px;
-  color: white;
+ 
   cursor: pointer;
   font-size: 14px;
 }
@@ -183,7 +190,7 @@
 }
 
 .link-column ul li::after{
-  color: #c33764;
+  color: #BE7C2A;
   animation: underline 1.2s ease-in-out; 
 }
 
@@ -252,7 +259,7 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: linear-gradient(135deg, #1d2671, #c33764);
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
   color: white;
   padding: 10px;
   border-radius: 50%;
@@ -266,6 +273,6 @@
 }
 
 .scroll-to-top:hover {
-  background: linear-gradient(135deg, #1d2671, #c33764);
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
   transition: background-color 0.3s ease;
 }

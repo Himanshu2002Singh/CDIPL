@@ -17,7 +17,7 @@
       margin-bottom: 0.5rem;
       text-transform: uppercase;
      
-      background: linear-gradient(135deg, #1d2671, #c33764);
+      background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-bottom: 20px;
@@ -26,7 +26,7 @@
   .real-estate-section .section-subtitle {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #333;
+    color: #BE7C2A;
     margin-bottom: 40px;
   }
   
@@ -73,7 +73,7 @@
   }
   
   .blog-date-box {
-    background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for an exclusive look */
+    background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463); /* Gradient background for an exclusive look */
     color: white;
     padding: 8px 15px;
     font-size: 0.9rem;
@@ -97,7 +97,7 @@
   
   .read-more {
   
-    color: #c33764;
+    color: #BE7C2A;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -105,7 +105,7 @@
   
   .read-more:hover {
     text-decoration: underline;
-    color: #c33764
+    color: #BE7C2A
   }
   
   /* Responsive Design */

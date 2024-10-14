@@ -42,65 +42,57 @@
   width: 48%;
   word-wrap: break-word;
 }
-
-/* Search Area Styling */
-.searchContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 15px 20px;
-  border-radius: 50px;
-  background-color: rgba(255, 255, 255, 0.069);
-  width: 80%;
-  max-width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Input fields and Search Button */
 .inputGroup {
   display: flex;
-  padding: 15px;
-  border-radius: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f91f;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formItem {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  max-width: 300px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+.propertyTypeSelect, .searchInput {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.011); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.searchInput,
-.propertyTypeSelect,
-.locationInput {
-  padding: 12px 15px;
-  margin-right: 10px;
-  border: 1px solid #e5e5e5;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  background-color: #f5f8fa;
-}
-
-.searchInput {
-  width: 450px;
-}
-
-.propertyTypeSelect,
-.locationInput {
-  width: 380px;
+  box-sizing: border-box;
 }
 
 .searchBtn {
-  padding: 12px 30px;
-  background-color: #ff5a5f;
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
   color: white;
   border: none;
-  border-radius: 30px;
+  width: max-content;
+  margin: 0 auto;
+  border-radius: 5px;
   cursor: pointer;
-  width: 230px;
-  font-size: 1rem;
   transition: background-color 0.3s ease;
+  margin-top: 20px;
 }
 
 .searchBtn:hover {
-  background-color: #e04e54;
+  background-color: #45a049;
 }
+
 
 /* Stats Section */
 .stats {
@@ -212,7 +204,7 @@
   /* Mobile adjustments */
   .heroSec {
     position: relative;
-    height: 130vh;
+    height: 170vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;

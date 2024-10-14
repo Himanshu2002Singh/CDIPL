@@ -4,7 +4,7 @@
   top: 0;
   width: 100%;
   z-index: 999;
-  padding: 10px 0;
+
   transition: background-color 0.3s ease, padding 0.3s;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .menu-list li a:hover {
-  color: #c33764;
+  color: #BE7C2A;;
 }
 
 
@@ -88,7 +88,7 @@
   display: inline-block;
   width: 35px;
   height: 35px;
-  background-color: linear-gradient(135deg, #1d2671, #c33764); /* Red color for icons */
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
   color: white;
   font-size: 18px;
   text-align: center;
@@ -115,7 +115,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color:linear-gradient(135deg, #1d2671, #c33764); /* Color for Call Button */
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
   color: white;
   display: flex;
   justify-content: center;
@@ -230,7 +230,7 @@
 
 .popup-content form button {
   padding: 10px 15px;
-  background-color: linear-gradient(135deg, #1d2671, #c33764);
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
   color: white;
   border: none;
   cursor: pointer;
@@ -240,12 +240,12 @@
 }
 
 .popup-content form button:hover {
-  background-color: #e11656;
+  background-color: #BE7C2A ;
 }
 
 .close-popup {
   margin-top: 10px;
-  background-color: #c33764;
+  background-color: #BE7C2A;
   color: white;
   border: none;
   padding: 10px;
@@ -298,7 +298,7 @@
 /* Inquiry Button */
 .inquiry-button {
   padding: 10px 15px;
-  background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for an exclusive look */
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463); /* Gradient background for an exclusive look */
     color: white;
   border: none;
   margin-right: 10%;
@@ -308,13 +308,13 @@
 }
 
 .inquiry-button:hover {
-  background-color: darkmagenta; /* Darker red on hover */
+  background-color: #BE7C2A; /* Darker red on hover */
 }
 
 /* Search Property Button */
 .search-property-button {
   padding: 10px 15px;
-  background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient background for an exclusive look */
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463); /* Gradient background for an exclusive look */
     color: white;
   border: none;
   border-radius: 6px;
@@ -324,7 +324,7 @@
 }
 
 .search-property-button:hover {
-  background-color: #c33764;
+  background-color: #BE7C2A;
 }
 
 /* Popup Content */
@@ -356,7 +356,7 @@
 
 .popup-content form button {
   padding: 10px 15px;
-  background: linear-gradient(135deg, #1d2671, #c33764);
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
   color: white;
   border: none;
   cursor: pointer;
@@ -366,12 +366,12 @@
 }
 
 .popup-content form button:hover {
-  background-color: #c33764;
+  background-color: #BE7C2A;;
 }
 
 .close-popup {
   margin-top: 10px;
-  background: linear-gradient(135deg, #1d2671, #c33764);
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
   color: white;
   border: none;
   padding: 10px;
@@ -384,7 +384,7 @@
 .mobile-search-icon{
  font-size: 25px;
  cursor: pointer;
-  color:#c33764;
+  color:#BE7C2A;
  margin-right: 20%;
   
 }
@@ -395,7 +395,7 @@
 .mobile-search-icon{
   font-size: 25px;
   cursor: pointer;
-   color:#c33764;
+   color:#BE7C2A;
   margin-right: 20%;
    
  }

@@ -28,6 +28,7 @@ import ContactUs from "./userpanel/ContactUs/ContactUs";
 import UploadForm from "./ProjectListingForm/UploadForm";
 import FloorDetails from "./ProjectListingForm/FloorDetails";
 import AddDetailsForm from "./ProjectListingForm/AddDetailsForm";
+import ProjectList from "./ProjectListingForm/ProjectList";
 
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
            <Route path="/upload/:tittle" element={<UploadForm />} />
            <Route path="/floordetails/:tittle" element={<FloorDetails/>} />
            <Route path="/additional/:tittle" element={<AddDetailsForm/>} />
+           <Route path='/projectlist' element={<ProjectList/>}/>
 
           <Route path="/bar" element={<Bar />} />
           <Route path="/pie" element={<Pie />} />

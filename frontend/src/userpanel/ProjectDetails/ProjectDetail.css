@@ -1,9 +1,17 @@
 /* Project Details */
+.project-detail-container{
+   margin-top: 5%;
+
+
+}
+
+
+
 .project-details {
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  padding: 20px;
+ 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 

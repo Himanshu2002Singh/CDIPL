@@ -1,7 +1,7 @@
 .m-exclusive {
     text-align: center;
     padding: 30px 17px;
-    background: linear-gradient(135deg, #1d2671, #c33764);
+   background: linear-gradient(135deg,#000,#BE7C2A ,#F5C463);
     color: white;
 }
 
@@ -23,11 +23,12 @@
 
 /* Carousel container styling */
 .m-exclusive .swiper-container {
-    padding: 20px 0;
-    width: 80%;
-    max-width: 2000px;
+    
+    width: 70%;
+    max-width: 1200px;
     margin: 0 auto;
     align-items: center;
+
 }
 
 /* Styling for individual cards */
@@ -37,13 +38,14 @@
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 340px;
-    height: 340px;
-    padding: 40px; /* Adjusted padding for card content */
+    max-width: 500px;
+    height: 540px;
+    padding: 25px 25px; /* Adjusted padding for card content */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 50px; /* Added margin for spacing between cards */
+    margin: 30px;
+     /* Added margin for spacing between cards */
 }
 
 /* Hover effect for scaling and shadow */
@@ -69,13 +71,13 @@
 
 /* Styling for project information section */
 .m-exclusive .project-info {
-    padding: 10px;
+    padding: 10px 10px;
     text-align: center;
     background-color: #fff;
 }
 
 .m-exclusive .project-info h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin: 10px 0;
     color: #1d2671;
     transition: color 0.3s ease;
@@ -87,7 +89,7 @@
 }
 
 .m-exclusive .project-info p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #333;
     margin: 5px 0;
 }
