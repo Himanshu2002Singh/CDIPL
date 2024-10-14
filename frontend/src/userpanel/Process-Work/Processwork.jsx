@@ -41,7 +41,7 @@ const WhyChooseUs = () => {
         <Col lg={4} md={6} className="mb-4">
           <Card className="text-center p-4 shadow card-gradient hover-card">
             <div className="card-logo">
-              <img src='./cdipl.png' alt="CDIPL Logo" />
+              <img src='./cdiplogo.png' alt="CDIPL Logo" />
             </div>
             <FaShieldAlt size={50} className="icon3 mb-3" />
             <Card.Body>
@@ -55,7 +55,7 @@ const WhyChooseUs = () => {
         <Col lg={4} md={6} className="mb-4">
           <Card className="text-center p-4 shadow card-gradient hover-card">
             <div className="card-logo">
-              <img src='./cdipl.png' alt="CDIPL Logo" />
+              <img src='./cdiplogo.png' alt="CDIPL Logo" />
             </div>
             <FaMoneyBillAlt size={50} className="icon3 mb-3" />
             <Card.Body>
@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
         <Col lg={4} md={6} className="mb-4">
           <Card className="text-center p-4 shadow card-gradient hover-card">
             <div className="card-logo">
-              <img src='./cdipl.png' alt="CDIPL Logo" />
+              <img src='./cdiplogo.png' alt="CDIPL Logo" />
             </div>
             <FaHandshake size={50} className="icon3 mb-3" />
             <Card.Body>

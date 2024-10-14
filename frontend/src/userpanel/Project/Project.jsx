@@ -35,31 +35,31 @@ const Projects = () => {
               projectId="2"
               delay="0.3s"
               imgSrc={office1}
-              tittle="NOIDA-NXT"
-              name="NOIDA NXT"
+              tittle="noida-central-avenue"
+              name="Noida Central Avenue"
               phone="(012) 0345 6789"
-              price="₹85,00/Sqft"
-              address="WTC, Plot no-13A & 13B Sector-Techzone, Greater Noida, Pincode-201308."
+              price="₹14,500/Sqft"
+              address="Sector 107, Greater Noida, Pincode-201308."
             />
             <OfficeCard
               projectId="3"
               delay="0.5s"
               imgSrc={office3}
-              tittle="m3m-the-line.pn"
+              tittle="m3m-the-line-sector-72-noida"
               name="M3M The Line"
               phone="01234 567 890"
-              price="₹23,500/sqft"
-              address="WTC, Plot no-13A & 13B Sector-Techzone, Greater Noida, Pincode-201308."
+              price="₹49,017/sqft"
+              address="Sector 72, Greater Noida, Pincode-201308."
             />
             <OfficeCard
               projectId="4"
               delay="0.7s"
               imgSrc={office4}
-              tittle="WEB"
-              name="WEB"
+              tittle="m3m-the-cullinan-sector-94-noida"
+              name="M3M The Cullinan"
               phone="+91 1234567890"
-              price="₹22,500/sqft"
-              address="WTC, Plot no-13A & 13B Sector-Techzone, Greater Noida, Pincode-201308."
+              price="₹21281.25/sqft"
+              address="Sector 94 , Greater Noida, Pincode-201308."
             />
           </div>
         </div>
