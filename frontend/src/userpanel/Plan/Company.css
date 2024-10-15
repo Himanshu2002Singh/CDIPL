@@ -18,7 +18,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-
+/* 
 .c-heading::after {
   content: '';
     width: 100%;
@@ -28,7 +28,7 @@
     left: 0;
     bottom: -5px;
     animation: underline 1.2s ease-in-out;
-}
+} */
 
 
 .c-description {

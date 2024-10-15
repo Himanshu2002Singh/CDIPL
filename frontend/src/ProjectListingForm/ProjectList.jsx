@@ -28,7 +28,7 @@ const ProjectList = () => {
 
   const deleteProject = async (tittle) => {
     try {
-      await axios.delete(`${config.baseURL}/project/${tittle}`);
+      await axios.delete(`${config.baseURL}/deleteproject/${tittle}`);
       fetchProjects(); // Refresh the project list
     } catch (error) {
       console.error('Error deleting project:', error);

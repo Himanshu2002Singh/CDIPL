@@ -77,6 +77,28 @@ const fetchProjectByTittle = async (req, res) => {
 };
 
 
+// Delete a single project by title
+const deleteProjectByTittle = async (req, res) => {
+  const { tittle } = req.params;
+
+  try {
+    const project = await Project.findOne({ where: { tittle } });
+
+    if (!project) {
+      return res.status(404).json({ success: false, message: 'Project not found' });
+    }
+
+    await project.destroy(); // Delete the project
+
+    res.status(200).json({ success: true, message: 'Project deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting project by tittle:', error);
+    res.status(500).json({ success: false, message: 'Error deleting project', error: error.message });
+  }
+};
 
 
-module.exports = { submitProject, fetchProjects, fetchProjectByTittle };
+
+
+
+module.exports = { submitProject, fetchProjects, fetchProjectByTittle ,deleteProjectByTittle };

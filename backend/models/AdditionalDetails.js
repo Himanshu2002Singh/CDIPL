@@ -16,7 +16,7 @@ const AdditionalDetails = sequelize.define('AdditionalDetails', {
     allowNull: true,
   },
   locationLink: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: true,
   },
 });
