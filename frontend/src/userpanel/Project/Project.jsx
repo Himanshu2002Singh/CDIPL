@@ -13,12 +13,26 @@ const Projects = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 3, // Default for larger screens
     slidesToScroll: 1,
-    centerMode: false,  // Disable center mode for uniform size and spacing
+    centerMode: false,
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: 768, // Medium devices (tablets)
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576, // Small devices (phones)
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -31,7 +45,7 @@ const Projects = () => {
             </div>
             <h2 className="projecttittle">Explore Our Best Properties</h2>
             <p className="projectsubtitle">
-            Discover premium properties that blend cutting-edge infrastructure with prime locations—ideal for businesses seeking expansion and growth.
+              Discover premium properties that blend cutting-edge infrastructure with prime locations—ideal for businesses seeking expansion and growth.
             </p>
           </div>
 
@@ -40,7 +54,7 @@ const Projects = () => {
             <OfficeCard
               projectId="1"
               imgSrc={office2}
-              tittle= 'Sharda-QUAd-WTC'
+              tittle='Sharda-QUAd-WTC'
               name="Sharda QUAd WTC"
               location="Techzone-4, Greater Noida, Pincode-201009"
               Area="5000 sqft"
