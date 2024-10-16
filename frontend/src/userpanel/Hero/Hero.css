@@ -27,7 +27,7 @@
   padding: 100px 70px;
   padding-left: 150px;
   width: 100%;
-  max-width: 2000px;
+  max-width: 2100px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@
   font-size: 2.8rem;
   font-weight: bold;
   margin-top: 8rem;
-  width: 48%;
+  width: 68%;
   word-wrap: break-word;
 }
 .inputGroup {
@@ -56,7 +56,7 @@
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
-  max-width: 300px;
+  max-width: 220px;
 }
 
 label {
@@ -114,7 +114,7 @@ label {
   .heroHeading {
     font-size: 2.3rem;
     margin-top: 6rem;
-    width: 80%;
+    width: 100%;
   }
 
     .heroContent {

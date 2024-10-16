@@ -1,7 +1,76 @@
+/* Slick carousel default styles */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+/* Customize the Slick carousel arrows */
+.slick-prev:before, 
+.slick-next:before {
+  color: #BE7C2A;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1;
+}
+
+.slick-dots li button:before {
+  color: white;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #BE7C2A;
+}
+/* Fix card size and spacing */
+.office-item {
+  width: 401px; /* Set a fixed width for the cards */
+  margin: 10px 10px; /* Adds space between the cards */
+  text-align: center;
+  height: 525px;
+  border-radius: 10px;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
+  background: var(--bs-light);
+  transition: 0.5s;
+}
+
+.office-item:hover {
+  box-shadow: 20px 20px 20px #F5C463;
+}
+
+/* Optional: Maintain proper aspect ratio for the images */
+.office-img img {
+  width: 100%;
+  height: auto; /* Ensure images maintain their aspect ratio */
+  border-radius: 10px;
+}
+
+/* Modify Slick arrows to ensure they stay centered */
+.slick-prev, .slick-next {
+  z-index: 1;
+  top: 50%; /* Center the arrows vertically */
+  transform: translateY(-50%);
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 20px; /* Adjust arrow size */
+  color: #BE7C2A; /* Arrow color */
+}
+
+.contact .office-item:hover {
+  box-shadow: 20px 20px 20px #F5C463;
+}
+
+.project-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
 .contact .office .office-item {
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 0 45px #F5C463;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
     background: var(--bs-light);
     transition: 0.5s;
   }
@@ -82,7 +151,7 @@
   .aboutproject-title {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #BE7C2A;
+    color: #c33764;
     position: relative;
     display: inline-block;
     margin-bottom: 15px;
@@ -100,3 +169,20 @@
     bottom: -5px;
     animation: underline 1.2s ease-in-out;
   }
+
+
+
+/* Responsive design for different screen sizes */
+@media (max-width: 1550px) {
+  .office-item {
+    width: calc(100% - 30px); /* Make sure 3 cards fit on the screen with more gap */
+  }
+}
+
+@media (max-width: 1200px) {
+  .office-item {
+    width: calc(100% - 30px); /* Make sure 2 cards fit on the screen with proper spacing */
+  }
+}
+
+

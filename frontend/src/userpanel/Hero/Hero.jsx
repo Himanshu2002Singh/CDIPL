@@ -15,7 +15,7 @@ const HeroSection = () => {
       ></video>
 
       <div className="heroContent">
-        <h1 className="heroHeading">Find & Buy Your Ideal Home, Flat, Plot or Villa with Confidence!</h1>
+        <h1 className="heroHeading">Find & Buy Your Ideal Residential or Commercial Property with Confidence!</h1>
 
         <div className="searchContainer">
           {/* <div className="searchOptions">
@@ -47,8 +47,9 @@ const HeroSection = () => {
   <div className="formItem">
     <label htmlFor="landTypeSelect">Land Type</label>
     <select id="landTypeSelect" className="propertyTypeSelect">
-      <option value="lease">Leasehold</option>
+      {/* <option value="lease">Leasehold</option> */}
       <option value="freehold">Freehold</option>
+      <option value="ReraApproved">RERA Approved</option>
     </select>
   </div>
 

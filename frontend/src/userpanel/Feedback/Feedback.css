@@ -22,7 +22,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 10%, rgba(255, 255, 255, 0.56) 40%, rgba(255, 255, 255, 0.697) 80%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.206) 10%, rgba(255, 255, 255, 0.201) 40%, rgba(255, 255, 255, 0.406) 80%);
   z-index: 1; /* Overlay the map */
 }
 

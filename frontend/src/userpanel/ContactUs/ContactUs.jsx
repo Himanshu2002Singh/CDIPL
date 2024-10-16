@@ -11,9 +11,9 @@ const ContactUs = () => {
       <div className="cdipl-contact-section">
         {/* Breadcrumb Section */}
         <div className="cdipl-breadcrumb" style={{ backgroundImage: `url(${backgroundImg})` }}>
-          <div className="overlay">
+          <div className="">
             <div className="company-title">
-              <a href="/">Home</a> <span> / </span> <span>Contact Us</span>
+              <a href="/"><span>Reach Out, We're Here! </span></a>
             </div>
           </div>
         </div>

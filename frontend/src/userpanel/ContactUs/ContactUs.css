@@ -6,18 +6,36 @@
   }
   
   /* Breadcrumb Styles */
-  .cdipl-breadcrumb {
-    background-size: cover;
-    margin-top: 4%;
-    background-position: center;
-    position: relative;
-    height: 410px;
-    font-size: 26px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+/* Breadcrumb Styles */
+.cdipl-breadcrumb {
+  background-size: cover;
+  margin-top: 4%;
+  background-position: center;
+  position: relative;
+  height: 410px;
+  font-size: 26px;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.109);
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adding black transparent overlay */
+.cdipl-breadcrumb::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency as needed */
+  z-index: -1; /* Keeps the overlay behind the content */
+}
+
   
   .cdipl-breadcrumb a {
     text-decoration: none;

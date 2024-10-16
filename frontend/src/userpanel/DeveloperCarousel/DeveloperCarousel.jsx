@@ -8,7 +8,7 @@ import imge2 from '../../assets/images.jpeg';
 const testimonials = [
   {
     logo: m3m, // Use the imported image directly
-    text: 'We are overjoyed to work with <strong>CDIPL</strong>. Their involvement in our GYGY Mentis project has been truly amazing. Their expert professionalism, transparency, and genuine care have created a strong bond of trust with our investors. Their support has been crucial in helping us establish a strong presence.',
+    text: 'We are overjoyed to work with <strong>CDIPL</strong>. Their involvement in our  project has been truly amazing. Their expert professionalism, transparency, and genuine care have created a strong bond of trust with our investors. Their support has been crucial in helping us establish a strong presence.',
     author: 'M3M',
   },
   {

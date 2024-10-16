@@ -11,7 +11,7 @@ const ProjectList = () => {
   const [projects, setProjects] = useState([]);
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
-  const [step, setStep] = useState(1); // Tracks the current step of the form
+  
     
   useEffect(() => {
     fetchProjects();

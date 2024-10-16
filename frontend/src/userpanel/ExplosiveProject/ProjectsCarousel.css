@@ -142,13 +142,13 @@
     }
 
     .m-exclusive .swiper-slide {
-        width: 25%;
+        width: 50%;
     }
 }
 
 @media (min-width: 992px) {
     .m-exclusive .swiper-slide {
-        width: 33.33%;
+        width: 50%;
     }
 }
 
@@ -158,8 +158,3 @@
     }
 }
 
-@media (max-width: 768px) {
-    .m-exclusive .swiper-slide {
-        width: 100%;
-    }
-}

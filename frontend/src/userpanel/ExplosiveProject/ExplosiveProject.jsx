@@ -84,7 +84,7 @@ const ProjectsCarousel = () => {
   return (
     <div className="m-exclusive">
          <h5 className="about-title" style={{color:'white'}}>Spotlight</h5>
-      <h2 className="exclusive-title">Leading Real Estate Investment Opportunity</h2>
+      <h2 className="exclusive-title">Discover premium properties that blend cutting-edge infrastructure with prime locations—ideal for businesses seeking expansion and growth.</h2>
       <p className="exclusive-subtitle"></p>
 
       <Slider {...settings} className="swiper-container">
