@@ -12,6 +12,9 @@ import FeedbackForm from '../Feedback/Feedback';
 import Footer from '../Footer/Footer';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+
+
+import floor3 from '../../assets/msdb.jpg'; 
 import config from '../../config';
 
 const ProjectDetail = () => {
@@ -23,7 +26,10 @@ const ProjectDetail = () => {
   const [loading, setLoading] = useState(true);
   const [images, setImages] = useState([]);
   const [error, setError] = useState('');
-  const [pamenities, setPamenities] = useState(null);
+  const [pamenities, setPamenities] = useState(null); 
+  const [floorDetails, setFloorDetails] = useState([]);
+
+
 
   const [popupVisible, setPopupVisible] = useState(false);
   const [popupTitle, setPopupTitle] = useState('');
@@ -119,6 +125,23 @@ const ProjectDetail = () => {
   }, [tittle]); // Dependency array ensures this runs when 'tittle' changes
   
 
+
+  useEffect(() => {
+    const fetchFloorDetailsByTitle = async () => {
+      try {
+        const response = await axios.get(`${config.baseURL}/floorplans/${tittle}`);
+
+        console.log(response.data)
+        setFloorDetails(response.data);
+      } catch (error) {
+        console.error('Error fetching floor plans:', error);
+      }
+    };
+
+    if (tittle) {
+      fetchFloorDetailsByTitle();
+    }
+  }, [tittle]);
 
   useEffect(() => {
     const fetchVideoDetails = async () => {
@@ -700,45 +723,31 @@ const logoImages = images?.logo || [];
     </section>
       {/* Floor Plans Section */}
       <section id="floor-plans" className="container mt-4">
-        <h3>Floor Plans</h3>
-        <div className="row">
-          {/* First floor plan */}
-          <div className="col-md-6 mb-4">
-            <div className="card">
-              <img
-                src="path-to-your-image/floor-plan-1.jpg" // replace with actual image path
-                className="card-img-top"
-                alt="Floor Plan (Tower-A)"
-              />
-              <div className="card-body">
-                <h5 className="card-title">Total Area</h5>
-                <p className="card-text">Area: 27 + AreaType: PLOT_AREA</p>
-                <button className="btn btn-danger">
-                  <i className="fas fa-phone-alt"></i> Get a call back
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Second floor plan */}
-          <div className="col-md-6 mb-4">
-            <div className="card">
-              <img
-                src="" // replace with actual image path
-                className="card-img-top"
-                alt="Floor Plan (Tower-B)"
-              />
-              <div className="card-body">
-                <h5 className="card-title">Total Area</h5>
-                <p className="card-text">Area: 27 + AreaType: PLOT_AREA</p>
-                <button className="btn btn-danger">
-                  <i className="fas fa-phone-alt"></i> Get a call back
-                </button>
-              </div>
-            </div>
+  <h3>Floor Plans for {tittle}</h3>
+  <div className="row">
+    {floorDetails.map((floor, index) => (
+      <div key={index} className="col-12 col-sm-6 col-md-4 mb-4"> {/* Adjust column classes for responsiveness */}
+        <div className="card">
+          <img
+            src={floor.imageUrl ? `${config.baseURL2}${floor.imageUrl}` : floor3} // Fallback image if imageUrl is not present
+            className="card-img-top"
+            alt={`Floor Plan (${floor.tittle})`}
+          />
+          <div className="card-body">
+            <h5 className="card-title">Total Area</h5>
+            <p className="card-text">BHK: {floor.bhk}</p>
+            <p className="card-text">Area: {floor.area}</p>
+            <p className="card-text">Price: {floor.price}</p>
+            <button className="btn btn-danger">
+              <i className="fas fa-phone-alt"></i> Get a call back
+            </button>
           </div>
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       <section id="gallery" className="container mt-4">
   <h3>Gallery</h3>

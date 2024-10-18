@@ -1,5 +1,5 @@
 const express = require('express');
-const { createFloorDetails, getFloorDetailsByTittle } = require('../controllers/floorDetailsController');
+const { createFloorDetails, getFloorDetailsByTittle , updateFloorDetails } = require('../controllers/floorDetailsController');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
@@ -33,5 +33,10 @@ router.post('/upload/floorplan/:tittle', upload.single('image'), createFloorDeta
 
 // Route to get floor details by title
 router.get('/floorplans/:tittle', getFloorDetailsByTittle);
+
+
+// Update floor details route
+router.post('/updatefloor/:tittle', upload.single('image'), updateFloorDetails);
+
 
 module.exports = router;

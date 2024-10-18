@@ -1,0 +1,96 @@
+
+
+
+
+.project-list {
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.updatebutton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.updatebutton:hover {
+    background-color: #0056b3;
+}
+
+.dialog-container {
+    padding: 20px;
+}
+
+.tabs {
+    margin-bottom: 20px;
+}
+
+.popupdatebutton-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popupdatebutton {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #e7e7e7;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.popupdatebutton.active-tab {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.popupdatebutton:hover {
+    background-color: #d4d4d4;
+}
+
+.form-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-row input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-row input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.dialog-content {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.dialog-actions {
+    justify-content: flex-end;
+}

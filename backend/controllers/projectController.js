@@ -77,6 +77,43 @@ const fetchProjectByTittle = async (req, res) => {
 };
 
 
+// Update an existing project by tittle
+const updateProject = async (req, res) => {
+  const { tittle } = req.params; // Fetch tittle from URL params
+
+  try {
+    // Find the project by tittle
+    const project = await Project.findOne({ where: { tittle } });
+
+    if (!project) {
+      return res.status(404).json({ success: false, message: 'Project not found' });
+    }
+
+    // Update the project fields, allowing partial updates
+    await project.update({
+      name: req.body.name || project.name,
+      location: req.body.location || project.location,
+      superArea: req.body.superArea || project.superArea,
+      avgPrice: req.body.avgPrice || project.avgPrice,
+      totalArea: req.body.totalArea || project.totalArea,
+      propertyType: req.body.propertyType || project.propertyType,
+      possession: req.body.possession || project.possession,
+      reraId: req.body.reraId || project.reraId,
+      projectDescription: req.body.description || project.projectDescription, // Ensure model uses projectDescription
+      proximity: req.body.proximity || project.proximity,
+      investmentPotential: req.body.investmentPotential || project.investmentPotential,
+      startingPrice: req.body.startingPrice || project.startingPrice,
+    });
+
+    // Return success response with updated project
+    res.status(200).json({ success: true, message: 'Project updated successfully', project });
+
+  } catch (error) {
+    console.error('Error updating project:', error);
+    res.status(500).json({ success: false, message: 'Error updating project', error: error.message });
+  }
+};
+
 // Delete a single project by title
 const deleteProjectByTittle = async (req, res) => {
   const { tittle } = req.params;
@@ -101,4 +138,4 @@ const deleteProjectByTittle = async (req, res) => {
 
 
 
-module.exports = { submitProject, fetchProjects, fetchProjectByTittle ,deleteProjectByTittle };
+module.exports = { submitProject, fetchProjects, fetchProjectByTittle, deleteProjectByTittle, updateProject };

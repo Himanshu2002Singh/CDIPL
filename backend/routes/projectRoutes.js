@@ -1,5 +1,5 @@
 const express = require('express');
-const { submitProject, fetchProjects, fetchProjectByTittle , deleteProjectByTittle } = require('../controllers/projectController');
+const { submitProject, fetchProjects, fetchProjectByTittle , deleteProjectByTittle ,updateProject  } = require('../controllers/projectController');
 
 const router = express.Router();
 
@@ -14,6 +14,9 @@ router.get('/fetchprojects', fetchProjects);
 // GET route to fetch a project by tittle
 // GET route to fetch a project by tittle
 router.get('/project/:tittle', fetchProjectByTittle);
+
+
+router.get('/updateproject/:tittle' ,updateProject);
 
 // Route to delete a single project by title
 router.delete('/deleteproject/:tittle', deleteProjectByTittle);

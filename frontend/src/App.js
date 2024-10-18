@@ -29,6 +29,7 @@ import UploadForm from "./ProjectListingForm/UploadForm";
 import FloorDetails from "./ProjectListingForm/FloorDetails";
 import AddDetailsForm from "./ProjectListingForm/AddDetailsForm";
 import ProjectList from "./ProjectListingForm/ProjectList";
+import UpdateDetails from "./ProjectListingForm/updateProperty";
 
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
            <Route path="/floordetails/:tittle" element={<FloorDetails/>} />
            <Route path="/additional/:tittle" element={<AddDetailsForm/>} />
            <Route path='/projectlist' element={<ProjectList/>}/>
+           <Route path='/updateproject' element={<UpdateDetails/>}/>
 
           <Route path="/bar" element={<Bar />} />
           <Route path="/pie" element={<Pie />} />

@@ -176,7 +176,7 @@
 
 @media (min-width: 1200px) {
   .office-item {
-    width: calc(98% - 30px); /* Make sure 2 cards fit on the screen with proper spacing */
+    width: calc(100% - 30px); /* Make sure 2 cards fit on the screen with proper spacing */
   }
 }
 
