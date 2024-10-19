@@ -1,5 +1,9 @@
 const express = require('express');
-const { createFloorDetails, getFloorDetailsByTittle , updateFloorDetails } = require('../controllers/floorDetailsController');
+const {
+  createFloorDetails,
+  getFloorDetailsByTittle,
+  updateFloorDetails,
+} = require('../controllers/floorDetailsController');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
@@ -19,7 +23,7 @@ const storage = multer.diskStorage({
     cb(null, folderPath); // Upload directly to the target directory
   },
   filename: (req, file, cb) => {
-    // Use the original name for the uploaded file to avoid confusion; could add timestamp for uniqueness
+    // Use the original name for the uploaded file; could add timestamp for uniqueness
     cb(null, file.originalname);
   },
 });
@@ -34,9 +38,7 @@ router.post('/upload/floorplan/:tittle', upload.single('image'), createFloorDeta
 // Route to get floor details by title
 router.get('/floorplans/:tittle', getFloorDetailsByTittle);
 
-
 // Update floor details route
-router.post('/updatefloor/:tittle', upload.single('image'), updateFloorDetails);
-
+router.put('/floorplans/:tittle', upload.single('image'), updateFloorDetails); // Changed to PUT
 
 module.exports = router;

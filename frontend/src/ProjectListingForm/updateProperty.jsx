@@ -14,12 +14,11 @@ const UpdateDetails = () => {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentTab, setCurrentTab] = useState('projectDetails');
-  const [floorDetailsFetched, setFloorDetailsFetched] = useState(false); // New state for floor details fetch
+  const [floorDetailsFetched, setFloorDetailsFetched] = useState(false);
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Fetch projects only once on component mount
   useEffect(() => {
     const fetchProjects = async () => {
       try {
@@ -31,9 +30,8 @@ const UpdateDetails = () => {
     };
 
     fetchProjects();
-  }, []); // Empty dependency array to fetch only once
+  }, []);
 
-  // Fetch floor details only if not fetched yet
   const fetchFloorDetails = async (title) => {
     try {
       const response = await axios.get(`${config.baseURL}/floorplans/${title}`);
@@ -41,7 +39,7 @@ const UpdateDetails = () => {
         ...prevProject,
         floorDetails: response.data,
       }));
-      setFloorDetailsFetched(true); // Mark as fetched
+      setFloorDetailsFetched(true);
     } catch (error) {
       console.error('Error fetching floor details:', error);
     }
@@ -56,7 +54,7 @@ const UpdateDetails = () => {
   const handleEdit = (project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
-    setFloorDetailsFetched(false); // Reset flag when editing a new project
+    setFloorDetailsFetched(false);
   };
 
   const handleClose = () => {
@@ -64,7 +62,6 @@ const UpdateDetails = () => {
     setSelectedProject(null);
   };
 
-  // Save Project Details only
   const handleSaveProjectDetails = async (e) => {
     e.preventDefault();
     if (selectedProject && selectedProject.tittle) {
@@ -98,7 +95,7 @@ const UpdateDetails = () => {
     formData.append('image', file);
 
     try {
-      const response = await axios.post(`${config.baseURL}/upload`, formData, {
+      const response = await axios.post(`${config.baseURL}/upload/floorplan/${selectedProject.tittle}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -124,47 +121,27 @@ const UpdateDetails = () => {
     }
   };
 
-  // Save Floor Details only
   const handleSaveFloorDetails = async (index) => {
     const floorDetail = selectedProject.floorDetails[index];
-    const { bhk, area, price, id } = floorDetail; // Updated fields
-    const file = floorDetail.image; // Optional image file
+    const { bhk, area, price, id } = floorDetail;
 
     const formData = new FormData();
     formData.append('bhk', bhk);
     formData.append('area', area);
     formData.append('price', price);
-    formData.append('id', id); // Existing floor detail ID
-    if (file) {
-      formData.append('image', file); // Optional new image file
-    }
+    formData.append('id', id);
 
     try {
-      await axios.post(`/updatefloor/${selectedProject.tittle}`, formData);
-
+      await axios.post(`${config.baseURL}/floorplans/${selectedProject.tittle}`, formData);
       alert('Floor details updated successfully!');
-      window.location.reload();
+      setFloorDetailsFetched(false); // Fetch floor details again if necessary
+      // Optionally reload the project to reflect changes
+      fetchFloorDetails(selectedProject.tittle);
     } catch (error) {
       console.error('Error updating floor details:', error);
-      alert('Failed to update floor details. Please check your input values.');
+      alert(error.response?.data?.message || 'Failed to update floor details.');
     }
   };
-
-  // Save all updates at once (Project, Floor, and Additional)
-  const handleSaveAll = async () => {
-    try {
-      if (selectedProject.tittle) {
-        await axios.post(`${config.baseURL}/updateproject/${selectedProject.tittle}`, selectedProject);
-        alert("Project and all related details updated successfully!");
-        setIsModalOpen(false);
-        window.location.reload();
-      }
-    } catch (error) {
-      console.error('Error saving all details:', error);
-      alert('Error saving details. Please check your input values.');
-    }
-  };
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setSelectedProject({ ...selectedProject, [name]: value });
@@ -263,7 +240,28 @@ const UpdateDetails = () => {
                           <input type="text" name="location" value={selectedProject.location} onChange={handleInputChange} />
                         </div>
 
-                        <Button type="submit">Save Project</Button>
+                        {/* New input fields for project details */}
+                        <div className="form-row">
+                          <label>Super Area</label>
+                          <input type="text" name="superArea" value={selectedProject.superArea} onChange={handleInputChange} />
+                        </div>
+
+                        <div className="form-row">
+                          <label>Average Price</label>
+                          <input type="text" name="avgPrice" value={selectedProject.avgPrice} onChange={handleInputChange} />
+                        </div>
+
+                        <div className="form-row">
+                          <label>Total Area</label>
+                          <input type="text" name="totalArea" value={selectedProject.totalArea} onChange={handleInputChange} />
+                        </div>
+
+                        <div className="form-row">
+                          <label>Property Type</label>
+                          <input type="text" name="propertyType" value={selectedProject.propertyType} onChange={handleInputChange} />
+                        </div>
+
+                        <button type="submit">Save Project Details</button>
                       </form>
                     )}
 
@@ -272,6 +270,7 @@ const UpdateDetails = () => {
                         <h3>Floor Details</h3>
                         {selectedProject.floorDetails.map((floorDetail, index) => (
                           <div key={index} className="floor-detail">
+                            <h4>Floor Detail {index + 1}</h4>
                             <div className="form-row">
                               <label>BHK</label>
                               <input
@@ -302,17 +301,16 @@ const UpdateDetails = () => {
                               />
                             </div>
 
+                            {/* New input fields for floor details */}
                             <div className="form-row">
-                              <label>Upload Image</label>
+                              <label>Floor Image</label>
                               <input
                                 type="file"
-                                accept="image/*"
                                 onChange={(e) => handleFloorImageChange(e, index)}
                               />
-                              {floorDetail.imageUrl && <img src={floorDetail.imageUrl} alt="Floor Plan" />}
                             </div>
 
-                            <Button onClick={() => handleSaveFloorDetails(index)}>Save Floor Detail</Button>
+                            <button onClick={() => handleSaveFloorDetails(index)}>Save Floor Detail</button>
                           </div>
                         ))}
                       </div>
@@ -320,14 +318,23 @@ const UpdateDetails = () => {
 
                     {currentTab === 'additionalDetails' && (
                       <form className="form-details">
-                        <h3>Additional Details</h3>
-                        {/* Add fields for additional details as needed */}
-                        <Button type="button" onClick={handleSaveAll}>Save All</Button>
+                        <h3>Additional Project Details</h3>
+
+                        <div className="form-row">
+                          <label>Additional Features</label>
+                          <textarea
+                            name="additionalFeatures"
+                            value={selectedProject.additionalFeatures}
+                            onChange={handleInputChange}
+                          />
+                        </div>
+
+                        <button type="submit">Save Additional Details</button>
                       </form>
                     )}
                   </DialogContent>
                   <DialogActions>
-                    <Button onClick={handleClose}>Close</Button>
+                    <Button onClick={handleClose} color="primary">Cancel</Button>
                   </DialogActions>
                 </Dialog>
               )}
