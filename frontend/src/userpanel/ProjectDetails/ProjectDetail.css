@@ -271,28 +271,28 @@
 }
 
 
-.card{
+.card5{
    width: 70%;
 }
 
-.card-img-top {
+.card5-img-top {
   transition: transform 0.3s ease;
   max-width: 80%;
   max-height: 50%;
   margin: 0 auto;
 }
 
-.card-text{
+.card5-text{
   color: black;
   font-weight: 600;
 }
 
-.card-img-top:hover {
+.card5-img-top:hover {
   transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-  .card-img-top {
+  .card5-img-top {
     max-height: 120px;
   }
 }

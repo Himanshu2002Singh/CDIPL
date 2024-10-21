@@ -727,17 +727,17 @@ const logoImages = images?.logo || [];
   <div className="row">
     {floorDetails.map((floor, index) => (
       <div key={index} className="col-12 col-sm-6 col-md-4 mb-4"> {/* Adjust column classes for responsiveness */}
-        <div className="card">
+        <div className="card5">
           <img
             src={floor.imageUrl ? `${config.baseURL2}${floor.imageUrl}` : floor3} // Fallback image if imageUrl is not present
-            className="card-img-top"
+            className="card5-img-top"
             alt={`Floor Plan (${floor.tittle})`}
           />
-          <div className="card-body">
-            <h5 className="card-title">Total Area</h5>
-            <p className="card-text">BHK: {floor.bhk}</p>
-            <p className="card-text">Area: {floor.area}</p>
-            <p className="card-text">Price: {floor.price}</p>
+          <div className="card5-body">
+            <h5 className="card5-title">Total Area</h5>
+            <p className="card5-text">BHK: {floor.bhk}</p>
+            <p className="card5-text">Area: {floor.area}</p>
+            <p className="card5-text">Price: {floor.price}</p>
             <button className="btn btn-danger">
               <i className="fas fa-phone-alt"></i> Get a call back
             </button>
