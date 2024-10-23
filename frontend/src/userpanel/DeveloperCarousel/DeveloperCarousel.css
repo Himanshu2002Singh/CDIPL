@@ -17,7 +17,7 @@
   -webkit-text-fill-color: transparent;
   padding-bottom: 20px;
 }
-
+/* 
 
 .developer-carousel-heading::after {
   content: '';
@@ -29,7 +29,7 @@
     bottom: -5px;
     animation: underline 1.2s ease-in-out;
 }
-
+ */
 
 /* Container for each carousel slide (cards) with fixed size */
 .developer-carousel-slide {

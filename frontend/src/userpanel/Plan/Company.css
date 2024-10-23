@@ -2,33 +2,36 @@
 .c-wrapper {
   padding: 2rem 0;
   background: #0f0f0f;
-}
-
-.c-heading {
-    font-size: 2.5rem;
-  font-weight: bold;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      
-  text-transform: uppercase;
-  
   text-align: center;
-      background: linear-gradient(135deg ,#0f0f0f ,#BE7C2A ,#F5C463);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
-/* 
-.c-heading::after {
+
+.about5-title {
+ 
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #BE7C2A;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  text-align: center;
+
+
+  text-transform: uppercase;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about5-title::after {
+  text-align: center;
   content: '';
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    animation: underline 1.2s ease-in-out;
-} */
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(135deg ,#0D0D0c ,#BE7C2A ,#F5C463);
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  animation: underline 1.2s ease-in-out;
+}
 
 
 .c-description {

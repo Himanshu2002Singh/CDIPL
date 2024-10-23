@@ -30,6 +30,7 @@ import FloorDetails from "./ProjectListingForm/FloorDetails";
 import AddDetailsForm from "./ProjectListingForm/AddDetailsForm";
 import ProjectList from "./ProjectListingForm/ProjectList";
 import UpdateDetails from "./ProjectListingForm/updateProperty";
+import BlogPage from "./userpanel/Blogpage/Blogpage";
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
           <Route path="/property" element={<PropertyListing />} />
           <Route path='/About-Us' element={<AboutCompany />} />
           <Route path="/Contact-Us" element={<ContactUs />} />
+          <Route path="/insights" element={<BlogPage />} />
         </Routes>
       </div>
       <div>

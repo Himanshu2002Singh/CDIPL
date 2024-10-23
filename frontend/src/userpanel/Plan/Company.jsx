@@ -118,7 +118,7 @@ const Companies = () => {
 
   return (
     <section className="c-wrapper">
-      <h2 className="c-heading">What's your Approach?</h2>
+      <h2 className="about5-title">What's your Approach?</h2>
       <p className="c-description">To Acquire Property For</p>
 
       <div

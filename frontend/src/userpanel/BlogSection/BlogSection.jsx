@@ -13,7 +13,7 @@ const BlogSection = () => {
       author: 'John Doe',
       image: et, // Use the image directly here
       description: 'Buying your first home can be daunting. Learn the top tips for a successful and stress-free home purchase.',
-      link: '#',
+      link: '/insights',
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ const BlogSection = () => {
       author: 'Jane Smith',
       image: wt, // Use the image directly here
       description: 'Discover simple yet effective ways to increase the value of your property before putting it on the market.',
-      link: '#',
+      link: '/insights',
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const BlogSection = () => {
       author: 'Michael Johnson',
       image: kt, // Use the image directly here
       description: 'Stay ahead of the curve by learning the latest trends shaping the real estate market in 2024.',
-      link: '#',
+      link: '/insights',
     },
   ];
 

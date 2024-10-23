@@ -13,6 +13,7 @@ import Footer from '../Footer/Footer';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
+import img3 from '../../assets/youtube.jpg'; 
 
 import floor3 from '../../assets/msdb.jpg'; 
 import config from '../../config';
@@ -794,35 +795,43 @@ const logoImages = images?.logo || [];
       </div>
     </section>
 
-     <section id="video-presentation" className="container mt-4">
-      <h3>Video Presentation of {tittle}</h3>
-      <p>
-        Click for the video of {tittle} and understand every perspective of 
-        'quality living' that they are offering. For more property videos, visit our YouTube channel.
-      </p>
-      <div className="video-container">
-        <iframe
-          src={videoData?.youtubeLink ? `https://www.youtube.com/embed/${videoData.youtubeLink.split('v=')[1]}` : `https://www.youtube.com/embed/${placeholderVideoUrl.split('v=')[1]}`}
-          title="YouTube Video"
-          frameBorder="0"
-          allowFullScreen
-          className="video-iframe"
-        />
-      </div>
-      <p className="video-description">{videoData?.description || "Watch our presentation!"}</p>
+    <section id="video-presentation" className="container mt-4">
+  <h3>Video Presentation of {tittle}</h3>
+  <p>
+    Click for the video of {tittle} and understand every perspective of 
+    'quality living' that they are offering. For more property videos, visit our YouTube channel.
+  </p>
+  <div className="video-container">
+    {videoData?.youtubeLink ? (
+      <iframe
+        src={`https://www.youtube.com/embed/${videoData.youtubeLink.split('v=')[1]}`}
+        title="YouTube Video"
+        frameBorder="0"
+        allowFullScreen
+        className="video-iframe"
+      />
+    ) : (
+      <img src={img3} alt="Presentation" className="video-placeholder" />
+    )}
+  </div>
+  <p className="video-description">{videoData?.description || "Watch our presentation!"}</p>
+</section>
 
-      {/* New Section for Location */}
-      <div className="location-container">
-        <h4>Location</h4>
-        {videoData?.locationLink ? (
-          <a href={videoData.locationLink} target="_blank" rel="noopener noreferrer" className="location-link">
-            View on Map
-          </a>
-        ) : (
-          <p>No location available</p>
-        )}
-      </div>
-    </section>
+<section id="location-section" className="container mt-4">
+  <h4>Location</h4>
+  {videoData?.locationLink ? (
+    <iframe
+      src={videoData.locationLink.replace('/maps/', '/maps/embed?pb=')}
+      className="location-iframe"
+      allowFullScreen=""
+      loading="lazy"
+      title="Google Maps Location"
+    ></iframe>
+  ) : (
+    <p>No location available</p>
+  )}
+</section>
+
 
       {/* Continue with the remaining sections such as Floor Plan, Gallery, Payment Plan */}
 

@@ -1,33 +1,82 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faRulerCombined, faBuilding, faCouch, faKey } from '@fortawesome/free-solid-svg-icons';
 import './Project.css';
-import office2 from '../../assets/Image-1.jpg';
-import office3 from '../../assets/m3m-the-line.png';
-import office4 from '../../assets/Image-1.jpg';
+import config from '../../config';
+import axios from 'axios';
 
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true); // For loading state
+  const [error, setError] = useState(null);     // For error state
+  const [images, setImages] = useState({});     // To store images
+
+  // Fetching projects from backend (API call simulation)
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await axios.get(`${config.baseURL}/fetchprojects`);
+        if (response.data.success && Array.isArray(response.data.projects)) {
+          const projectData = response.data.projects.slice(0, 6); // Limit to 6 projects
+          setProjects(projectData);
+
+          // Fetch images for each project based on title
+          projectData.forEach((project) => {
+            fetchImagesByTitle(project.tittle); // Ensure titles match correctly
+          });
+        } else {
+          setError('Error fetching projects');
+        }
+      } catch (error) {
+        console.error('Error fetching projects:', error);
+        setError('Error fetching projects.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const fetchImagesByTitle = async (tittle) => {
+      try {
+        const response = await axios.get(`${config.baseURL}/uploads/${tittle}`);
+        if (response.data.success) {
+          setImages((prevImages) => ({
+            ...prevImages,
+            [tittle]: response.data.images.mainGallery || [],
+          }));
+        } else {
+          console.error(`Error fetching images for ${tittle}:`, response.data.message);
+        }
+      } catch (error) {
+        console.error(`Error fetching images for ${tittle}:`, error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3, // Default for larger screens
+    slidesToShow: 3,
     slidesToScroll: 1,
-    centerMode: false,
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: true,
     responsive: [
       {
-        breakpoint: 768, // Medium devices (tablets)
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 576, // Small devices (phones)
+        breakpoint: 576,
         settings: {
           slidesToShow: 1,
         },
@@ -49,45 +98,27 @@ const Projects = () => {
             </p>
           </div>
 
-          {/* Slick Slider with fixed-width cards */}
-          <Slider {...settings}>
-            <OfficeCard
-              projectId="1"
-              imgSrc={office2}
-              tittle='Sharda-QUAd-WTC'
-              name="Sharda QUAd WTC"
-              location="Techzone-4, Greater Noida, Pincode-201009"
-              Area="5000 sqft"
-              Type="Office"
-              Configuration="Fully Furnished"
-              RERA="UPRERAPRJ3357"
-              price="₹40* Lakh"
-            />
-            <OfficeCard
-              projectId="2"
-              imgSrc={office3}
-              name="M3M The Line"
-              tittle="m3m-the-line-sector-72-noida"
-              location="Sector 72, Noida, Pincode-201308"
-              Area="7500 sqft"
-              Type="Retail"
-              Configuration="Shell"
-              RERA="UPRERAPRJ246070"
-              price="₹42.4* Cr"
-            />
-            <OfficeCard
-              projectId="3"
-              imgSrc={office4}
-              name="M3M The Cullinan"
-              tittle="m3m-the-cullinan-sector-94-noida"
-              location="Sector 94, Noida, Pincode-201308"
-              Area="10000 sqft"
-              Type="Luxury Apartments"
-              Configuration="Fully Furnished"
-              RERA="UPRERAPRJ442214"
-              price="₹6.81 Cr"
-            />
-          </Slider>
+          {/* Check if projects is an array before using .map */}
+          {Array.isArray(projects) && projects.length > 0 ? (
+            <Slider {...settings}>
+              {projects.map((project) => (
+                <OfficeCard
+                  key={project.id}
+                  name={project.name}
+                  tittle={project.tittle}
+                  imgSrc={images[project.tittle]?.[0]} // Use the first image from the fetched images
+                  location={project.location}
+                  Area={project.Area}
+                  Type={project.Type}
+                  Configuration={project.Configuration}
+                  RERA={project.RERA}
+                  price={project.price}
+                />
+              ))}
+            </Slider>
+          ) : (
+            <p>No projects available at the moment.</p>
+          )}
         </div>
       </div>
     </div>
@@ -98,7 +129,7 @@ const OfficeCard = ({ name, tittle, imgSrc, location, RERA, Area, Type, Configur
   return (
     <div className="office-item p-4">
       <div className="office-img mb-4">
-        <img src={imgSrc} className="img-fluid w-100 rounded" alt={name} />
+        <img src={imgSrc || '/default-image.jpg'} className="img-fluid w-100 rounded" alt={name} />
       </div>
       <div className="office-content d-flex flex-column">
         <h4 className="mb-2">{name}</h4>
