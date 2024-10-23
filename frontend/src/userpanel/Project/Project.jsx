@@ -36,25 +36,24 @@ const Projects = () => {
         setLoading(false);
       }
     };
-
-    const fetchImagesByTitle = async (tittle) => {
-      try {
-        const response = await axios.get(`${config.baseURL}/uploads/${tittle}`);
-        if (response.data.success) {
-          setImages((prevImages) => ({
-            ...prevImages,
-            [tittle]: response.data.images.mainGallery || [],
-          }));
-        } else {
-          console.error(`Error fetching images for ${tittle}:`, response.data.message);
-        }
-      } catch (error) {
-        console.error(`Error fetching images for ${tittle}:`, error);
-      }
-    };
-
     fetchProjects();
   }, []);
+
+  const fetchImagesByTitle = async (tittle) => {
+    try {
+      const response = await axios.get(`${config.baseURL}/uploads/${tittle}`); // Adjust the endpoint accordingly
+      if (response.data.success) {
+        setImages((prevImages) => ({
+          ...prevImages,
+          [tittle]: response.data.images, // Store images with tittle as key
+        }));
+      } else {
+        console.error(`No images found for ${tittle}`);
+      }
+    } catch (error) {
+      console.error('Error fetching images:', error);
+    }
+  };
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
@@ -101,20 +100,25 @@ const Projects = () => {
           {/* Check if projects is an array before using .map */}
           {Array.isArray(projects) && projects.length > 0 ? (
             <Slider {...settings}>
-              {projects.map((project) => (
-                <OfficeCard
-                  key={project.id}
-                  name={project.name}
-                  tittle={project.tittle}
-                  imgSrc={images[project.tittle]?.[0]} // Use the first image from the fetched images
-                  location={project.location}
-                  Area={project.Area}
-                  Type={project.Type}
-                  Configuration={project.Configuration}
-                  RERA={project.RERA}
-                  price={project.price}
-                />
-              ))}
+              {projects.map((project) => {
+                const mainGalleryImages = images[project.tittle]?.mainGallery || []; // Get mainGallery images for the project
+                const imgSrc = mainGalleryImages[0] || '/default-image.jpg'; // Use first image or fallback to default
+
+                return (
+                  <OfficeCard
+                    key={project.id}
+                    name={project.name}
+                    tittle={project.tittle}
+                    imgSrc={imgSrc} // Use the first image from the mainGallery or default
+                    location={project.location}
+                    Area={project.Area}
+                    Type={project.Type}
+                    Configuration={project.Configuration}
+                    RERA={project.RERA}
+                    price={project.price}
+                  />
+                );
+              })}
             </Slider>
           ) : (
             <p>No projects available at the moment.</p>
@@ -126,10 +130,14 @@ const Projects = () => {
 };
 
 const OfficeCard = ({ name, tittle, imgSrc, location, RERA, Area, Type, Configuration, price }) => {
+  // Check if filePath exists before calling .replace()
+  const imagePath = imgSrc?.filePath ? `${config.baseURL2}${imgSrc.filePath.replace(/\\/g, '/')}` : '/default-image.jpg';
+
   return (
     <div className="office-item p-4">
       <div className="office-img mb-4">
-        <img src={imgSrc || '/default-image.jpg'} className="img-fluid w-100 rounded" alt={name} />
+        {/* Use the imagePath for the src */}
+        <img src={imagePath} className="img-fluid w-100 rounded" alt={name} />
       </div>
       <div className="office-content d-flex flex-column">
         <h4 className="mb-2">{name}</h4>
