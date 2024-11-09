@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import './Company.css';
 
 const Companies = () => {
@@ -9,47 +10,56 @@ const Companies = () => {
   const [translate, setTranslate] = useState(0);
   const [transition, setTransition] = useState(true);
   const carouselRef = useRef(null);
+  const navigate = useNavigate(); // Hook to navigate to a different page
 
   const companies = [
     {
       name: "Startup",
       description: "Meet your new venture needs with affordable and convenient spaces.",
       icon: "fa-rocket",
+      propertyType: "", // Example propertyType
     },
     {
       name: "New Property",
       description: "Begin your journey of first property ownership with a safe and steady choice.",
       icon: "fa-building",
+      propertyType: "Residential", // Example propertyType
     },
     {
       name: "Investment",
       description: "Strategically invest in dynamic and promising workspaces with expertise.",
       icon: "fa-chart-line",
+      propertyType: "Commercial", // Example propertyType
     },
     {
       name: "ROI & Appreciation",
       description: "Take advantage of our diverse investment options for extraordinary returns.",
       icon: "fa-seedling",
+      propertyType: "OfficeSpace", // Example propertyType
     },
     {
       name: "Property Management",
       description: "We manage your property with the best possible care and precision.",
       icon: "fa-home",
+      propertyType: "", // Example propertyType
     },
     {
       name: "Commercial Spaces",
       description: "Discover the right commercial space for your business needs.",
       icon: "fa-briefcase",
+      propertyType: "Commercial", // Example propertyType
     },
     {
       name: "Residential",
       description: "Find your dream home with our exclusive residential properties.",
       icon: "fa-house-user",
+      propertyType: "Residential", // Example propertyType
     },
     {
       name: "Leasing Options",
       description: "Choose from flexible leasing options for residential and commercial spaces.",
       icon: "fa-handshake",
+      propertyType: "", // Example propertyType
     },
   ];
 
@@ -116,6 +126,12 @@ const Companies = () => {
     setTranslate(0); // Reset the translation after drag ends
   };
 
+  // Function to handle card click and navigate to property URL
+  const handleCardClick = (propertyType) => {
+    const queryString = new URLSearchParams({ propertyType }).toString();
+    navigate(`/property?${queryString}`); // Navigates to the property page with query params
+  };
+
   return (
     <section className="c-wrapper">
       <h2 className="about5-title">What's your Approach?</h2>
@@ -145,7 +161,11 @@ const Companies = () => {
               {companies
                 .slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide)
                 .map((company, index) => (
-                  <div key={index} className="company-box">
+                  <div
+                    key={index}
+                    className="company-box"
+                    onClick={() => handleCardClick(company.propertyType)} // Handle click
+                  >
                     <i className={`fas ${company.icon} company-icon`}></i>
                     <h3>{company.name}</h3>
                     <p className="classp2">{company.description}</p>

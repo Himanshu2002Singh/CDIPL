@@ -1,0 +1,32 @@
+.pagination {
+  display: flex;
+  
+  justify-content: center; /* Center the content */
+  align-items: center;
+  width: 100%; /* Take full width of parent */
+  margin-top: 20px;
+}
+
+.pagination-arrow-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  margin: 0 10px;
+  display: flex;
+  width: max-content;
+  justify-content: center; /* Center content within button */
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+.pagination-arrow-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-arrow-btn:hover:not(:disabled) {
+  background-color: #0056b3;
+}

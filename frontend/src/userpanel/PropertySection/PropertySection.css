@@ -30,10 +30,10 @@
   }
   
   /* Container for the property cards */
-  .property-container {
+  .property-container3 {
     display: flex;
     justify-content: space-around; /* Keeps the cards equally spaced */
-    flex-wrap: wrap;
+
     gap: 20px;
     max-width: 2000px; /* Keeps the width from stretching too far */
     margin: 0 auto; /* Centers the entire container */
@@ -46,7 +46,7 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    width: 200px; /* Consistent width for the cards */
+    width: 300px; /* Consistent width for the cards */
     position: relative; /* Ensure the "View More" is positioned relative to the card */
     overflow: hidden; /* Hide the text initially */
     transition: transform 0.3s ease-in-out;
@@ -104,7 +104,7 @@
   
   /* Mobile view: Single row per card */
   @media (max-width: 768px) {
-    .property-container {
+    .property-container3 {
       flex-direction: column;
       align-items: center;
     }

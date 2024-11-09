@@ -31,6 +31,7 @@ import AddDetailsForm from "./ProjectListingForm/AddDetailsForm";
 import ProjectList from "./ProjectListingForm/ProjectList";
 import UpdateDetails from "./ProjectListingForm/updateProperty";
 import BlogPage from "./userpanel/Blogpage/Blogpage";
+import ProjectTrim from "./userpanel/PropertyListing/ProjectTrim";
 
 
 function App() {
@@ -49,7 +50,7 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path="/project" element={<Projects />} />
           <Route path="/project/:tittle" element={<ProjectDetail />} />
-          <Route path="/property" element={<PropertyListing />} />
+          <Route path="/property" element={<ProjectTrim />} />
           <Route path='/About-Us' element={<AboutCompany />} />
           <Route path="/Contact-Us" element={<ContactUs />} />
           <Route path="/insights" element={<BlogPage />} />

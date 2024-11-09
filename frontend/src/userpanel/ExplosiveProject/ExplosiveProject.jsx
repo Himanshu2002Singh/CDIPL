@@ -10,51 +10,7 @@ const ProjectsCarousel = () => {
   const [error, setError] = useState(null);
   const [images, setImages] = useState({}); // Store images by project title
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await axios.get(`${config.baseURL}/fetchprojects`);
-        if (response.data.success) {
-          const projectData = response.data.projects.slice(0, 6); // Limit to 6 projects
-          setProjects(projectData);
-
-          // Fetch images for each project based on title
-          projectData.forEach((project) => {
-            fetchImagesByTitle(project.tittle); // Ensure titles match correctly
-          });
-        } else {
-          setError('Error fetching projects');
-        }
-      } catch (error) {
-        console.error('Error fetching projects:', error);
-        setError('Error fetching projects.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    const fetchImagesByTitle = async (tittle) => {
-      try {
-        const response = await axios.get(`${config.baseURL}/uploads/${tittle}`);
-        if (response.data.success) {
-          setImages((prevImages) => ({
-            ...prevImages,
-            [tittle]: response.data.images.mainGallery || [],
-          }));
-        } else {
-          console.error(`Error fetching images for ${tittle}:`, response.data.message);
-        }
-      } catch (error) {
-        console.error(`Error fetching images for ${tittle}:`, error);
-      }
-    };
-
-    fetchProjects();
-  }, []);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-
+ 
   // Slider settings
   const settings = {
     dots: true, // Enable dots

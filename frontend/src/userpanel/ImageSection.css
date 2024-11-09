@@ -1,19 +1,29 @@
 /* ImageSection.css */
 .image-section {
     width: 100%;
-    padding: 10px 10px;
+   
     background-color: black;
-    height: 60vh;
+    height: 70vh;
     margin: 0 auto;
    
   }
   
   .responsive-image {
-    width: 98.9%; /* Full width of the section */
-    height: auto; /* Maintain aspect ratio */
-    height: 60vh;
+    width: 100%; /* Full width of the section */
+
+    height: 70vh;
     margin: 0 auto;
     border: 6px solid rgb(245, 161, 52); /* White border around the image */
     box-sizing: border-box; /* Include border in the element's total width and height */
   }
   
+  /* Responsive Adjustments */
+@media (max-width: 768px) {
+  .responsive-image {
+     height:65vh;
+  }
+
+  .image-section {
+    height: 65vh;
+  }
+}
