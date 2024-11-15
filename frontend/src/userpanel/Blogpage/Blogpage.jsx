@@ -1,6 +1,7 @@
 import React from 'react';
 import './BlogPage.css';
 import Footer from '../Footer/Footer';
+import jewar from "../../assets/hq720.jpg";
 
 const BlogPage = () => {
 
@@ -11,13 +12,14 @@ const BlogPage = () => {
             <main className="blog-page-content mt-5">
                 
                 <Article
-                    tag="Adventure"
-                    title="Are You Ready For Discover Sea Diving Position Fall Nation Area Down"
-                    description="Ahen an unknown printer took a galley of type and their scrambled imaketype specimen book has follorrrived not only fiver centuriewhen an unknown."
+                    tag="Growth and Connectivity"
+                    title=" Jewar Noida International Airport Takes Flight: A Milestone for Noida's Growth and Connectivity"
+                    description=" The long-awaited Noida International Airport, located in Jewar, is poised to transform the region’s aviation landscape. With the airport preparing for its first commercial flights, there are major milestones being celebrated, signaling a promising future for Noida and the entire NCR"
                     author="Admin"
-                    date="August 30, 2024"
+                    date="November 14, 2024"
                     comments="0 Comments"
-                    image="https://via.placeholder.com/150x100?text=Sea+Diving"
+                    image={jewar}
+                    link="/jewar-noida-international-airport-takes-first-flight"
                 />
                 <Article
                     tag="Adventure"
@@ -55,7 +57,7 @@ const BlogPage = () => {
 };
 
 // Reusable Article Component with updated structure
-const Article = ({ tag, title, description, author, date, comments, image }) => {
+const Article = ({ tag, title, description, author, date, comments, image,link }) => {
     return (
         <article className="blog-page-post">
             <div className="blog-page-post-content">
@@ -68,7 +70,8 @@ const Article = ({ tag, title, description, author, date, comments, image }) => 
                         <span>{date}</span>
                         <span>{comments}</span>
                     </div>
-                    <button className="blog-page-btn-read-more">Read More</button>
+                    <a href={link}>
+                    <button className="blog-page-btn-read-more">Read More</button></a>
                 </div>
                 <div className="blog-page-post-image-container">
                     <img src={image} alt={title} className="blog-page-post-image" />

@@ -36,12 +36,13 @@
 }
 
 .blog-page-post-image-container {
-    width: 28%;
+    width: 36%;
+    height: 100%;
 }
 
 .blog-page-post-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 5px;
 }
 

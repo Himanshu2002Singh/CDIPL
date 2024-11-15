@@ -1,6 +1,6 @@
 import React from 'react';
 import './BlogSection.css';
-import et from '../../assets/1.webp';
+import et from '../../assets/hq720.jpg';
 import wt from '../../assets/2.webp';
 import kt from '../../assets/3.webp';
 
@@ -8,12 +8,12 @@ const BlogSection = () => {
   const blogs = [
     {
       id: 1,
-      title: "Top 5 Tips for Buying Your First Home",
-      date: '15 June',
-      author: 'John Doe',
+      title: "Jewar Noida International Airport Takes Flight",
+      date: '14 November',
+      // author: 'John Doe',
       image: et, // Use the image directly here
-      description: 'Buying your first home can be daunting. Learn the top tips for a successful and stress-free home purchase.',
-      link: '/insights',
+      description: 'The long-awaited Noida International Airport, located in Jewar, is poised to transform the region’s aviation landscape. With the airport preparing for its first commercial flights, there are major milestones being celebrated, signaling a promising future for Noida and the entire NCR.',
+      link: '/jewar-noida-international-airport-takes-first-flight',
     },
     {
       id: 2,

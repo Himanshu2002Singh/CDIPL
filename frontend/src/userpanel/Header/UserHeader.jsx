@@ -63,6 +63,7 @@ const Navbar = () => {
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/About-Us">About Us</a></li>
                                     <li><a href="/property">Projects</a></li>
+                                    <li><a href='/insights'>Insights</a></li>
                                     <li><a href="/Contact-Us">Contact</a></li>
                                 </ul>
                             </nav>
@@ -94,6 +95,7 @@ const Navbar = () => {
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/About-Us">About Us</a></li>
                                     <li><a href="/property">Projects</a></li>
+                                    <li><a href='/insights'>Insights</a></li>
                                     <li><a href="/Contact-Us">Contact</a></li>
                                     <li>
                                         <button className="search-property-button" onClick={toggleInquiryPopup}>
