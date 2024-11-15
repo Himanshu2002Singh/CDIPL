@@ -32,6 +32,7 @@ import ProjectList from "./ProjectListingForm/ProjectList";
 import UpdateDetails from "./ProjectListingForm/updateProperty";
 import BlogPage from "./userpanel/Blogpage/Blogpage";
 import ProjectTrim from "./userpanel/PropertyListing/ProjectTrim";
+import BlogContent from "./userpanel/Blogpage/Jware_Airport";
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           <Route path="/property" element={<ProjectTrim />} />
           <Route path='/About-Us' element={<AboutCompany />} />
           <Route path="/Contact-Us" element={<ContactUs />} />
+          <Route path='/Jewar-Airport' element={<BlogContent/>}/>
           <Route path="/insights" element={<BlogPage />} />
         </Routes>
       </div>
