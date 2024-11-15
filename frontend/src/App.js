@@ -54,7 +54,7 @@ function App() {
           <Route path="/property" element={<ProjectTrim />} />
           <Route path='/About-Us' element={<AboutCompany />} />
           <Route path="/Contact-Us" element={<ContactUs />} />
-          <Route path='/Jewar-Airport' element={<BlogContent/>}/>
+          
           <Route path="/insights" element={<BlogPage />} />
           <Route path="/jewar-noida-international-airport-takes-first-flight" element={<BlogContent/>}/>
         </Routes>
