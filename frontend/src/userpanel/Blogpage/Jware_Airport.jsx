@@ -44,17 +44,17 @@ function BlogContent() {
 
                 <h3 className="jewar-heading text-xl font-semibold mt-4">Testing Phase Begins: Landing Tests for 90 Aircraft</h3>
                 <p className="jewar-paragraph">
-                    Starting from November 15, 2024, a crucial phase of testing will kick off at the Jewar International Airport. Over the next month, a total of <strong>90 aircraft</strong> will undergo landing tests. These tests will be conducted every day from <strong> November 15 to December 15, 2024</strong>, ensuring that the runway meets international safety and operational standards. As part of this test phase, <strong>IndiGo and Akasa </strong>Airlines will be among the carriers involved in the trials, reflecting the growing readiness of the airport for commercial use.
+                    Starting from November 15, 2024, a crucial phase of testing will kick off at the Jewar International Airport. Over the next month, a total of 90 aircraft will undergo landing tests. These tests will be conducted every day from November 15 to December 15, 2024, ensuring that the runway meets international safety and operational standards. As part of this test phase, IndiGo and Akasa Airlines will be among the carriers involved in the trials, reflecting the growing readiness of the airport for commercial use.
                 </p>
 
                 <h3 className="jewar-heading text-xl font-semibold mt-4">Phase One Development: A Giant Leap for Noida's Aviation Hub</h3>
                 <p className="jewar-paragraph">
-                    The first phase of <strong> Jewar Noida International Airport </strong> is being developed over an expansive <strong>1334 hectares</strong> of land.<strong> This massive development includes the construction of a state-of-the-art 3900-meter runway</strong>, a modern <strong>terminal building </strong>, and a <strong>Control Tower (ATC)</strong>. These facilities are designed to accommodate a variety of aircraft and ensure seamless operations, catering to both domestic and international flights. The scale of this project reflects the ambition behind this airport, which is set to become a major hub in North India.
+                    The first phase of Jewar Noida International Airport is being developed over an expansive 1334 hectares of land. This massive development includes the construction of a state-of-the-art 3900-meter runway, a modern terminal building, and a Control Tower (ATC). These facilities are designed to accommodate a variety of aircraft and ensure seamless operations, catering to both domestic and international flights. The scale of this project reflects the ambition behind this airport, which is set to become a major hub in North India.
                 </p>
 
                 <h3 className="jewar-heading text-xl font-semibold mt-4">A Strong Start: 30 Airlines on Day One</h3>
                 <p className="jewar-paragraph">
-                    On the first day of operation, the <strong>Noida International Airport</strong>  is expected to witness the launch of services by <strong>30 airlines</strong> , which will include both <strong>domestic and international flights </strong> . Of these, <storong>25 domestic flights, 3 international flights, and 2 cargo flights </storong>are expected to take off, marking the airport’s entry into the global aviation scene. This broad spectrum of flights reflects the airport's ability to cater to a diverse range of passengers, from business travelers to tourists, while also supporting the logistics and cargo sector.
+                    On the first day of operation, the Noida International Airport is expected to witness the launch of services by 30 airlines, which will include both domestic and international flights. Of these, 25 domestic flights, 3 international flights, and 2 cargo flights are expected to take off, marking the airport’s entry into the global aviation scene. This broad spectrum of flights reflects the airport's ability to cater to a diverse range of passengers, from business travelers to tourists, while also supporting the logistics and cargo sector.
                 </p>
 
                 <h3 className="jewar-heading text-xl font-semibold mt-4">Impact on Noida and NCR’s Connectivity</h3>
@@ -67,15 +67,15 @@ function BlogContent() {
 
                 <h3 className="jewar-heading text-xl font-semibold mt-4">A Vision for the Future</h3>
                 <p className="jewar-paragraph">
-                   <strong>Jewar International Airport </strong>  is not just a transportation hub but a symbol of the region’s ambition to become a global player in the aviation industry. With plans for further expansion in the coming years, the airport will play a vital role in enhancing Noida's status as a key player in India's growth story.
+                    Jewar International Airport is not just a transportation hub but a symbol of the region’s ambition to become a global player in the aviation industry. With plans for further expansion in the coming years, the airport will play a vital role in enhancing Noida's status as a key player in India's growth story.
                 </p>
                 <p className="jewar-paragraph">
-                    As we await the official takeoff, the <strong>Jewar Noida International Airport </strong> is already setting the stage for a promising future, offering unparalleled connectivity and becoming an essential catalyst for economic development in the region.
+                    As we await the official takeoff, the Jewar Noida International Airport is already setting the stage for a promising future, offering unparalleled connectivity and becoming an essential catalyst for economic development in the region.
                 </p>
 
                 <h3 className="jewar-heading text-xl font-semibold mt-4">Conclusion</h3>
                 <p className="jewar-paragraph">
-                    In conclusion, the<strong>Noida International Airport at Jewar </strong> is poised to be a game-changer for Noida, bringing new opportunities for businesses, tourism, and connectivity to the region. The first test flights, the development of modern airport infrastructure, and the large-scale involvement of multiple airlines signal a bright future for this ambitious project. As the airport prepares for its grand opening, it is clear that <strong>Jewar Airport </strong> will play a pivotal role in shaping the aviation future of Noida and NCR.
+                    In conclusion, the Noida International Airport at Jewar is poised to be a game-changer for Noida, bringing new opportunities for businesses, tourism, and connectivity to the region. The first test flights, the development of modern airport infrastructure, and the large-scale involvement of multiple airlines signal a bright future for this ambitious project. As the airport prepares for its grand opening, it is clear that Jewar Airport will play a pivotal role in shaping the aviation future of Noida and NCR.
                 </p>
             </article>
 
