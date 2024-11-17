@@ -2,14 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { FaPhone, FaSearch, FaFacebookF, FaInstagram, FaLinkedinIn, FaBars, FaTimes } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom'; // For page detection
 import './Header.css';
+import axios from 'axios';
 import log2 from '../../assets/cdiplogo.png'; // Sticky logo
 import log1 from '../../assets/cdipl.png'; // Transparent logo
+import config from '../../config';
 
 const Navbar = () => {
     const [isSticky, setIsSticky] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
    
     const [isInquiryPopupOpen, setIsInquiryPopupOpen] = useState(false);
+    
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [message, setMessage] = useState('');
 
     const location = useLocation(); // Get the current page URL
 
@@ -40,6 +46,30 @@ const Navbar = () => {
     const toggleInquiryPopup = () => {
         setIsInquiryPopupOpen(!isInquiryPopupOpen);
     };
+     
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            // Send inquiry data to backend
+            const response = await axios.post(`${config.baseURL}/inquiries/submit`, {
+                name,
+                phone,
+                message,
+            });
+
+            if (response.status === 201) {
+                alert('Inquiry submitted successfully');
+                setName('');
+                setPhone('');
+                setMessage('');
+                setIsInquiryPopupOpen(false); // Close the popup
+            }
+        } catch (error) {
+            alert('Error submitting inquiry');
+        }
+    };
+
 
     return (
         <>
@@ -142,18 +172,45 @@ const Navbar = () => {
                 <div className="popup-screen">
                     <div className="popup-content">
                         <h2>Inquiry Form</h2>
-                        <form>
-                            <input type="text" placeholder="Your Name" required />
-                            <input type="email" placeholder="Your Email" required />
-                            <textarea placeholder="Your Message" required></textarea>
+                        <form onSubmit={handleSubmit} id="contact-form">
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Your Name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                            />
+                            <input
+                                type="number"
+                                id="phone"
+                                placeholder="Your Phone Number"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                                required
+                            />
+                            <textarea
+                                id="message"
+                                placeholder="Your Message"
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                required
+                            ></textarea>
                             <button type="submit">Submit</button>
                         </form>
                         <button className="close-popup" onClick={toggleInquiryPopup}>Close</button>
                     </div>
                 </div>
+
+                
             )}
         </>
+
+        
     );
+    
 };
+
+
 
 export default Navbar;

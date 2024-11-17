@@ -1,8 +1,39 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import React from 'react';
+import React, { useState } from 'react';
 import './Feedback.css';
+import axios from 'axios';
+import config from '../../config';
 
 const ContactPage = () => {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+        // Send inquiry data to backend
+        const response = await axios.post(`${config.baseURL}/inquiries/submit`, {
+            name,
+            phone,   // Include phone number in the request
+            message,
+        });
+
+        if (response.status === 201) {
+            alert('Inquiry submitted successfully');
+            setName('');
+            setPhone('');  // Reset phone number field
+            setMessage('');
+           
+        }
+    } catch (error) {
+        alert('Error submitting inquiry');
+    }
+};
+
+
+
   return (
     <div className="contact-container">
       {/* Google Maps iframe */}
@@ -24,23 +55,44 @@ const ContactPage = () => {
         <div className="form-section">
           <h2>Send us a Message</h2>
           <p>We're here to assist you with any inquiries, questions, or support you need. Reach out to us for detailed property information, expert advice, or general assistance, and we'll get back to you promptly.</p>
-          <form>
-            <div className="form-row">
+          <form onSubmit={handleSubmit} id="contact-form">
+          <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
-                <input type="text" id="name" placeholder="Enter your Name" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="number">Your Phone Number</label>
-                <input type="text" id="number" placeholder="Enter your Number" />
-              </div>
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Your Message</label>
-              <textarea id="message" placeholder="Enter your message"></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-          </form>
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Your Name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                            />
+                            </div>
+                            <div className="form-group">
+                            <label htmlFor="phone">Your Phone Number</label>
+                            <input
+                                type="phone"
+                                id="phone"
+                                placeholder="Your Phone Number"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                                required
+                            />
+                            </div>
+                            </div>
+
+                            <div className="form-group">
+                            <label htmlFor="message">Your Message</label>
+                            <textarea
+                                id="message"
+                                placeholder="Your Message"
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                required
+                            ></textarea>
+                            </div>
+                            <button type="submit">Submit</button>
+                        </form>
         </div>
 
         {/* Contact Information Section */}

@@ -1,10 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ContactUs.css"; // Ensure the CSS file is created and linked correctly
 import Footer from "../Footer/Footer";
 import backgroundImg from '../../assets/r1.png';
 import { Container } from "react-bootstrap";
+import axios from "axios";
+import config from "../../config";
 
 const ContactUs = () => {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+        // Send inquiry data to backend
+        const response = await axios.post(`${config.baseURL}/inquiries/submit`, {
+            name,
+            phone,   // Include phone number in the request
+            message,
+        });
+
+        if (response.status === 201) {
+            alert('Inquiry submitted successfully');
+            setName('');
+            setPhone('');  // Reset phone number field
+            setMessage('');
+           
+        }
+    } catch (error) {
+        alert('Error submitting inquiry');
+    }
+};
+
+
   return (
     <>
      <Container fluid>
@@ -74,17 +104,31 @@ const ContactUs = () => {
 
           {/* Contact Form Section */}
           <div className="cdipl-contact-form-container">
-            <form className="cdipl-contact-form">
+            <form className="cdipl-contact-form" onSubmit={handleSubmit}>
               <div className="cdipl-form-row">
-                <input type="text" placeholder="Name*" required />
-                <input type="email" placeholder="Email*" required />
+                <input 
+                id="name"
+                 type="text"
+                  placeholder="Name*" 
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required  />
+                <input type="text"
+                                        id="number"
+                                        placeholder="Enter your Number"
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)} required />
               </div>
               <div className="cdipl-form-row">
                 <input type="date" placeholder="Desired Date*" required />
                 <input type="time" placeholder="Desired Time*" required />
               </div>
               <textarea
-                placeholder="Additional Message"
+                 id="message"
+                 placeholder="Enter your message"
+                 value={message}
+                 onChange={(e) => setMessage(e.target.value)}
+                
                 rows="5"
                 className="cdipl-textarea"
               ></textarea>

@@ -10,6 +10,7 @@ const amenitiesRoutes = require('./routes/amenitiesRoutes');
 const uploadRoutes = require('./routes/uploadRoutes');
 const floorDetailsRoutes = require('./routes/floorDetailsRoutes');
 const additionalDetailsRoutes = require('./routes/additionalDetails');
+const contactMessageRoutes = require('./routes/contactMessageRoutes');
 
 require('dotenv').config();
 
@@ -48,6 +49,9 @@ app.use('/api', uploadRoutes);
 
 // Use additional details routes
 app.use('/api', additionalDetailsRoutes);
+
+// Use the contact message routes
+app.use('/api/inquiries', contactMessageRoutes);
 
 
 
