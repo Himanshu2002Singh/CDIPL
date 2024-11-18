@@ -108,7 +108,7 @@ const ProjectForm = () => {
       {step === 1 && (
         <form onSubmit={handleNext}>
           <div className="projectlisting-mb-3">
-            <label htmlFor="tittle" className="projectlisting-form-label">Project Tittle</label>
+            <label htmlFor="tittle" className="projectlisting-form-label">Project Url</label>
             <input
               type="text"
               className="projectlisting-form-control"
@@ -116,7 +116,7 @@ const ProjectForm = () => {
               name="tittle"
               value={formData.tittle}
               onChange={handleChange}
-              placeholder="Enter project tittle"
+              placeholder="Enter project url"
               required
             />
           </div>
@@ -147,17 +147,22 @@ const ProjectForm = () => {
             />
           </div>
           <div className="projectlisting-mb-3">
-            <label htmlFor="superArea" className="projectlisting-form-label">Super Area</label>
-            <input
-              type="text"
-              className="projectlisting-form-control"
-              id="superArea"
-              name="superArea"
-              value={formData.superArea}
-              onChange={handleChange}
-              placeholder="Enter super area (sqft)"
-              required
-            />
+            <label htmlFor="superArea" className="projectlisting-form-label">Land Type</label>
+            <select
+  className="projectlisting-form-control"
+  id="superArea"
+  name="superArea"
+  value={formData.superArea}
+  onChange={handleChange}
+  required
+>
+  <option value="" disabled>
+    Select Land type
+  </option>
+  <option value="RERA Approved">Rera Approved</option>
+  <option value="Free Hold Property">Freehold Property</option>
+</select>
+
           </div>
           <div className="projectlisting-mb-3">
             <label htmlFor="avgPrice" className="projectlisting-form-label">Avg. Price</label>
@@ -173,7 +178,7 @@ const ProjectForm = () => {
             />
           </div>
           <div className="projectlisting-mb-3">
-            <label htmlFor="totalArea" className="projectlisting-form-label">Total Area</label>
+            <label htmlFor="totalArea" className="projectlisting-form-label">Total Area </label>
             <input
               type="text"
               className="projectlisting-form-control"
@@ -187,16 +192,23 @@ const ProjectForm = () => {
           </div>
           <div className="projectlisting-mb-3">
             <label htmlFor="propertyType" className="projectlisting-form-label">Property Type</label>
-            <input
-              type="text"
-              className="projectlisting-form-control"
-              id="propertyType"
-              name="propertyType"
-              value={formData.propertyType}
-              onChange={handleChange}
-              placeholder="Enter property type"
-              required
-            />
+            <select
+  className="projectlisting-form-control"
+  id="propertyType"
+  name="propertyType"
+  value={formData.propertyType}
+  onChange={handleChange}
+  required
+>
+<option value="">Select Property Type</option>
+          <option value="Residential">Residential</option>
+          <option value="Commercial">Commercial</option>
+          <option value="OfficeSpace">Office Space/IT-ITES</option>
+          <option value="MixedUse">Mixed Use</option>
+          <option value="studio Apartment">Studio Apartments</option>
+          <option value="Agri">Agriculture</option>
+</select>
+
           </div>
           <div className="projectlisting-mb-3">
             <label htmlFor="possession" className="projectlisting-form-label">Possession</label>
@@ -257,7 +269,7 @@ const ProjectForm = () => {
             />
           </div>
           <div className="projectlisting-mb-3">
-            <label htmlFor="investmentpotential" className="projectlisting-form-label">Investment Potential</label>
+            <label htmlFor="investmentpotential" className="projectlisting-form-label">Usp</label>
             <input
               type="text"
               id="investmentpotential"
@@ -265,7 +277,7 @@ const ProjectForm = () => {
               className="projectlisting-form-control"
               value={formData.investmentpotential}
               onChange={handleChange}
-              placeholder="Enter Investment Potential"
+              placeholder="Enter Usp "
               required
             />
           </div>

@@ -32,8 +32,8 @@ const PropertySection = () => {
               <i className={`fas ${property.icon}`}></i>
             </div>
             <h3 className="property-name">{property.name}</h3>
-            <p className="property-count">{property.count}</p>
-            <span className="view-more-text">View More</span>
+            
+            <span className="view-more">View More</span>
           </div>
         ))}
       </div>

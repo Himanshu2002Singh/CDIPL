@@ -80,27 +80,21 @@
   }
   
   /* View More text */
-  .property-card .view-more-text {
-    display: none; /* Hidden by default */
+  .property-card .view-more {
+    display: block; /* Hidden by default */
     position: absolute;
-    bottom: 10px;
+    bottom: 6px;
+    
     left: 50%;
     transform: translateX(-50%);
     color: #BE7C2A;
     font-size: 14px;
     transition: opacity 0.3s ease;
     cursor: pointer;
-    opacity: 0; /* Start with 0 opacity */
+    opacity: 1; /* Start with 0 opacity */
   }
   
-  /* Show the text on hover */
-  .property-card:hover .view-more-text {
-    display: block; /* Display on hover */
-    opacity: 1; /* Fade in */
-    transition: opacity 0.3s ease;
-    cursor: pointer;
-    
-  }
+
   
   /* Mobile view: Single row per card */
   @media (max-width: 768px) {

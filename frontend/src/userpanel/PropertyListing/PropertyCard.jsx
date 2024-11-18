@@ -16,7 +16,7 @@ const PropertyGrid = () => {
     name: "",
     location: "",
     avgPrice: "",
-    landType: "",
+    superArea: "",
   });
 
   // Extract query parameters from the URL
@@ -27,7 +27,7 @@ const PropertyGrid = () => {
       name: queryParams.get("name") || "",
       location: queryParams.get("location") || "",
       avgPrice: queryParams.get("avgPrice") || "",
-      landType: queryParams.get("landType") || "",
+      superArea: queryParams.get("superArea") || "",
     };
     setSearchParams(params);
   }, [location]);
@@ -77,12 +77,12 @@ const PropertyGrid = () => {
     const matchesPropertyType =
       !searchParams.propertyType || project.propertyType.includes(searchParams.propertyType);
     const matchesname =
-      !searchParams.name || project.name.toLowerCase().includes(searchParams.name);
+      !searchParams.name || project.name.toLowerCase().includes(searchParams.name.toLowerCase());
     const matchesLocation =
       !searchParams.location || project.location.toLowerCase().includes(searchParams.location.toLowerCase());
     const matchesPrice = !searchParams.avgPrice || project.avgPrice <= parseInt(searchParams.avgPrice, 10);
     const matchesLandType =
-      !searchParams.landType || project.landType.toLowerCase().includes(searchParams.landType.toLowerCase());
+      !searchParams.superArea || project.superArea.toLowerCase().includes(searchParams.superArea.toLowerCase());
 
     return (
       matchesPropertyType &&
@@ -117,14 +117,14 @@ const PropertyGrid = () => {
 
         {/* Land Type dropdown */}
         <select
-          value={searchParams.landType}
+          value={searchParams.superArea}
           onChange={(e) =>
-            setSearchParams({ ...searchParams, landType: e.target.value })
+            setSearchParams({ ...searchParams, superArea: e.target.value })
           }
         >
           <option value="">Select Land Type</option>
-          <option value="freehold">Freehold</option>
-          <option value="ReraApproved">RERA Approved</option>
+          <option value="Free Hold Property">Freehold</option>
+          <option value="Rera Approved">RERA Approved</option>
         </select>
 
         <input

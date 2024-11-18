@@ -55,6 +55,7 @@ app.use('/api/inquiries', contactMessageRoutes);
 
 
 
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

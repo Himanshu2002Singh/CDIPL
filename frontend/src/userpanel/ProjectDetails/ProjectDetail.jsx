@@ -50,6 +50,24 @@ const ProjectDetail = () => {
     setActiveIndex(index);
   };
 
+
+  const formatPrice = (price) => {
+    const numericPrice = Number(price.toString().replace(/,/g, ''));
+
+    if (isNaN(numericPrice)) {
+        return "Invalid Price";
+    }
+
+    if (numericPrice >= 10000000) {
+        return `${(numericPrice / 10000000).toFixed(2)} Cr`;
+    } else if (numericPrice >= 100000) {
+        return `${(numericPrice / 100000).toFixed(2)} Lakh`;
+    }
+    return numericPrice.toString();
+};
+
+
+
   const [videoData, setVideoData] = useState(null);
   const placeholderVideoUrl = 'https://www.youtube.com/watch?v=somePlaceholderId'; // Define a placeholder video URL
 
@@ -321,7 +339,7 @@ const logoImages = images?.logo || [];
                   <div className="highlight-box">
                     <FaMoneyBillWave className="highlight-icon" />
                     <div className="highlight-text">
-                      <strong>{projectData.avgPrice}</strong>
+                      <strong>{formatPrice(projectData.avgPrice)}</strong>
                       <p>Avg. Price</p>
                     </div>
                   </div>
@@ -491,7 +509,7 @@ const logoImages = images?.logo || [];
 
               {/* Prices Section */}
               <h5 style={{fontWeight:600}}>Prices:</h5>
-              <p>Starting from:<strong>{	projectData.startingPrice}</strong></p>
+              <p>Starting from:<strong>{formatPrice(	projectData.startingPrice)}</strong></p>
 
               {/* More Details Section */}
               <div className="more-details-box mt-4 p-3 border">

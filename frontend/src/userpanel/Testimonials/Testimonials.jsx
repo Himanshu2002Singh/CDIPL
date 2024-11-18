@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import './Testimonials.css';  // Import the CSS
 import user from '../../assets/user.png';
-
+import women from '../../assets/woman.png';
 const testimonialsData = [
     {
         name: 'Anil - Madhu',
@@ -12,12 +12,12 @@ const testimonialsData = [
     {
         name: 'Dr. Namita Nadar',
         testimonial: 'I came to know about Wellness Mart in Noida, a unique concept of health and wellness hub right in the middle of a premium commercial centre really fascinated me...',
-        image: user
+        image: women
     },
     {
-        name: 'Raghav - Deepika',
+        name: 'Deepika',
         testimonial: 'Choosing CDIPL Ur Homes for our investment in Sukhbiri Farms was one of the best decisions we’ve ever made...',
-        image: user
+        image: women
     },
     {
         name: 'Rajesh',

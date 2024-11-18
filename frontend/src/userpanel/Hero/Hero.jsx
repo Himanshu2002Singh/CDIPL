@@ -9,7 +9,7 @@ const HeroSection = () => {
   // State for search inputs
   const [searchParams, setSearchParams] = useState({
     location: '',
-    landType: '',
+    superArea: '',
     propertyType: '',
     name: ''
   });
@@ -68,15 +68,15 @@ const HeroSection = () => {
             <div className="formItem">
               <label htmlFor="landTypeSelect">Land Type</label>
               <select
-                id="landType"
+                id="superArea"
                 className="propertyTypeSelect"
-                name="landType"
-                value={searchParams.landType}
+                name="superArea"
+                value={searchParams.superArea}
                 onChange={handleChange}
               >
                 <option value="">Select Land Type</option>
-                <option value="freehold">Freehold</option>
-                <option value="ReraApproved">RERA Approved</option>
+                <option value="Free Hold Property">Freehold</option>
+                <option value="RERA Approved">RERA Approved</option>
               </select>
             </div>
 

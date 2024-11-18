@@ -39,6 +39,24 @@ const Projects = () => {
     fetchProjects();
   }, []);
 
+  const formatPrice = (price) => {
+    const numericPrice = Number(price.toString().replace(/,/g, ''));
+
+    if (isNaN(numericPrice)) {
+        return "Invalid Price";
+    }
+
+    if (numericPrice >= 10000000) {
+        return `${(numericPrice / 10000000).toFixed(2)} Cr`;
+    } else if (numericPrice >= 100000) {
+        return `${(numericPrice / 100000).toFixed(2)} Lakh`;
+    }
+    return numericPrice.toString();
+};
+
+
+
+
   const fetchImagesByTitle = async (tittle) => {
     try {
       const response = await axios.get(`${config.baseURL}/uploads/${tittle}`); // Adjust the endpoint accordingly
@@ -115,7 +133,7 @@ const Projects = () => {
                     Type={project.propertyType}
                     Configuration={project.Configuration}
                     RERA={project.reraId}
-                    price={project.startingPrice}
+                    price={formatPrice(project.startingPrice)}
                   />
                 );
               })}

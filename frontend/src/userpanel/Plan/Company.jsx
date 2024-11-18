@@ -9,6 +9,7 @@ const Companies = () => {
   const [startPos, setStartPos] = useState(0);
   const [translate, setTranslate] = useState(0);
   const [transition, setTransition] = useState(true);
+  const [isPaused, setIsPaused] = useState(false); // Track if the carousel should pause
   const carouselRef = useRef(null);
   const navigate = useNavigate(); // Hook to navigate to a different page
 
@@ -17,53 +18,52 @@ const Companies = () => {
       name: "Startup",
       description: "Meet your new venture needs with affordable and convenient spaces.",
       icon: "fa-rocket",
-      propertyType: "", // Example propertyType
+      propertyType: "",
     },
     {
       name: "New Property",
       description: "Begin your journey of first property ownership with a safe and steady choice.",
       icon: "fa-building",
-      propertyType: "Residential", // Example propertyType
+      propertyType: "Residential",
     },
     {
       name: "Investment",
       description: "Strategically invest in dynamic and promising workspaces with expertise.",
       icon: "fa-chart-line",
-      propertyType: "Commercial", // Example propertyType
+      propertyType: "Commercial",
     },
     {
       name: "ROI & Appreciation",
       description: "Take advantage of our diverse investment options for extraordinary returns.",
       icon: "fa-seedling",
-      propertyType: "OfficeSpace", // Example propertyType
+      propertyType: "OfficeSpace",
     },
     {
       name: "Property Management",
       description: "We manage your property with the best possible care and precision.",
       icon: "fa-home",
-      propertyType: "", // Example propertyType
+      propertyType: "",
     },
     {
       name: "Commercial Spaces",
       description: "Discover the right commercial space for your business needs.",
       icon: "fa-briefcase",
-      propertyType: "Commercial", // Example propertyType
+      propertyType: "Commercial",
     },
     {
       name: "Residential",
       description: "Find your dream home with our exclusive residential properties.",
       icon: "fa-house-user",
-      propertyType: "Residential", // Example propertyType
+      propertyType: "Residential",
     },
     {
       name: "Leasing Options",
       description: "Choose from flexible leasing options for residential and commercial spaces.",
       icon: "fa-handshake",
-      propertyType: "", // Example propertyType
+      propertyType: "",
     },
   ];
 
-  // Update items per slide based on screen width
   const updateItemsPerSlide = () => {
     const width = window.innerWidth;
     if (width <= 768) {
@@ -85,6 +85,8 @@ const Companies = () => {
 
   // Auto-slide logic
   useEffect(() => {
+    if (isPaused) return;
+
     const slideInterval = setInterval(() => {
       if (!isDragging) {
         setCurrentSlide((prevSlide) => (prevSlide + 1) % totalSlides);
@@ -92,13 +94,12 @@ const Companies = () => {
     }, 3000); // Slide every 3 seconds
 
     return () => clearInterval(slideInterval);
-  }, [totalSlides, isDragging]);
+  }, [totalSlides, isDragging, isPaused]);
 
   const handleDotClick = (index) => {
     setCurrentSlide(index);
   };
 
-  // Mouse/touch drag functions
   const handleDragStart = (event) => {
     const startPos = event.type === "touchstart" ? event.touches[0].clientX : event.clientX;
     setStartPos(startPos);
@@ -126,11 +127,14 @@ const Companies = () => {
     setTranslate(0); // Reset the translation after drag ends
   };
 
-  // Function to handle card click and navigate to property URL
   const handleCardClick = (propertyType) => {
     const queryString = new URLSearchParams({ propertyType }).toString();
     navigate(`/property?${queryString}`); // Navigates to the property page with query params
   };
+
+  // Pause carousel on hover or touch
+  const handleMouseEnter = () => setIsPaused(true);
+  const handleMouseLeave = () => setIsPaused(false);
 
   return (
     <section className="c-wrapper">
@@ -144,16 +148,19 @@ const Companies = () => {
         onMouseMove={handleDragMove}
         onMouseUp={handleDragEnd}
         onMouseLeave={handleDragEnd}
-        onTouchStart={handleDragStart}
+        onMouseEnter={handleMouseEnter} // Pause on hover
+        // eslint-disable-next-line react/jsx-no-duplicate-props
+        onMouseLeave={handleMouseLeave} // Resume on leave
+        onTouchStart={() => setIsPaused(true)} // Pause on touch
+        onTouchEnd={() => setIsPaused(false)} // Resume on touch end
         onTouchMove={handleDragMove}
-        onTouchEnd={handleDragEnd}
       >
         <div
           className="carousel-inner"
           style={{
-            transform: `translateX(-${(currentSlide * 100) / totalSlides}%)`, // Adjusts based on current slide
+            transform: `translateX(-${(currentSlide * 100) / totalSlides}%)`,
             width: `${totalSlides * 100}%`,
-            transition: transition ? "transform 0.3s ease" : "none", // Smooth transition only when not dragging
+            transition: transition ? "transform 0.3s ease" : "none",
           }}
         >
           {Array.from({ length: totalSlides }).map((_, slideIndex) => (
@@ -164,7 +171,7 @@ const Companies = () => {
                   <div
                     key={index}
                     className="company-box"
-                    onClick={() => handleCardClick(company.propertyType)} // Handle click
+                    onClick={() => handleCardClick(company.propertyType)}
                   >
                     <i className={`fas ${company.icon} company-icon`}></i>
                     <h3>{company.name}</h3>

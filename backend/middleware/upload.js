@@ -24,7 +24,7 @@ const storage = multer.diskStorage({
 
 // File filter to allow only image and video uploads
 const fileFilter = (req, file, cb) => {
-  const allowedTypes = /jpeg|jpg|png|webp|mp4|avi/;
+  const allowedTypes = /jpeg|jpg|png|webp|avif|mp4|avi/;
   const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
   const mimetype = allowedTypes.test(file.mimetype);
 
