@@ -5,6 +5,60 @@
 
 }
 
+.project-card {
+  border-radius: 10px;
+  border: none;
+}
+
+.project-card-body {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.project-details-list li {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.project-heading {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.project-subheading {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.project-description-heading {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #555;
+}
+
+.contact-button {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.project-location-icon {
+  color: #007bff;
+  margin-right: 5px;
+}
+
+
 
 
 .project-details {
@@ -30,7 +84,7 @@
 
 .project-location, .project-description {
   font-size: 1.2rem;
-  color: #777;
+  color: #edc479;
   margin-bottom: 20px;
   animation: fadeIn 1s ease;
 }
@@ -54,6 +108,43 @@
 .project-additional-details li:last-child {
   border-bottom: none;
 }
+
+.project-main-card {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.project-heading {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.project-card-body {
+  padding: 15px;
+}
+
+.project-details-list li {
+  margin-bottom: 10px;
+}
+
+.project-additional-details .roww {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.project-additional-details .coll {
+  flex: 1;
+  padding: 5px;
+  text-align: left;
+}
+
 
 /* Flexbox for two columns */
 .roww {

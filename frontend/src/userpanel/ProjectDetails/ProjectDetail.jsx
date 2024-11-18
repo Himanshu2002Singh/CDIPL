@@ -203,119 +203,143 @@ const logoImages = images?.logo || [];
 
   return (
     <div className="project-detail-container container-fluid">
-      <div className="row gx-4 gy-4 custom-gap"> {/* Adjusted gutter classes for padding */}
-        {/* Left Side: Images and Project Highlights */}
-        <div className="col-lg-6">
-  {/* Carousel for Main Project Images */}
-  {mainGalleryImages.length > 0 && (
-        <div id="projectCarousel" className="carousel slide mb-4" data-bs-ride="carousel">
-          <div className="carousel-inner">
-            {/* Display the main project image */}
-            <div className="carousel-item active">
-              <img 
-                src={`${config.baseURL2}${mainGalleryImages[0]?.filePath.replace(/\\/g, '/') || ''}`} 
-                className="d-block w-100" 
-                alt="Main Project Image" 
-              />
-            </div>
-            {/* Display other gallery images */}
-            {mainGalleryImages.slice(1).map((image, index) => (
-              <div className="carousel-item" key={index}>
-                <img 
-                  src={`${config.baseURL2}${image?.filePath.replace(/\\/g, '/') || ''}`} 
-                  className="d-block w-100" 
-                  alt={`Gallery Image ${index + 1}`} 
+      <div className="container-fluid py-4">
+  {/* Hero Section */}
+  <div className="row">
+    <div className="col-12">
+      <div className="row">
+        {/* Main Gallery Image */}
+        <div className="col-lg-8 col-md-12 mb-4">
+          <img
+            src={`${config.baseURL2}${mainGalleryImages[0]?.filePath.replace(/\\/g, '/')}`}
+            className="img-fluid rounded shadow"
+            alt="Main Gallery Image"
+            style={{ maxHeight: "500px", objectFit: "cover", width: "100%" }}
+          />
+        </div>
+        {/* Collage of Other Gallery Images */}
+        <div className="col-lg-4 col-md-12">
+          <div className="row g-2">
+            {GalleryImages.slice(0, 6).map((image, index) => (
+              <div className="col-6" key={index}>
+                <img
+                  src={`${config.baseURL2}${image?.filePath.replace(/\\/g, '/')}`}
+                  className="img-fluid rounded shadow"
+                  alt={`Gallery Image ${index + 1}`}
+                  style={{ height: "120px", objectFit: "cover", width: "100%" }}
                 />
               </div>
             ))}
+            {/* Placeholder for remaining images */}
+            <div className="col-12">
+              <div className="position-relative">
+                <img
+                  src={`${config.baseURL2}${GalleryImages[0]?.filePath.replace(/\\/g, '/')}`}
+                  className="img-fluid rounded shadow"
+                  alt="More Images"
+                  style={{ height: "250px", objectFit: "cover", width: "100%" }}
+                />
+                <div
+                  className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-dark bg-opacity-50 text-white"
+                  style={{ fontSize: "1.5rem", fontWeight: "bold" }}
+                >
+                  + {mainGalleryImages.length-2} More Images
+                </div>
+              </div>
+            </div>
           </div>
-
-          {/* Carousel navigation buttons */}
-          <button className="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
         </div>
-      )}
+      </div>
+    </div>
+  </div>
 
-      {/* Static Gallery below Carousel */}
-      <div className="gallery row g-2 mb-4">
-        {GalleryImages.slice(0, 6).map((image, index) => (
-          <div className="col-4" key={index}>
-            <img 
-              src={`${config.baseURL2}${image?.filePath.replace(/\\/g, '/') || ''}`} 
-              className="img-fluid rounded" 
-              alt={`Static Gallery Image ${index + 1}`} 
+  {/* Details Section */}
+  <div className="row mt-4 justify-content-center">
+  {/* Details */}
+
+
+  <div className="col-10">
+  {/* Main Card Section */}
+  <div className="card shadow-sm project-main-card">
+    <div className="card-body">
+      {/* Project Name, Logo, and Starting Price */}
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <div className="d-flex align-items-center">
+          {logoImages.length > 0 && (
+            <img
+              src={`${config.baseURL2}${logoImages[0]?.filePath.replace(/\\/g, '/')}`}
+              alt="Project Logo"
+              style={{
+                width: "80px",
+                height: "80px",
+                objectFit: "contain",
+                marginRight: "20px", // Gap between logo and name
+              }}
             />
+          )}
+          <h2 className="project-heading" style={{ margin: 0 }}>
+            <strong>{projectData.name}</strong>
+          </h2>
+        </div>
+        <div>
+          <h4 style={{ margin: 0 }}>
+            <strong>Starting Price:</strong>
+          </h4>
+          <h5 style={{ fontWeight: "bold", color: "#ff5722" }}>
+            ₹{formatPrice(projectData.startingPrice)}
+          </h5>
+        </div>
+      </div>
+
+      {/* Details in Cards */}
+      <div className="row">
+        <div className="col-md-6 mb-3">
+          <div className="card project-card shadow-sm">
+            <div className="card-body project-card-body">
+              <ul className="list-unstyled project-details-list mb-0">
+                <li><strong>RERA ID:</strong> {projectData.reraId || "N/A"}</li>
+                <li><strong>Location:</strong> {projectData.location}</li>
+                <li><strong>Possession:</strong> {projectData.possession}</li>
+                <li><strong>Property Type:</strong> {projectData.propertyType}</li>
+                <li><strong>Land Type:</strong> {projectData.superArea}</li>
+                <li><strong>Average Price:</strong> ₹{projectData.avgPrice}</li>
+              </ul>
+            </div>
           </div>
-        ))}
+        </div>
+        <div className="col-md-6 mb-3">
+          <div className="card project-card shadow-sm">
+            <div className="card-body project-card-body">
+              <h3>Prime Locations</h3>
+              <ul className="project-additional-details himanshu">
+                {projectData.proximity
+                  .split(',')
+                  .slice(0, 4) // केवल पहले 4 लोकेशन्स को चयनित करें
+                  .reduce((rows, location, index) => {
+                    if (index % 2 === 0) {
+                      rows.push([location.trim()]);
+                    } else {
+                      rows[rows.length - 1].push(location.trim());
+                    }
+                    return rows;
+                  }, [])
+                  .map((row, rowIndex) => (
+                    <li key={rowIndex} className="roww">
+                      <div className="coll">{row[0]}</div>
+                      {row[1] && <div className="coll">{row[1]}</div>}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-
-</div>
-
-  
-
-        {/* Right Side: Project Details */}
-        <div className="col-lg-6">
-  <div className="project-details p-3">
-    
-    {/* Display the first logo from the fetched logoImages array */}
-    {logoImages.length > 0 && (
-      <div className="text-center mb-4">
-        <img 
-          src={`${config.baseURL2}${logoImages[0]?.filePath.replace(/\\/g, '/')}`} // Adjusting the URL
-          alt="Project Logo" 
-          style={{
-            width: '120px',  // Fixed size for the logo
-            height: '80px',
-            objectFit: 'contain',
-            margin: '0 auto',
-          }} 
-        />
-      </div>
-    )}
-
-    <h2 className="project-title text-center">{projectData.name}</h2>
-    <p className="project-location text-center">{projectData.location}</p>
-    <p className="project-description">{projectData.description}</p>
-
-    {/* Project details */}
-    <ul className="project-additional-details">
-      <li><strong>Super Area:</strong> {projectData.superArea}</li>
-      <li><strong>Average Price:</strong> {projectData.avgPrice}</li>
-      <li><strong>Property Type:</strong> {projectData.propertyType}</li>
-      <li><strong>Possession:</strong> {projectData.possession}</li>
-    </ul>
-
-    <h3>RERA Details</h3>
-    <ul className="project-additional-details">
-      <li><strong>RERA ID:</strong> {projectData.reraId}</li>
-    </ul>
-
-    <h3>Prime Locations</h3>
-    <ul className="project-additional-details himanshu">
-      {projectData.proximity.split(',').reduce((rows, location, index) => {
-        if (index % 2 === 0) {
-          rows.push([location.trim()]);
-        } else {
-          rows[rows.length - 1].push(location.trim());
-        }
-        return rows;
-      }, []).map((row, rowIndex) => (
-        <li key={rowIndex} className="roww">
-          <div className="coll">{row[0]}</div>
-          {row[1] && <div className="coll">{row[1]}</div>}
-        </li>
-      ))}
-    </ul>
-
+    </div>
   </div>
 </div>
-      </div>
+
+</div>
+</div>
 
 
       {/* Project Highlights and Contact Form */}
