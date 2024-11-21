@@ -26,7 +26,7 @@ const PropertyListing = ({ property }) => {
         <div className="property-info">
           <span> <strong>RERA ID: </strong>{property.reraId} </span>
           <span><strong>Property Type: </strong>{property.propertyType}</span>
-          <span><strong>Sq. Ft. : </strong>{property.totalArea}</span>
+          <span><strong>Total Project Area : </strong>{property.totalArea}</span>
         </div>
         
         {/* View button */}

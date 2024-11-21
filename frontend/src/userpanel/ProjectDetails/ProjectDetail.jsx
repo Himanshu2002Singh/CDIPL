@@ -302,7 +302,7 @@ const logoImages = images?.logo || [];
                 <li><strong>Possession:</strong> {projectData.possession}</li>
                 <li><strong>Property Type:</strong> {projectData.propertyType}</li>
                 <li><strong>Land Type:</strong> {projectData.superArea}</li>
-                <li><strong>Average Price:</strong> ₹{projectData.avgPrice}</li>
+                <li><strong>Sq.ft. Price:</strong> ₹{projectData.avgPrice}</li>
               </ul>
             </div>
           </div>
@@ -355,7 +355,7 @@ const logoImages = images?.logo || [];
                     <FaRulerCombined className="highlight-icon" />
                     <div className="highlight-text">
                       <strong>{projectData.superArea}</strong>
-                      <p>Super Area</p>
+                      <p>Land Type</p>
                     </div>
                   </div>
                 </div>
@@ -363,8 +363,8 @@ const logoImages = images?.logo || [];
                   <div className="highlight-box">
                     <FaMoneyBillWave className="highlight-icon" />
                     <div className="highlight-text">
-                      <strong>{formatPrice(projectData.avgPrice)}</strong>
-                      <p>Avg. Price</p>
+                      <strong>{projectData.avgPrice}</strong>
+                      <p>/Sq. ft. Price</p>
                     </div>
                   </div>
                 </div>
@@ -536,7 +536,7 @@ const logoImages = images?.logo || [];
               <p>Starting from:<strong>{formatPrice(	projectData.startingPrice)}</strong></p>
 
               {/* More Details Section */}
-              <div className="more-details-box mt-4 p-3 border">
+              {/* <div className="more-details-box mt-4 p-3 border">
                 <h5 className="mb-3">More Details</h5>
                 <div className="row">
                   <div className="col-md-4 col-sm-6">
@@ -564,7 +564,7 @@ const logoImages = images?.logo || [];
                     <p><strong>Flooring:</strong> Marble</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -780,7 +780,7 @@ const logoImages = images?.logo || [];
             <h5 className="card5-title">Total Area</h5>
             <p className="card5-text">BHK: {floor.bhk}</p>
             <p className="card5-text">Area: {floor.area}</p>
-            <p className="card5-text">Price: {floor.price}</p>
+            <p className="card5-text">Price: {formatPrice(floor.price)}</p>
             <button className="btn btn-danger">
               <i className="fas fa-phone-alt"></i> Get a call back
             </button>
