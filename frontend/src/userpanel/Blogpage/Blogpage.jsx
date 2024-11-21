@@ -2,6 +2,7 @@ import React from 'react';
 import './BlogPage.css';
 import Footer from '../Footer/Footer';
 import jewar from "../../assets/hq720.jpg";
+import sukhbiri from "../../assets/SukhbiriHomes94.jpg";
 
 const BlogPage = () => {
 
@@ -17,18 +18,19 @@ const BlogPage = () => {
                     description=" The long-awaited Noida International Airport, located in Jewar, is poised to transform the region’s aviation landscape. With the airport preparing for its first commercial flights, there are major milestones being celebrated, signaling a promising future for Noida and the entire NCR"
                     author="Admin"
                     date="November 14, 2024"
-                    comments="0 Comments"
+                    comments="1 Comments"
                     image={jewar}
                     link="/jewar-noida-international-airport-takes-first-flight"
                 />
                 <Article
-                    tag="Adventure"
-                    title="Explore the New Heights of Mountain Adventures"
-                    description="From scaling peaks to exploring mountain valleys, our adventure homes are perfect for thrill-seekers."
+                    tag="Property"
+                    title="Sukhbiri Homes, Sector 107 Noida – Where Luxury Meets Comfort!"
+                    description="When it comes to finding the perfect home, the search often feels endless. But what if there was a place that ticked every box on your wish list—a place where luxury meets comfort and every day feels like a vacation? Welcome to Sukhbiri Homes Sector 107 Noida , a residential paradise crafted to bring your dreams to life."
                     author="Admin"
-                    date="September 12, 2024"
-                    comments="5 Comments"
-                    image="https://via.placeholder.com/150x100?text=Mountain+Adventure"
+                    date="November 20, 2024"
+                    comments="1 Comments"
+                    image={sukhbiri}
+                    link="/sukhbiri-homes-noida"
                 />
                 <Article
                     tag="Luxury"
@@ -131,17 +133,19 @@ const PopularNews = () => {
     const popularNews = [
         {
             id: 1,
-            category: "Fashion",
-            title: "Budget Issues Force The Our To Be...",
-            date: "December 9, 2021",
-            image: "https://via.placeholder.com/100x100?text=News+1"
+            category: "Growth and Connectivity",
+            title: "Jewar Noida International Airport Takes Flight...",
+            date: "November 14, 2024",
+            image: jewar ,
+            link:'/jewar-noida-international-airport-takes-first-flight'
         },
         {
             id: 2,
-            category: "Fashion",
-            title: "Here What's In Battlefield $80...",
-            date: "December 9, 2021",
-            image: "https://via.placeholder.com/100x100?text=News+2"
+            category: "Property",
+            title: "Sukhbiri Homes, Sector 107 Noida – Where Luxury Meets Comfort!",
+            date: "November 20, 2024",
+            image: sukhbiri ,
+            link: '/sukhbiri-homes-noida'
         },
         {
             id: 3,
@@ -162,7 +166,7 @@ const PopularNews = () => {
                         <img src={news.image} alt={news.title} className="popular-news-image" />
                         <div className="popular-news-info">
                             <span className="popular-news-category">{news.category}</span>
-                            <a href="#" className="popular-news-title">{news.title}</a>
+                            <a href={news.link} className="popular-news-title">{news.title}</a>
                             <div className="popular-news-date">{news.date}</div>
                         </div>
                     </li>
@@ -177,8 +181,8 @@ const PopularNews = () => {
 
 const HotCategories = () => {
     const categories = [
-        { id: 1, name: "Accident", count: 1, image: "https://via.placeholder.com/150x100?text=Accident" },
-        { id: 2, name: "Action", count: 9, image: "https://via.placeholder.com/150x100?text=Action" },
+        { id: 1, name: "Growth and Connectivity", count: 1, image:jewar},
+        { id: 2, name: "Property", count: 1, image: sukhbiri },
         { id: 3, name: "Adventure", count: 3, image: "https://via.placeholder.com/150x100?text=Adventure" },
         { id: 4, name: "America", count: 4, image: "https://via.placeholder.com/150x100?text=America" },
         { id: 5, name: "Animal", count: 7, image: "https://via.placeholder.com/150x100?text=Animal" }
@@ -205,7 +209,7 @@ const HotCategories = () => {
 
 const Tags = () => {
     const tags = [
-        "Animal", "Business", "Dental", "Eye Care", "Fashion", "Food", "Gym", "Health", 
+        "Growth and Connectivity", "Property", "Dental", "Eye Care", "Fashion", "Food", "Gym", "Health", 
         "Music", "Politics", "Sports", "Tech", "Technology", "Travel", "Yoga"
     ];
 

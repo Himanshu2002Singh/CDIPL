@@ -1,7 +1,7 @@
 import React from 'react';
 import './BlogSection.css';
 import et from '../../assets/hq720.jpg';
-import wt from '../../assets/2.webp';
+import wt from '../../assets/SukhbiriHomes94.jpg';
 import kt from '../../assets/3.webp';
 
 const BlogSection = () => {
@@ -17,12 +17,12 @@ const BlogSection = () => {
     },
     {
       id: 2,
-      title: "How to Increase Property Value Before Selling",
-      date: '20 June',
-      author: 'Jane Smith',
+      title: "Sukhbiri Homes, Sector 107 Noida – Where Luxury Meets Comfort!",
+      date: '20 November',
+    
       image: wt, // Use the image directly here
-      description: 'Discover simple yet effective ways to increase the value of your property before putting it on the market.',
-      link: '/insights',
+      description: 'When it comes to finding the perfect home, the search often feels endless. But what if there was a place that ticked every box on your wish list—a place where luxury meets comfort and every day feels like a vacation? Welcome to Sukhbiri Homes Sector 107 Noida , a residential paradise crafted to bring your dreams to life.',
+      link: '/sukhbiri-homes-noida',
     },
     {
       id: 3,

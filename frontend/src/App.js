@@ -33,6 +33,7 @@ import UpdateDetails from "./ProjectListingForm/updateProperty";
 import BlogPage from "./userpanel/Blogpage/Blogpage";
 import ProjectTrim from "./userpanel/PropertyListing/ProjectTrim";
 import BlogContent from "./userpanel/Blogpage/Jware_Airport";
+import Blog2Content from "./userpanel/Blogpage/Sukhbiri_Home";
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
           
           <Route path="/insights" element={<BlogPage />} />
           <Route path="/jewar-noida-international-airport-takes-first-flight" element={<BlogContent/>}/>
+          <Route path="/sukhbiri-homes-noida" element={<Blog2Content/>}/>
         </Routes>
       </div>
       <div>
