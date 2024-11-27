@@ -1,0 +1,73 @@
+.text-editor-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .editor-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  .ql-editor {
+    min-height: 300px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: #444;
+  }
+  
+  .editor-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .save-button {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .status-message {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .published-url {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .published-url p {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .published-url a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .published-url a:hover {
+    text-decoration: underline;
+  }
+  

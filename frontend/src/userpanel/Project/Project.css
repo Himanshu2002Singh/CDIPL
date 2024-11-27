@@ -22,7 +22,7 @@
 }
 /* Fix card size and spacing */
 .office-item {
-  width: 401px; /* Set a fixed width for the cards */
+  width: 501px; /* Set a fixed width for the cards */
   margin: 10px 10px; /* Adds space between the cards */
   text-align: center;
   height: 525px;
@@ -30,6 +30,7 @@
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
   background: var(--bs-light);
   transition: 0.5s;
+  max-width: 450px;
 }
 
 .office-item:hover {
@@ -39,9 +40,13 @@
 /* Optional: Maintain proper aspect ratio for the images */
 .office-img img {
   width: 100%;
-  height: auto; /* Ensure images maintain their aspect ratio */
+  height: auto; /* Maintains aspect ratio */
+  max-width: 300px; /* Set a fixed maximum width */
+  max-height: 200px; /* Set a fixed maximum height */
+  object-fit: cover; /* Ensures the image fills the box */
   border-radius: 10px;
 }
+
 
 /* Modify Slick arrows to ensure they stay centered */
 .slick-prev, .slick-next {

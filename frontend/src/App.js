@@ -34,6 +34,8 @@ import BlogPage from "./userpanel/Blogpage/Blogpage";
 import ProjectTrim from "./userpanel/PropertyListing/ProjectTrim";
 import BlogContent from "./userpanel/Blogpage/Jware_Airport";
 import Blog2Content from "./userpanel/Blogpage/Sukhbiri_Home";
+import TextEditor from "./userpanel/DynamicsBlogPage/DynamicsBlog";
+import ProjectsTable from "./ProjectListingForm/ProjectsTable";
 
 
 function App() {
@@ -59,6 +61,7 @@ function App() {
           <Route path="/insights" element={<BlogPage />} />
           <Route path="/jewar-noida-international-airport-takes-first-flight" element={<BlogContent/>}/>
           <Route path="/sukhbiri-homes-noida" element={<Blog2Content/>}/>
+          <Route path="/blog-editors" element={<TextEditor/>}/>
         </Routes>
       </div>
       <div>
@@ -75,6 +78,7 @@ function App() {
            <Route path="/additional/:tittle" element={<AddDetailsForm/>} />
            <Route path='/projectlist' element={<ProjectList/>}/>
            <Route path='/updateproject' element={<UpdateDetails/>}/>
+           <Route path="/add-meta" element={<ProjectsTable/>}/>
 
           <Route path="/bar" element={<Bar />} />
           <Route path="/pie" element={<Pie />} />

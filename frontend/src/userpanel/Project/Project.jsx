@@ -19,7 +19,7 @@ const Projects = () => {
       try {
         const response = await axios.get(`${config.baseURL}/fetchprojects`);
         if (response.data.success && Array.isArray(response.data.projects)) {
-          const projectData = response.data.projects.slice(0, 6); // Limit to 6 projects
+          const projectData = response.data.projects; // Limit to 6 projects
           setProjects(projectData);
 
           // Fetch images for each project based on title
@@ -155,7 +155,7 @@ const OfficeCard = ({ name, tittle, imgSrc, location, RERA, totalArea, Type, Con
     <div className="office-item p-4">
       <div className="office-img mb-4">
         {/* Use the imagePath for the src */}
-        <img src={imagePath} className="img-fluid w-100 rounded" alt={name} />
+        <img src={imagePath} className="img-fluid rounded" alt={name} />
       </div>
       <div className="office-content d-flex flex-column">
         <h4 className="mb-2">{name}</h4>

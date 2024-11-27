@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-no-undef */
+
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useEffect, useState } from 'react';
 import './ProjectDetail.css';
@@ -12,7 +12,7 @@ import FeedbackForm from '../Feedback/Feedback';
 import Footer from '../Footer/Footer';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-
+import { Helmet } from 'react-helmet'; // Import Helmet
 import img3 from '../../assets/youtube.jpg'; 
 
 import floor3 from '../../assets/msdb.jpg'; 
@@ -29,8 +29,8 @@ const ProjectDetail = () => {
   const [error, setError] = useState('');
   const [pamenities, setPamenities] = useState(null); 
   const [floorDetails, setFloorDetails] = useState([]);
-
-
+  const [metaDetails, setMetaDetails] = useState(''); // State to store meta details
+  const [metastilte , setMetaTitle] = useState('');
 
   const [popupVisible, setPopupVisible] = useState(false);
   const [popupTitle, setPopupTitle] = useState('');
@@ -92,7 +92,7 @@ const ProjectDetail = () => {
         const response = await axios.get(`${config.baseURL}/fetchamenities/${tittle}`);
         if (response.data.success) {
           setPamenities(response.data.amenities);
-          console.log(response.data.amenities);
+         
         } else {
           setError('No amenities found for this project');
         }
@@ -103,6 +103,29 @@ const ProjectDetail = () => {
   
     fetchAmenities();
   }, [tittle]);
+
+
+
+    // Fetch meta details from the backend
+    useEffect(() => {
+      const fetchMetaDetails = async () => {
+        try {
+          const response = await axios.get(`${config.baseURL}/meta-details/${tittle}`);
+          if (response.data.success) {
+            setMetaDetails(response.data.metaDetails.metaDescription);
+            setMetaTitle(response.data.metaDetails.metaTitle);
+            console.log(response.data.metaDetails.metaDescription) // Assume meta contains title and description
+          } else {
+            console.error('Error fetching meta details:', response.data.message);
+          }
+        } catch (error) {
+          console.error('Error fetching meta details:', error);
+        }
+      };
+  
+      fetchMetaDetails();
+    }, [tittle]);
+  
   
   // Fetch the project data from backend using tittle
   useEffect(() => {
@@ -203,6 +226,17 @@ const logoImages = images?.logo || [];
 
   return (
     <div className="project-detail-container container-fluid">
+
+<Helmet>
+        <title>{metastilte ||  `${projectData.name}`}</title>
+        <meta
+          name="description"
+          content={
+            metaDetails ||
+            `Discover details about ${projectData.name || 'this project'}, located at ${projectData.location || 'a prime location'}. Starting price: ${projectData.startingPrice || 'Contact us for details'}.`
+          }
+        />
+      </Helmet>
       <div className="container-fluid py-4">
   {/* Hero Section */}
   <div className="row">
