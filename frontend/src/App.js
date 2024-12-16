@@ -36,6 +36,10 @@ import BlogContent from "./userpanel/Blogpage/Jware_Airport";
 import Blog2Content from "./userpanel/Blogpage/Sukhbiri_Home";
 import TextEditor from "./userpanel/DynamicsBlogPage/DynamicsBlog";
 import ProjectsTable from "./ProjectListingForm/ProjectsTable";
+import MetaForm from "./ProjectListingForm/SeoPannel";
+import MetaAboutForm from "./ProjectListingForm/AboutSeo";
+import MetaContactForm from "./ProjectListingForm/MetaContactForm";
+import MetaProjectForm from "./ProjectListingForm/ProjectMeta";
 
 
 function App() {
@@ -79,6 +83,10 @@ function App() {
            <Route path='/projectlist' element={<ProjectList/>}/>
            <Route path='/updateproject' element={<UpdateDetails/>}/>
            <Route path="/add-meta" element={<ProjectsTable/>}/>
+           <Route path= "/home-meta" element={<MetaForm/>}/>
+           <Route path="/about-meta" element={<MetaAboutForm/>}/>
+           <Route path='/contact-meta' element={<MetaContactForm/>}/>
+           <Route path ='/all-project' element={<MetaProjectForm/>}/>
 
           <Route path="/bar" element={<Bar />} />
           <Route path="/pie" element={<Pie />} />

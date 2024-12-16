@@ -1,15 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ContactUs.css"; // Ensure the CSS file is created and linked correctly
 import Footer from "../Footer/Footer";
 import backgroundImg from '../../assets/r1.png';
 import { Container } from "react-bootstrap";
 import axios from "axios";
 import config from "../../config";
+import { Helmet } from "react-helmet";
 
 const ContactUs = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
+
+  const [metaDetails, setMetaDetails] = useState(''); // State to store meta details
+  const [metastilte , setMetaTitle] = useState('');
+  const [metaKeywords , setMetaKeywords]= useState('');
+
+  useEffect(() => {
+    const fetchMetaDetails = async () => {
+      try {
+        const response = await axios.get(`${config.baseURL}/meta-contact-details`);
+        if (response.data.success) {
+
+          setMetaDetails(response.data.metaHomeDetails.metaDescription);
+          setMetaTitle(response.data.metaHomeDetails.metaTitle);
+          setMetaKeywords(response.data.metaHomeDetails.metaKeywords);
+          console.log(response.data) // Assume meta contains title and description
+        } else {
+          console.error('Error fetching meta details:', response.data.message);
+        }
+      } catch (error) {
+        console.error('Error fetching meta details:', error);
+      }
+    };
+
+    fetchMetaDetails();
+  })
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,6 +63,17 @@ const ContactUs = () => {
 
   return (
     <>
+         {/* Background Image with Title */}
+         <Helmet>
+        <title>{metastilte ||  `Contact Us- CDIPL`}</title>
+        <meta 
+        name="description" 
+        content={
+           metaDetails || `Discover properties, read blogs, and explore our real estate services.`} />
+        <meta 
+        name="keywords"
+         content={metaKeywords || `real estate, properties, home buying, real estate services` } />
+      </Helmet>
      <Container fluid>
       <div className="cdipl-contact-section">
         {/* Breadcrumb Section */}

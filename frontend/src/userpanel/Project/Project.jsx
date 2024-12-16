@@ -14,6 +14,9 @@ const Projects = () => {
   const [images, setImages] = useState({});     // To store images
 
   // Fetching projects from backend (API call simulation)
+
+
+  
   useEffect(() => {
     const fetchProjects = async () => {
       try {

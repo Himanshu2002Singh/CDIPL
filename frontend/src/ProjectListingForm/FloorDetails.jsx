@@ -122,7 +122,7 @@ const FloorDetails = () => {
               <input
                 type="file"
                 onChange={handleFloorPlanChange(index, 'image')}
-                required
+                
               />
             </div>
           </div>

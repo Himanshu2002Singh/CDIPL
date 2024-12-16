@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './AboutCompany.css'; // Import the CSS file for styling
 import backgroundImg from '../../assets/AboutBG.png'; // Background Image
 import storyImage1 from '../../assets/storyimg1.png'; // First Story image
@@ -12,14 +12,53 @@ import seema from '../../assets/pixelcut-export.jpeg';
 import megha from '../../assets/Megha-Tyagi (1).jpg'
 import ajay from '../../assets/Ajay-Gupta.png';
 import DeveloperCarousel from '../DeveloperCarousel/DeveloperCarousel';
+import { Helmet } from 'react-helmet';
+import axios from 'axios';
+import config from '../../config';
 
 
 const AboutCompany = () => {
-  
+   
+  const [metaDetails, setMetaDetails] = useState(''); // State to store meta details
+  const [metastilte , setMetaTitle] = useState('');
+  const [metaKeywords , setMetaKeywords]= useState('');
+
+  useEffect(() => {
+    const fetchMetaDetails = async () => {
+      try {
+        const response = await axios.get(`${config.baseURL}/meta-about-details`);
+        if (response.data.success) {
+
+          setMetaDetails(response.data.metaAboutDetails.metaDescription);
+          setMetaTitle(response.data.metaAboutDetails.metaTitle);
+          setMetaKeywords(response.data.metaAboutDetails.metaKeywords);
+          console.log(response.data) // Assume meta contains title and description
+        } else {
+          console.error('Error fetching meta details:', response.data.message);
+        }
+      } catch (error) {
+        console.error('Error fetching meta details:', error);
+      }
+    };
+
+    fetchMetaDetails();
+  })
+
   
   return (
     <div className="about-company-container">
       {/* Background Image with Title */}
+      <Helmet>
+        <title>{metastilte ||  `About CDIPL`}</title>
+        <meta 
+        name="description" 
+        content={
+           metaDetails || `Discover properties, read blogs, and explore our real estate services.`} />
+        <meta 
+        name="keywords"
+         content={metaKeywords || `real estate, properties, home buying, real estate services` } />
+      </Helmet>
+
       <div className="about-company-header" style={{ backgroundImage: `url(${backgroundImg})` }}>
         <div className="overlay">
           <div className="company-title">

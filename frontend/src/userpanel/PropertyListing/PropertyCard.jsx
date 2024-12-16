@@ -4,6 +4,7 @@ import axios from "axios";
 import PropertyListing from "./PropertyListing";
 import "./PropertyGrid.css";
 import config from "../../config";
+import { Helmet } from "react-helmet";
 
 const PropertyGrid = () => {
   const location = useLocation();
@@ -18,6 +19,31 @@ const PropertyGrid = () => {
     avgPrice: "",
     superArea: "",
   });
+
+  const [metaDetails, setMetaDetails] = useState(''); // State to store meta details
+  const [metastilte , setMetaTitle] = useState('');
+  const [metaKeywords , setMetaKeywords]= useState('');
+
+  useEffect(() => {
+    const fetchMetaDetails = async () => {
+      try {
+        const response = await axios.get(`${config.baseURL}/meta-allproject-details`);
+        if (response.data.success) {
+
+          setMetaDetails(response.data.metaAllProjectDetails.metaDescription);
+          setMetaTitle(response.data.metaAllProjectDetails.metaTitle);
+          setMetaKeywords(response.data.metaAllProjectDetails.metaKeywords);
+          console.log(response.data) // Assume meta contains title and description
+        } else {
+          console.error('Error fetching meta details:', response.data.message);
+        }
+      } catch (error) {
+        console.error('Error fetching meta details:', error);
+      }
+    };
+
+    fetchMetaDetails();
+  })
 
   // Extract query parameters from the URL
   useEffect(() => {
@@ -95,7 +121,21 @@ const PropertyGrid = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
+
+    
     <div className="property-grid">
+          {/* Background Image with Title */}
+          <Helmet>
+        <title>{metastilte ||  `About CDIPL`}</title>
+        <meta 
+        name="description" 
+        content={
+           metaDetails || `Discover properties, read blogs, and explore our real estate services.`} />
+        <meta 
+        name="keywords"
+         content={metaKeywords || `real estate, properties, home buying, real estate services` } />
+      </Helmet>
+
       <h2>Projects</h2>
 
       {/* Search bar for live search */}

@@ -31,7 +31,7 @@ const ProjectDetail = () => {
   const [floorDetails, setFloorDetails] = useState([]);
   const [metaDetails, setMetaDetails] = useState(''); // State to store meta details
   const [metastilte , setMetaTitle] = useState('');
-
+  const [metaKeywords , setMetaKeywords]= useState('');
   const [popupVisible, setPopupVisible] = useState(false);
   const [popupTitle, setPopupTitle] = useState('');
 
@@ -114,6 +114,7 @@ const ProjectDetail = () => {
           if (response.data.success) {
             setMetaDetails(response.data.metaDetails.metaDescription);
             setMetaTitle(response.data.metaDetails.metaTitle);
+            setMetaKeywords(response.data.metaDetails.metaKeywords);
             console.log(response.data.metaDetails.metaDescription) // Assume meta contains title and description
           } else {
             console.error('Error fetching meta details:', response.data.message);
@@ -222,7 +223,7 @@ const mainGalleryImages = images?.mainGallery || [];
 const GalleryImages = images?.gallery || [];
 const paymentPlanImages = images?.paymentPlan || [];
 const logoImages = images?.logo || [];
- 
+
 
   return (
     <div className="project-detail-container container-fluid">
@@ -236,6 +237,11 @@ const logoImages = images?.logo || [];
             `Discover details about ${projectData.name || 'this project'}, located at ${projectData.location || 'a prime location'}. Starting price: ${projectData.startingPrice || 'Contact us for details'}.`
           }
         />
+        <meta 
+        name="keywords"
+         content={ metaKeywords || `real estate, ${projectData.name || 'this project'},${projectData.location || 'a prime location'}, properties, home buying, real estate services `} 
+         />
+
       </Helmet>
       <div className="container-fluid py-4">
   {/* Hero Section */}

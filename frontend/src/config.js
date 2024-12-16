@@ -1,6 +1,6 @@
 // src/config.js
 const config = {
-    baseURL: "https://contourdirectindia.com/api",
+    baseURL: "http://localhost:5000/api",
     baseURL2: "https://contourdirectindia.com"
   };
   

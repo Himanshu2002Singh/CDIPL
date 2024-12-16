@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './About.css'; // Import the CSS file
 
 const AboutCdipl = () => {
+
   return (
     <div className='aboutcdipl-container mt-30'>
       <div className="aboutcdipl">

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import config from '../config';
+import './MetaDetailsForm.css';
 
 const MetaDetailsForm = ({ projectTittle, onClose }) => {
   const [metaTitle, setMetaTitle] = useState('');
   const [metaDescription, setMetaDescription] = useState('');
+  const [metaKeywords , setMetaKeywords] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,6 +15,7 @@ const MetaDetailsForm = ({ projectTittle, onClose }) => {
       await axios.post(`${config.baseURL}/meta-details`, {
         metaTitle,
         metaDescription,
+        metaKeywords,
         projectTittle,
       });
       alert('MetaDetails added successfully');
@@ -42,6 +45,14 @@ const MetaDetailsForm = ({ projectTittle, onClose }) => {
             <textarea
               value={metaDescription}
               onChange={(e) => setMetaDescription(e.target.value)}
+            ></textarea>
+          </label>
+
+          <label style={{color:'black'}} >
+            Meta Keywords:
+            <textarea
+              value={metaKeywords}
+              onChange={(e) => setMetaKeywords(e.target.value)}
             ></textarea>
           </label>
           <div className="form-buttons">
