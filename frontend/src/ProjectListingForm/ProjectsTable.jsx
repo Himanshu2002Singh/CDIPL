@@ -31,7 +31,7 @@ const ProjectsTable = () => {
         setProjects(response.data.items || response.data.projects || []);
       } catch (error) {
         console.error('Error fetching projects:', error);
-        alert(`Failed to load ${activePage} data.`);
+        // alert(`Failed to load ${activePage} data.`);
       }
     };
 
