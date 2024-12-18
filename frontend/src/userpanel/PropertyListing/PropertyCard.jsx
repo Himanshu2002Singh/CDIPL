@@ -122,7 +122,6 @@ const PropertyGrid = () => {
 
   return (
 
-    
     <div className="property-grid">
           {/* Background Image with Title */}
           <Helmet>
@@ -222,6 +221,7 @@ const PropertyGrid = () => {
         })}
       </div>
     </div>
+  
   );
 };
 
