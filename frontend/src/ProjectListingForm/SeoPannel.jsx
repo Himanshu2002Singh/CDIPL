@@ -12,7 +12,7 @@ const MetaForm = ({onClose}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`${config.baseURL}/meta-home-details/update`, {
+      const response = await axios.post(`${config.baseURL}/meta-home-details/update`, {
         metaTitle,
         metaKeywords,
         metaDescription,

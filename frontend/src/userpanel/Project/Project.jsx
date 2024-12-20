@@ -150,7 +150,7 @@ const Projects = () => {
   );
 };
 
-const OfficeCard = ({ name, tittle, imgSrc, location, RERA, totalArea, Type, Configuration, price }) => {
+const OfficeCard = ({ name, tittle, imgSrc, location, RERA, Area, Type, Configuration, price }) => {
   // Check if filePath exists before calling .replace()
   const imagePath = imgSrc?.filePath ? `${config.baseURL2}${imgSrc.filePath.replace(/\\/g, '/')}` : '/default-image.jpg';
 
@@ -166,7 +166,7 @@ const OfficeCard = ({ name, tittle, imgSrc, location, RERA, totalArea, Type, Con
           <FontAwesomeIcon icon={faMapMarkerAlt} style={{ color: '#BE7C2A' }} /> {location}
         </p>
         <div className="d-flex justify-content-between mb-2">
-          <p><FontAwesomeIcon icon={faRulerCombined} style={{ color: '#BE7C2A' }} /> <strong>Area: </strong>{totalArea} </p>
+          <p><FontAwesomeIcon icon={faRulerCombined} style={{ color: '#BE7C2A' }} /> <strong>Area: </strong>{Area} </p>
           <p><FontAwesomeIcon icon={faKey} style={{ color: '#BE7C2A' }} /> <strong>RERA: </strong>{RERA}</p>
         </div>
         <div className="d-flex justify-content-between mb-2">

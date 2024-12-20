@@ -6,7 +6,20 @@ import { Link } from 'react-router-dom';
 const PropertyListing = ({ property }) => {
 
   const imagePath = property.image?.filePath ? `${config.baseURL2}${property.image.filePath.replace(/\\/g, '/')}` : '/default-image.jpg';
+  const formatPrice = (price) => {
+    const numericPrice = Number(price.toString().replace(/,/g, ''));
 
+    if (isNaN(numericPrice)) {
+        return "Invalid Price";
+    }
+
+    if (numericPrice >= 10000000) {
+        return `${(numericPrice / 10000000).toFixed(2)} Cr`;
+    } else if (numericPrice >= 100000) {
+        return `${(numericPrice / 100000).toFixed(2)} Lakh`;
+    }
+    return numericPrice.toString();
+};
   return (
 
     <div className="property-card">
@@ -19,7 +32,9 @@ const PropertyListing = ({ property }) => {
       {/* Property details section */}
       <div className="property-details">
         <h5>{property.name}</h5>
-        <p className="price">₹{property.avgPrice}/Sq. Ft.</p>
+        
+        <p className="price">₹{property.startingPrice === 4.97 ? '4.97cr' : formatPrice(property.startingPrice)}</p>
+
         <p>{property.location}</p>
         
         {/* Additional property information */}

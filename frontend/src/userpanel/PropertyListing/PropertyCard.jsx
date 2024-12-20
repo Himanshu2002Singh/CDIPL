@@ -16,7 +16,7 @@ const PropertyGrid = () => {
     propertyType: "",
     name: "",
     location: "",
-    avgPrice: "",
+    startingPrice: "",
     superArea: "",
   });
 
@@ -52,7 +52,7 @@ const PropertyGrid = () => {
       propertyType: queryParams.get("propertyType") || "",
       name: queryParams.get("name") || "",
       location: queryParams.get("location") || "",
-      avgPrice: queryParams.get("avgPrice") || "",
+      startingPrice: queryParams.get("startingPrice") || "",
       superArea: queryParams.get("superArea") || "",
     };
     setSearchParams(params);

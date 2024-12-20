@@ -40,6 +40,7 @@ import MetaForm from "./ProjectListingForm/SeoPannel";
 import MetaAboutForm from "./ProjectListingForm/AboutSeo";
 import MetaContactForm from "./ProjectListingForm/MetaContactForm";
 import MetaProjectForm from "./ProjectListingForm/ProjectMeta";
+import UpdateFloorPlan from "./ProjectListingForm/UpdateFloorPlan";
 
 
 function App() {
@@ -75,6 +76,7 @@ function App() {
           <Route path="/invoices" element={<Invoices />} />
           {isAdminLoggedIn &&
           <Route path='/project-Listing-form' element={<ProjectForm />} />}
+          <Route path="/updatefloor" element={<UpdateFloorPlan/>}/>
         
            <Route path="/amenities-form/:tittle" element={<AmenitiesForm />} />
            <Route path="/upload/:tittle" element={<UploadForm />} />

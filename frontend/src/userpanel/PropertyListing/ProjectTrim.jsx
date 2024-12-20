@@ -14,7 +14,7 @@ const ProjectTrim = () => {
     <div>
       <PropertyGrid />
       
-      <Pagination currentPage={currentPage} onPageChange={handlePageChange} style={{ marginBottom:'20px'}}/>
+      <Pagination currentPage={currentPage} onPageChange={handlePageChange} />
       <Footer/>
     </div>
   );
